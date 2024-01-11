@@ -1,0 +1,153 @@
+Hello George Kingsley Paul Sundararaj,
+This is confirmation that Case Number 694831371 was successfully opened with the Cisco Technical Assistance Center.
+Case details:
+Case: 694831371
+Case Subject: SDA DNAC - C9300 NETCONF SSH access not working using TACACS authentication
+Severity: 3
+Status: Open
+Please REPLY ALL to this email so that updates you make will be reflected in the case notes.
+To manage this case, you can use:
+
+Thanks for contacting Cisco Solution Support TAC.
+My name is Jorge Alvarado, and I will be your Cisco Customer Support Engineer for this service request.
+I will be working with you to ensure that we can provide you with both a timely and successful solution.
+I would like to ask you the following questions necessary in order to proceed with this case:
+1.
+Which DNAC version are you running?
+2.
+Could you please briefly describe the Business Impact this issue has on your operations (Low / Medium / High)?
+3.
+Is this a single node or a three-node cluster?
+4.
+Is your appliance a DN1 or DN2?
+5.
+Please let me know your availability for a call.
+Feel free to contact me in case you have any question.
+
+Thanks for contacting Cisco Solution Support TAC.
+My name is Jorge Alvarado, and I will be your Cisco Customer Support Engineer for this service request.
+I will be working with you to ensure that we can provide you with both a timely and successful solution.
+I would like to ask you the following questions necessary in order to proceed with this case:
+1.
+Which DNAC version are you running?
+2.
+Could you please briefly describe the Business Impact this issue has on your operations (Low / Medium / High)?
+3.
+Is this a single node or a three-node cluster?
+4.
+Is your appliance a DN1 or DN2?
+5.
+Please let me know your availability for a call.
+Feel free to contact me in case you have any question.
+
+Thanks for contacting Cisco Solution Support TAC.
+My name is Jorge Alvarado, and I will be your Cisco Customer Support Engineer for this service request.
+I will be working with you to ensure that we can provide you with both a timely and successful solution.
+I would like to ask you the following questions necessary in order to proceed with this case:
+1.
+Which DNAC version are you running?
+2.
+Could you please briefly describe the Business Impact this issue has on your operations (Low / Medium / High)?
+3.
+Is this a single node or a three-node cluster?
+4.
+Is your appliance a DN1 or DN2?
+5.
+Please let me know your availability for a call.
+Feel free to contact me in case you have any question.
+
+Please find below the requested details.
+1.
+Which DNAC version are you running?
+2.2.2.9
+2.
+Could you please briefly describe the Business Impact this issue has on your operations (Low / Medium / High)?
+Medium
+1.
+Is this a single node or a three-node cluster?
+3-node cluster
+1.
+Is your appliance a DN1 or DN2?
+DN2
+1.
+Please let me know your availability for a call.
+You can send me the invitie
+
+Is it ok a call for tomorrow at 9:00 AM CST?
+
+Lets have the call on Friday.
+
+On Friday I’m out of the office, is it ok on Monday?
+
+Hope you are doing well.
+This is Saurabh Khillare from the DNA Solution Support team; I will be the engineer assisting you with this service request.
+I am sending this out as an initial point of contact to let you know that I have accepted your case and to give you information on how to contact me.
+You can find my contact details and working hours in the signature of this email.
+Is the device under managed state in DNAC inventory?
+Are you able to SSH normally? Via 22 port
+Does the user have priv 15?
+Was this working earlier?
+
+Can we have a call.
+
+I am not available now.
+I can directly on Monday.
+
+-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
+-- Do not delete or change any of the following text.
+
+Thanks for your time during Webex session today.
+Please find a brief summary below:
+DNAC version: 2.2.2.9
+ISE version: 2.7
+NETCONF not working for switches when customer is using TACACS credentials and it works fine when local credentials are used.
+On switch logs we are seeing following message:
+Jan  8 2023 13:58:22.107 SGT: %DMI-5-AUTHENTICATION_FAILED: Switch 1 R0/0: dmiauthd: Authentication failure from 172.18.12.20:49803 for netconf over ssh.
+Jan  8 2023 13:58:27.304 SGT: %DMI-5-AUTHENTICATION_FAILED: Switch 1 R0/0: dmiauthd: Authentication failure from 172.18.12.20:10261 for netconf over ssh.
+We added following AAA config on switch and NETCONF started working using TACACS credentials:
+aaa authentication login default group dnac-network-tacacs-group local
+aaa authorization exec default group dnac-network-tacacs-group local if-authenticated
+This is an expected behaviour with NETCONF while using TACACS credentials as documented under https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvy47909 and we need to continue using workaround by applying above AAA commands using a CLI template to all switches where NETCONF will be enabled.
+I will work with Dev team to updated affected version for this bug.
+Regarding the other issue where DNAC is unable to login to switch using NETCONF when TACACS credentials are used we found that AAA request hits deny shell access rule because remote address is missing in the request due to which it cannot match same permit rule which is used when you use your own TACACS credential.
+I will work with Manjunath to validate this behaviour in lab and see if we are able to replicate same.
+Please upload all the debugs and sessions logs regarding this issue to the TAC case.
+
+We appreciate your continuous patience working with Cisco Sydney TAC on this SR.
+I have taken over this SR from Hitesh.
+Please allow me to review the case, work with Hitesh to clarify the case details should it be required and come back to you with an action plan.
+As per your usual communication preference, I’ll reach out to you on Webex teams.
+
+This case has been already updated.
+Below is the update:
+
+Thanks for the update and it was lovely connecting with you over the Webex.
+I understand that you have the below safety net measure to secure any ssh request that reaches ISE with DNAC managed username.
+When DNAC ssh’s to NAD on the traditional port, its passes through and Inventory collection and other automation feature works as anticipated.
+However, when its SSH’s over 830 on Netconf,  it’s gets denied.
+The denial occurs because Netconf yang packet doesn’t conatin remote address (DNAC address) in the TACAS request.
+This is a known behaviour and an enhancement has been raised for this
+https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvx47585
+Please allow me to identify if the patched versions work and suggest you one.
+
+It’s me again.
+How are we tracking on this SR?
+Have you upgraded the test switch to 17.4 or 17.6 version.
+If so, please test Netconf ssh and let you know if you require further assistance.
+
+Thanks for the case closure confirmation over WebExTeams on the 18th April.
+It’s always a pleasure working with you and looking forward to work with you in the future 😊
+I will proceed to close this SR.Technology: Cisco DNA Center - On-Prem
+Subtechnology: Cisco DNA Center - Infrastructure (Services, UI, API, etc.)
+Problem Code: Error Messages, Logs, Debugs
+
+Product: NA
+Product Family: DNAHW
+Software Version: N/A
+Router/Node Name: N/A
+
+Problem Details: SDA DNAC - C9300 NETCONF SSH access not working using TACACS authenticationSDA DNAC - C9300 NETCONF SSH access not working using TACACS authenticationtimestamp : 2023-04-25T03:36:32.000+0000 || updatedby : bochinna || type : RESOLUTION SUMMARY || visibility : External || details : Resolution Summary
+=====================
+When DNAC ssh’s to NAD on the traditional port, its passes through and Inventory collection and other automation feature works as anticipated. However, when its SSH’s over 830 on Netconf, it’s gets denied.
+
+The denial occurs because Netconf yang packet doesn’t contain remote address (DNAC address) in the TACAS request. This is a known behavior, and an enhancement has been raised for this CSCvx47585
