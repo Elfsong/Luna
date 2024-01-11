@@ -7,9 +7,6 @@ import json
 import time
 import argparse
 import pandas as pd
-from tqdm import tqdm
-from rich import print
-from rich.progress import track
 from rich.console import Console
 from src.graph import CiscoGraph
 from src.evaluator import LCSEvaluator

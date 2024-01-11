@@ -1,0 +1,8 @@
+pandas
+rich
+neo4j
+openai
+huggingface_hub
+langchain
+tiktoken
+openpyxl

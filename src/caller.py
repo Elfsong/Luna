@@ -37,17 +37,19 @@ class OpenAICaller(Caller):
         )
         return response.choices[0].message.content
     
-    def analysis(self, docs, question, choice_list) -> str:
+    def analysis(self, docs, question, choice_list, status) -> str:
         chunks = list()
         assert isinstance(docs, list)
         
         # Step 0. split docs into chunks
         for doc in docs:
             chunks += self.text_splitter.split_text(doc)
+        self.console.log(f"Document input length: {len(doc)}, which has been split into {len(chunks)} chunks.")
             
         # Step 1. map these chunks
         map_results = list()
-        for chunk in chunks:
+        for index, chunk in enumerate(chunks):
+            status.update(f"[bold green] Mapping chunk [{index+1}/{len(chunks)}]...")
             map_prompt = f'Question: {question} \n \
                 The ONLY product_name should be selected from the given product list: {choice_list} \
                 Response in this JSON format: \n {{"product_name": "","explanation": "", "summary": ""}} \n {chunk}'
@@ -57,6 +59,7 @@ class OpenAICaller(Caller):
         # Step 2. reduce these results        
         reduce_results = map_results[::-1]
         while True:
+            status.update(f"[bold green] Reducing chunks from {len(reduce_results)} -> 1...")
             if len(reduce_results) == 1: break
             
             reduce_result_str = ""
