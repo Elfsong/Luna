@@ -34,3 +34,5 @@ python worker.py
 
 Please feel free to let me know if you have any concerns. Thank you!
 Email: Mingzhe@nus.edu.sg
+
+![Demo](data/demo.png)
