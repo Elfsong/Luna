@@ -13,6 +13,14 @@ In most cases, you don't need to do this section by yourself. However, if you ar
 * Knowledge Graph (see https://shorturl.at/lyKTZ)
 * LLM Inference Engine (run 'start_llm.sh')
 
+You can also try the LLM inference engine by CURL:
+```
+curl 10.246.112.13:8080/generate \
+    -X POST \
+    -d '{"inputs":"What is Deep Learning?","parameters":{"max_new_tokens":20}}' \
+    -H 'Content-Type: application/json'
+```
+
 ### Step 2. Run the Code
 If you would like to use pre-defined config in the 'data' folder, please try:
 ```shell
