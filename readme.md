@@ -1,7 +1,7 @@
-# Welcome to Luna
+# Welcome to Luna 🔮
 
-## Step 0. Prepare Environment
+### Step 0. Prepare Environment
 
-## Step 1. Set up Containers (Optional)
+### Step 1. Set up Containers (Optional)
 
-## Step 2. Run the Code
+### Step 2. Run the Code
