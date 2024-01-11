@@ -42,7 +42,7 @@ def config_generator(console):
     # llm
     if config['type'] == 'llama':
         while True:
-            llm_url_default = 'http://127.0.0.1:8080'
+            llm_url_default = 'http://10.246.112.13:8080'
             print(f'[blue]Luna[/blue]: Cool! What is your llm server address? [[u]{llm_url_default}[/u]]')
             llm_url_input = Prompt.ask('You')
             if llm_url_input == "":

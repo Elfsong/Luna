@@ -117,18 +117,6 @@ if __name__ == "__main__":
         console.log(f"No config detected. Let me ask you a few questions:)")
         config = config_generator(console)
         
-        config = {
-            "type": "llama",
-            "chunk_size": 2048,
-            "chunk_overlap": 256,
-            "model_name": "Llama-70b",
-            "llm_url": 'http://127.0.0.1:8080',
-            "graph_url": 'bolt://10.245.89.103:7687',
-            'graph_user': 'neo4j',
-            'graph_pwd': 'yyids123',
-            "fields": ["notes", "symptom", "description", "summary"],
-        }
-        
     with console.status("[bold green]Loading components...") as status:
         # Step 1. Load graph handler
         graph_handler = CiscoGraph(config['graph_url'], config['graph_user'], config['graph_pwd'])
