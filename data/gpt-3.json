@@ -3,7 +3,7 @@
     "chunk_size": 12000,
     "chunk_overlap": 500,
     "model_name": "gpt-3.5-turbo-1106",
-    "openai_api_key": "YOUR_OPENAI_KEY",
+    "openai_api_key": "YOU_OPENAI_KEY",
     "graph_url": "bolt://10.245.89.103:7687",
     "graph_user": "neo4j",
     "graph_pwd": "yyids123",
