@@ -11,7 +11,7 @@ from rich.console import Console
 from src.graph import CiscoGraph
 from src.evaluator import LCSEvaluator
 from src.caller import OpenAICaller, LlamaCaller
-from src.utils import get_product_mapping, save_results, banner, config_generator
+from src.utils import get_product_mapping, get_swv_mapping, save_results, banner, config_generator
 
 
 def worker(console, graph_handler, caller, config):
@@ -99,6 +99,90 @@ def worker(console, graph_handler, caller, config):
         time.sleep(3)
         console.log(f"Well done. The accuracy for this run is {accuracy}. Please check the detailed result at '{save_file_path}'.")
 
+def software_worker(console, graph_handler, caller, config):
+    with console.status("[bold green] Loading software version mapping file...") as status:
+        s_mapping = get_swv_mapping('./data/tech_subtech_swv.xlsx')
+        time.sleep(3)
+        console.log(f'Software version mapping file loaded.')
+    
+    with console.status("[bold green]Retrieving nodes from the graph...") as status:
+        mnodes = graph_handler.raw_excute("MATCH (m:Gold) RETURN m")
+        time.sleep(3)
+        console.log(f"Got {len(mnodes)} nodes from the graph.")
+    
+    results = list()
+    total, correct_sum = 0, 0
+    
+    with console.status("[bold green] Node Processing...") as status:
+        for index, mnode in enumerate(mnodes):
+            console.log("=" * 30)
+            mnode_data = mnode["m"]
+            mnode_sr = mnode_data["sr"]
+            mnode_swv = mnode_data["SW_Version__c"]
+            
+            mnode_tech = mnode_data["Technology_Text__c"]
+            mnode_subtech = mnode_data["Sub_Technology_Text__c"]
+            s_list = s_mapping[mnode_tech][mnode_subtech]
+            s_str = "/ ".join(s_list)
+            
+            notes = list()  
+            nnodes = graph_handler.raw_excute(f"MATCH (m:Metadata) WHERE (m.sr = '{mnode_sr}') MATCH ((m)-[:Has]->(n)) RETURN n")
+            for nnode in nnodes:
+                nnode_data = nnode["n"]
+                if 'extracted_note' in nnode_data:
+                    note_content = nnode_data["extracted_note"]
+                    notes += [note_content]
+            
+            doc = ""
+            if "notes" in config["fields"]:
+                doc += "\n".join(notes)
+            if "symptom" in config["fields"]:
+                doc += "\n" + mnode_data["Customer_Symptom__c"]
+            if "description" in config["fields"]:
+                doc += "\n" + mnode_data["Description"]
+            if "summary" in config["fields"]:
+                doc += "\n" + mnode_data["Resolution_Summary__c"]
+
+            question = f'Which software_version is principally discussed in these documents?'
+            
+            console.log(f"Current node {mnode_sr} [{index+1}/{len(mnodes)}]")
+            
+            response = caller.software_analysis([doc], question, s_str, status)
+            
+            prediction, summary, explanation = "", "", ""
+            try:
+                response_json = json.loads(response)
+                prediction = response_json['software_version']
+                summary = response_json['summary']
+                explanation = response_json['explanation']
+            except Exception as e:
+                console.log(f"[bold red] [Worker] Json parse error: {e}. Using the original response instead.")
+                prediction = response
+                
+            correct, overlap = LCSEvaluator.eval(mnode_swv, prediction, 0.5)
+            
+            total += 1
+            correct_sum += correct
+            
+            console.log(f'Ground truth: [bold green]{mnode_swv}[/bold green] Prediction: [bold yellow]{prediction}[/bold yellow] Overlap: {overlap} Passed: {str(correct)}')
+            console.log(f'Explanation: [i]{explanation}[/i]')
+            
+            results += [{
+                "sr": mnode_sr,
+                "software_version": mnode_swv,
+                "prediction": prediction,
+                "explanation": explanation,
+                "summary": summary,
+                "overlap": overlap,
+                "correct": correct,
+            }]
+    
+    with console.status("[bold green] Result Saving...") as status:
+        accuracy = correct_sum / total
+        save_file_path = f"./results/{config['model_name']}_{accuracy}.csv"
+        save_results(pd.DataFrame.from_dict(results), save_file_path)
+        time.sleep(3)
+        console.log(f"Well done. The accuracy for this run is {accuracy}. Please check the detailed result at '{save_file_path}'.")
 
 if __name__ == "__main__":
     console = Console()
@@ -135,5 +219,6 @@ if __name__ == "__main__":
         console.log(f"[bold cyan]LLM Handler[/bold cyan] Load Completed!")
     
     # Step 3. Let's go
-    worker(console, graph_handler, llm_caller, config)
+    # worker(console, graph_handler, llm_caller, config)
+    software_worker(console, graph_handler, llm_caller, config)
     

@@ -14,10 +14,13 @@ class Caller(object):
         self.console = console
         self.text_splitter = TokenTextSplitter(chunk_size=config['chunk_size'], chunk_overlap=config['chunk_overlap'])
             
-    def call(self, prompt) -> str:
+    def call(self, prompt: str) -> str:
         raise NotImplementedError("Don't call the interface directly")
     
-    def analysis(self, docs, question, choice_list) -> str:
+    def analysis(self, docs: str, question: str, choice_list, status) -> str:
+        raise NotImplementedError("Don't call the interface directly")
+    
+    def software_analysis(self, docs: str, question: str, choice_list, status) -> str:
         raise NotImplementedError("Don't call the interface directly")
 
 class OpenAICaller(Caller):
@@ -68,6 +71,42 @@ class OpenAICaller(Caller):
             
             reduce_prompt = f'Question: {question} \n \
                 Response in this JSON format: \n {{"product_name": "","explanation": "", "summary": ""}} \n {reduce_result_str}'
+                
+            reduce_results.append(self.call(reduce_prompt))
+            
+        return reduce_results[0]
+    
+    def software_analysis(self, docs, question, choice_list, status) -> str:
+        chunks = list()
+        assert isinstance(docs, list)
+        
+        # Step 0. split docs into chunks
+        for doc in docs:
+            chunks += self.text_splitter.split_text(doc)
+        self.console.log(f"Document input length: {len(doc)}, which has been split into {len(chunks)} chunks.")
+            
+        # Step 1. map these chunks
+        map_results = list()
+        for index, chunk in enumerate(chunks):
+            status.update(f"[bold green] Mapping chunk [{index+1}/{len(chunks)}]...")
+            map_prompt = f'Question: {question} \n \
+                The ONLY software version should be selected from the given software version list: {choice_list} \
+                Response in this JSON format: \n {{"software_version": "","explanation": "", "summary": ""}} \n {chunk}'
+            result = self.call(map_prompt)
+            map_results.append(result)
+            
+        # Step 2. reduce these results        
+        reduce_results = map_results[::-1]
+        while True:
+            status.update(f"[bold green] Reducing chunks from {len(reduce_results)} -> 1...")
+            if len(reduce_results) == 1: break
+            
+            reduce_result_str = ""
+            while reduce_results and len(self.text_splitter.split_text(reduce_result_str)) <= 1:
+                reduce_result_str += reduce_results.pop()
+            
+            reduce_prompt = f'Question: {question} \n \
+                Response in this JSON format: \n {{"software_version": "","explanation": "", "summary": ""}} \n {reduce_result_str}'
                 
             reduce_results.append(self.call(reduce_prompt))
             
