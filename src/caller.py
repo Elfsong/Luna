@@ -163,6 +163,46 @@ class LlamaCaller(Caller):
             
         return reduce_results[0]
     
+    def software_analysis(self, docs, question, choice_list, status) -> str:
+        chunks = list()
+        assert isinstance(docs, list)
+        
+        # Step 0. split docs into chunks
+        for doc in docs:
+            chunks += self.text_splitter.split_text(doc)
+        self.console.log(f"Document input length: {len(doc)}, which has been split into {len(chunks)} chunks.")
+            
+        # Step 1. map these chunks
+        map_results = list()
+        for index, chunk in enumerate(chunks):
+            status.update(f"[bold green] Mapping chunk [{index+1}/{len(chunks)}]...")
+            map_prompt = f'Question: {question} \n \
+                The ONLY software_version should be selected from the given product list: {choice_list} \
+                Response in this JSON format: \n {{"software_version": "","explanation": "<less_than_50_words>", "summary": "<less_than_50_words>"}} \n {chunk} \n \
+                Response:\n'
+            result = self.call(map_prompt)
+            map_results.append(result)
+            
+            
+        # Step 2. reduce these results 
+        reduce_results = map_results[::-1]
+        while True:
+            status.update(f"[bold green] Reducing chunks from {len(reduce_results)} -> 1...")
+            if len(reduce_results) == 1: break
+            
+            reduce_result_str = ""
+            while reduce_results and len(self.text_splitter.split_text(reduce_result_str)) <= 1:
+                reduce_result_str += reduce_results.pop()
+            
+            reduce_prompt = f'Given the following results, answer this question: {question} \n \
+                {reduce_result_str} \n \
+                Response ONLY one JSON in this format: \n {{"software_version": "<software_version>","explanation": "<less_than_50_words>", "summary": "<less_than_50_words>"}} \n \
+                Response:\n'
+            
+            result = self.call(reduce_prompt)
+            reduce_results.append(result)
+            
+        return reduce_results[0]
     
     
     

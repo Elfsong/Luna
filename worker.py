@@ -9,8 +9,8 @@ import argparse
 import pandas as pd
 from rich.console import Console
 from src.graph import CiscoGraph
-from src.evaluator import LCSEvaluator
 from src.caller import OpenAICaller, LlamaCaller
+from src.evaluator import LCSEvaluator, SDASEvaluator
 from src.utils import get_product_mapping, get_swv_mapping, save_results, banner, config_generator
 
 
@@ -159,12 +159,12 @@ def software_worker(console, graph_handler, caller, config):
                 console.log(f"[bold red] [Worker] Json parse error: {e}. Using the original response instead.")
                 prediction = response
                 
-            correct, overlap = LCSEvaluator.eval(mnode_swv, prediction, 0.5)
+            correct = SDASEvaluator.eval(mnode_swv, prediction, 0.2)
             
             total += 1
             correct_sum += correct
             
-            console.log(f'Ground truth: [bold green]{mnode_swv}[/bold green] Prediction: [bold yellow]{prediction}[/bold yellow] Overlap: {overlap} Passed: {str(correct)}')
+            console.log(f'Ground truth: [bold green]{mnode_swv}[/bold green] Prediction: [bold yellow]{prediction}[/bold yellow] Passed: {str(correct)}')
             console.log(f'Explanation: [i]{explanation}[/i]')
             
             results += [{
@@ -173,7 +173,6 @@ def software_worker(console, graph_handler, caller, config):
                 "prediction": prediction,
                 "explanation": explanation,
                 "summary": summary,
-                "overlap": overlap,
                 "correct": correct,
             }]
     
@@ -190,7 +189,7 @@ if __name__ == "__main__":
     
     # Step 0. Load configuration
     parser = argparse.ArgumentParser(description='Luna 0.1')
-    parser.add_argument('--config_path', type=str,default=None, help='Configuration File Path')
+    parser.add_argument('--config_path', type=str,default='./data/gpt-3.json', help='Configuration File Path')
     args = parser.parse_args()
     
     if args.config_path:
