@@ -112,6 +112,7 @@ def software_worker(console, graph_handler, caller, config):
     
     results = list()
     total, correct_sum = 0, 0
+    valid_total = 0
     
     with console.status("[bold green] Node Processing...") as status:
         for index, mnode in enumerate(mnodes):
@@ -119,6 +120,7 @@ def software_worker(console, graph_handler, caller, config):
             mnode_data = mnode["m"]
             mnode_sr = mnode_data["sr"]
             mnode_swv = mnode_data["SW_Version__c"]
+            mnode_product = mnode_data["Product_Name__c"]
             
             mnode_tech = mnode_data["Technology_Text__c"]
             mnode_subtech = mnode_data["Sub_Technology_Text__c"]
@@ -143,28 +145,30 @@ def software_worker(console, graph_handler, caller, config):
             if "summary" in config["fields"]:
                 doc += "\n" + mnode_data["Resolution_Summary__c"]
 
-            question = f'Which software_version is principally discussed in these documents?'
+            question = f'Which software version of {mnode_product} is principally discussed in these documents?'
             
             console.log(f"Current node {mnode_sr} [{index+1}/{len(mnodes)}]")
             
-            response = caller.software_analysis([doc], question, s_str, status)
+            # response = caller.software_analysis([doc], question, s_str, status)
             
             prediction, summary, explanation = "", "", ""
-            try:
-                response_json = json.loads(response)
-                prediction = response_json['software_version']
-                summary = response_json['summary']
-                explanation = response_json['explanation']
-            except Exception as e:
-                console.log(f"[bold red] [Worker] Json parse error: {e}. Using the original response instead.")
-                prediction = response
-                
+            # try:
+            #     response_json = json.loads(response)
+            #     prediction = response_json['software_version']
+            #     summary = response_json['summary']
+            #     explanation = response_json['explanation']
+            # except Exception as e:
+            #     console.log(f"[bold red] [Worker] Json parse error: {e}. Using the original response instead.")
+            #     prediction = response
+            
+            valid_sr = mnode_swv in doc
             correct = SDASEvaluator.eval(mnode_swv, prediction, 0.2)
             
             total += 1
+            valid_total += 1 if valid_sr else 0
             correct_sum += correct
             
-            console.log(f'Ground truth: [bold green]{mnode_swv}[/bold green] Prediction: [bold yellow]{prediction}[/bold yellow] Passed: {str(correct)}')
+            console.log(f'Ground truth: [bold green]{mnode_swv}[/bold green] Prediction: [bold yellow]{prediction}[/bold yellow] Valid: {str(valid_sr)} Passed: {str(correct)}')
             console.log(f'Explanation: [i]{explanation}[/i]')
             
             results += [{
@@ -172,16 +176,17 @@ def software_worker(console, graph_handler, caller, config):
                 "software_version": mnode_swv,
                 "prediction": prediction,
                 "explanation": explanation,
+                "valid_sr": valid_sr,
                 "summary": summary,
                 "correct": correct,
             }]
     
     with console.status("[bold green] Result Saving...") as status:
-        accuracy = correct_sum / total
+        accuracy = correct_sum / valid_total
         save_file_path = f"./results/{config['model_name']}_{accuracy}.csv"
         save_results(pd.DataFrame.from_dict(results), save_file_path)
         time.sleep(3)
-        console.log(f"Well done. The accuracy for this run is {accuracy}. Please check the detailed result at '{save_file_path}'.")
+        console.log(f"Well done. There are {valid_total} valid instances. The accuracy for this run is {accuracy}. Please check the detailed result at '{save_file_path}'.")
 
 if __name__ == "__main__":
     console = Console()
