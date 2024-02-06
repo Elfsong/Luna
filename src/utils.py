@@ -136,6 +136,19 @@ def config_generator(console):
         else:
             config['fields'] = fields_input.split(',')
             break
+    
+    # mcq
+    while True:
+        mcq_default = True
+        print(f'[blue]Luna[/blue]: Would like like to use MCQ mode? [[u]{mcq_default}[/u]]')
+        mcq_input = Prompt.ask('You')
+        
+        if mcq_input == '':
+            config['mcq'] = mcq_default
+            break
+        else:
+            config['mcq'] = mcq_input.split(',')
+            break
         
     console.log(config)
     print("[blue]Luna[/blue]: Ok, you are good to go :rocket:")

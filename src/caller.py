@@ -17,7 +17,7 @@ class Caller(object):
     def call(self, prompt: str) -> str:
         raise NotImplementedError("Don't call the interface directly")
     
-    def analysis(self, docs: str, question: str, choice_list, status) -> str:
+    def product_analysis(self, docs: str, question: str, choice_list, status) -> str:
         raise NotImplementedError("Don't call the interface directly")
     
     def software_analysis(self, docs: str, question: str, choice_list, status) -> str:
@@ -40,7 +40,7 @@ class OpenAICaller(Caller):
         )
         return response.choices[0].message.content
     
-    def analysis(self, docs, question, choice_list, status) -> str:
+    def product_analysis(self, docs, question, choice_list, status) -> str:
         chunks = list()
         assert isinstance(docs, list)
         
@@ -53,9 +53,16 @@ class OpenAICaller(Caller):
         map_results = list()
         for index, chunk in enumerate(chunks):
             status.update(f"[bold green] Mapping chunk [{index+1}/{len(chunks)}]...")
-            map_prompt = f'Question: {question} \n \
-                The ONLY product_name should be selected from the given product list: {choice_list} \
-                Response in this JSON format: \n {{"product_name": "","explanation": "", "summary": ""}} \n {chunk}'
+            
+            # MCQ Switch
+            if choice_list:
+                map_prompt = f'Question: {question} \n \
+                    The ONLY product_name should be selected from the given product list: {choice_list} \
+                    Response in this JSON format: \n {{"product_name": "","explanation": "", "summary": ""}} \n {chunk}'
+            else:
+                map_prompt = f'Question: {question} \n \
+                    Response in this JSON format: \n {{"product_name": "","explanation": "", "summary": ""}} \n {chunk}'
+                    
             result = self.call(map_prompt)
             map_results.append(result)
             
@@ -89,9 +96,16 @@ class OpenAICaller(Caller):
         map_results = list()
         for index, chunk in enumerate(chunks):
             status.update(f"[bold green] Mapping chunk [{index+1}/{len(chunks)}]...")
-            map_prompt = f'Question: {question} \n \
-                The ONLY software version should be selected from the given software version list: {choice_list} \
-                Response in this JSON format: \n {{"software_version": "","explanation": "", "summary": ""}} \n {chunk}'
+            
+            # MCQ Switch
+            if choice_list:
+                map_prompt = f'Question: {question} \n \
+                    The ONLY software version should be selected from the given software version list: {choice_list} \
+                    Response in this JSON format: \n {{"software_version": "","explanation": "", "summary": ""}} \n {chunk}'
+            else:
+                map_prompt = f'Question: {question} \n \
+                    Response in this JSON format: \n {{"software_version": "","explanation": "", "summary": ""}} \n {chunk}'
+                    
             result = self.call(map_prompt)
             map_results.append(result)
             
@@ -122,7 +136,7 @@ class LlamaCaller(Caller):
         response = response.strip()
         return response
     
-    def analysis(self, docs, question, choice_list, status) -> str:
+    def product_analysis(self, docs, question, choice_list, status) -> str:
         chunks = list()
         assert isinstance(docs, list)
         
@@ -135,10 +149,17 @@ class LlamaCaller(Caller):
         map_results = list()
         for index, chunk in enumerate(chunks):
             status.update(f"[bold green] Mapping chunk [{index+1}/{len(chunks)}]...")
-            map_prompt = f'Question: {question} \n \
-                The ONLY product_name should be selected from the given product list: {choice_list} \
-                Response in this JSON format: \n {{"product_name": "","explanation": "<less_than_50_words>", "summary": "<less_than_50_words>"}} \n {chunk} \n \
-                Response:\n'
+            
+            # MCQ Switch
+            if choice_list:
+                map_prompt = f'Question: {question} \n \
+                    The ONLY product_name should be selected from the given product list: {choice_list} \
+                    Response in this JSON format: \n {{"product_name": "","explanation": "<less_than_50_words>", "summary": "<less_than_50_words>"}} \n {chunk} \n \
+                    Response:\n'
+            else:
+                map_prompt = f'Question: {question} \n \
+                    Response in this JSON format: \n {{"product_name": "","explanation": "<less_than_50_words>", "summary": "<less_than_50_words>"}} \n {chunk} \n \
+                    Response:\n'
             result = self.call(map_prompt)
             map_results.append(result)
             
@@ -176,10 +197,17 @@ class LlamaCaller(Caller):
         map_results = list()
         for index, chunk in enumerate(chunks):
             status.update(f"[bold green] Mapping chunk [{index+1}/{len(chunks)}]...")
-            map_prompt = f'Question: {question} \n \
-                The ONLY software_version should be selected from the given product list: {choice_list} \
-                Response in this JSON format: \n {{"software_version": "","explanation": "<less_than_50_words>", "summary": "<less_than_50_words>"}} \n {chunk} \n \
-                Response:\n'
+            
+            # MCQ Switch
+            if choice_list:
+                map_prompt = f'Question: {question} \n \
+                    The ONLY software_version should be selected from the given product list: {choice_list} \
+                    Response in this JSON format: \n {{"software_version": "","explanation": "<less_than_50_words>", "summary": "<less_than_50_words>"}} \n {chunk} \n \
+                    Response:\n'
+            else:
+                map_prompt = f'Question: {question} \n \
+                    Response in this JSON format: \n {{"software_version": "","explanation": "<less_than_50_words>", "summary": "<less_than_50_words>"}} \n {chunk} \n \
+                    Response:\n'
             result = self.call(map_prompt)
             map_results.append(result)
             

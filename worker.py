@@ -14,13 +14,13 @@ from src.evaluator import LCSEvaluator, SDASEvaluator
 from src.utils import get_product_mapping, get_swv_mapping, save_results, banner, config_generator
 
 
-def worker(console, graph_handler, caller, config):
+def product_worker(console, graph_handler, caller, config):
     with console.status("[bold green] Loading product mapping file...") as status:
         p_mapping = get_product_mapping('./data/tech_subtech_pnames.xlsx')
         time.sleep(3)
         console.log(f'Product mapping file loaded.')
     
-    with console.status("[bold green]Retrieving nodes from the graph...") as status:
+    with console.status("[bold green] Retrieving nodes from the graph...") as status:
         mnodes = graph_handler.raw_excute("MATCH (m:Gold) RETURN m")
         time.sleep(3)
         console.log(f"Got {len(mnodes)} nodes from the graph.")
@@ -58,11 +58,15 @@ def worker(console, graph_handler, caller, config):
             if "summary" in config["fields"]:
                 doc += "\n" + mnode_data["Resolution_Summary__c"]
 
-            question = f'Which product is principally discussed in these documents?'
-            
-            console.log(f"Current node {mnode_sr} [{index+1}/{len(mnodes)}]")
-            
-            response = caller.analysis([doc], question, p_str, status)
+            # MCQ Switch
+            if config['mcq']:
+                question = f'Which product is principally discussed in these documents?'
+                console.log(f"Current node {mnode_sr} [{index+1}/{len(mnodes)}]")
+                response = caller.product_analysis([doc], question, p_str, status)
+            else:
+                question = f'What product is principally discussed in these documents?'
+                console.log(f"Current node {mnode_sr} [{index+1}/{len(mnodes)}]")
+                response = caller.product_analysis([doc], question, None, status)
             
             prediction, summary, explanation = "", "", ""
             try:
@@ -145,24 +149,25 @@ def software_worker(console, graph_handler, caller, config):
             if "summary" in config["fields"]:
                 doc += "\n" + mnode_data["Resolution_Summary__c"]
 
-            question = f'Which software version of {mnode_product} is principally discussed in these documents?'
-            
+            # question = f'Which software version of {mnode_product} is principally discussed in these documents? Answer "None" if you cannot find answer in the given documents.'
+            question = f'Which software version is principally discussed in these documents?'
+
             console.log(f"Current node {mnode_sr} [{index+1}/{len(mnodes)}]")
             
-            # response = caller.software_analysis([doc], question, s_str, status)
+            response = caller.software_analysis([doc], question, s_str, status)
             
             prediction, summary, explanation = "", "", ""
-            # try:
-            #     response_json = json.loads(response)
-            #     prediction = response_json['software_version']
-            #     summary = response_json['summary']
-            #     explanation = response_json['explanation']
-            # except Exception as e:
-            #     console.log(f"[bold red] [Worker] Json parse error: {e}. Using the original response instead.")
-            #     prediction = response
+            try:
+                response_json = json.loads(response)
+                prediction = response_json['software_version']
+                summary = response_json['summary']
+                explanation = response_json['explanation']
+            except Exception as e:
+                console.log(f"[bold red] [Worker] Json parse error: {e}. Using the original response instead.")
+                prediction = response
             
             valid_sr = mnode_swv in doc
-            correct = SDASEvaluator.eval(mnode_swv, prediction, 0.2)
+            correct = SDASEvaluator.eval(mnode_swv, prediction, 0.3)
             
             total += 1
             valid_total += 1 if valid_sr else 0
@@ -182,14 +187,14 @@ def software_worker(console, graph_handler, caller, config):
             }]
     
     with console.status("[bold green] Result Saving...") as status:
-        accuracy = correct_sum / valid_total
-        save_file_path = f"./results/{config['model_name']}_{accuracy}.csv"
+        # accuracy = correct_sum / valid_total
+        save_file_path = f"./results/{config['model_name']}_{correct_sum}.csv"
         save_results(pd.DataFrame.from_dict(results), save_file_path)
         time.sleep(3)
-        console.log(f"Well done. There are {valid_total} valid instances. The accuracy for this run is {accuracy}. Please check the detailed result at '{save_file_path}'.")
+        console.log(f"Well done. There are {valid_total} valid instances. We have {correct_sum} correct predictions. Please check the detailed result at '{save_file_path}'.")
 
 if __name__ == "__main__":
-    console = Console()
+    console = Console(record=True)
     banner()
     
     # Step 0. Load configuration
@@ -223,6 +228,8 @@ if __name__ == "__main__":
         console.log(f"[bold cyan]LLM Handler[/bold cyan] Load Completed!")
     
     # Step 3. Let's go
-    # worker(console, graph_handler, llm_caller, config)
-    software_worker(console, graph_handler, llm_caller, config)
+    product_worker(console, graph_handler, llm_caller, config)
+    # software_worker(console, graph_handler, llm_caller, config)
+    
+    console.save_html(f"luna_log.html")
     
