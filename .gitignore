@@ -1,3 +1,5 @@
 results/
 src/__pycache__/
 luna_log.html
+data/NUS_Case_Metadata.json
+data/NUS_Case_Notes.json

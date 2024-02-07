@@ -2,7 +2,7 @@
     "type": "openai",
     "chunk_size": 12000,
     "chunk_overlap": 500,
-    "model_name": "gpt-4-preview-1106",
+    "model_name": "gpt-4-0125-preview",
     "openai_api_key": "YOU_OPENAI_KEY",
     "graph_url": "bolt://10.245.89.103:7687",
     "graph_user": "neo4j",
@@ -13,5 +13,5 @@
         "description",
         "summary"
     ],
-    "mcq": true
+    "mcq": false
 }

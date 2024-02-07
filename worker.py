@@ -11,7 +11,7 @@ from rich.console import Console
 from src.graph import CiscoGraph
 from src.caller import OpenAICaller, LlamaCaller
 from src.evaluator import LCSEvaluator, SDASEvaluator
-from src.utils import get_product_mapping, get_swv_mapping, save_results, banner, config_generator
+from src.utils import get_product_mapping, get_swv_mapping, save_results, banner, config_generator, load_metadata, load_notes
 
 
 def product_worker(console, graph_handler, caller, config):
@@ -199,26 +199,44 @@ if __name__ == "__main__":
     console = Console(record=True)
     banner()
     
-    # Step 0. Load configuration
-    parser = argparse.ArgumentParser(description='Luna 0.2')
-    parser.add_argument('--config_path', type=str,default='./data/gpt-3.json', help='Configuration File Path')
-    args = parser.parse_args()
-    
-    if args.config_path:
-        console.log(f"Config {args.config_path} detected!")
-        with open(args.config_path, 'r') as config_f:
-            config = json.load(config_f)
-    else:
-        console.log(f"No config detected. Let me ask you a few questions:)")
-        config = config_generator(console)
+    # Step 0. Load Containers
+    with console.status("[bold green]Loading Containers...") as status:
+        # Step 1.1. LLM Container
+        status.update(f"[bold green]Loading the LLM Container...")
+        console.log("Start a LLM Container.")
+        time.sleep(3)
+        console.log(f"[bold cyan]LLM Container[/bold cyan] Load Completed!")
         
-    with console.status("[bold green]Loading components...") as status:
-        # Step 1. Load graph handler
+        # Step 1.2. KG Container
+        status.update(f"[bold green]Loading the KG Container...")
+        metadata = load_metadata("./data/NUS_Case_Metadata.json")
+        notes = load_notes("./data/NUS_Case_Notes.json")
+        
+        time.sleep(3)
+        console.log(f"[bold cyan]KG Container[/bold cyan] Load Completed!")
+    
+    # Step 1. Load Configuration
+    with console.status("[bold green] Loading configuration...") as status:
+        parser = argparse.ArgumentParser(description='Luna 0.2')
+        parser.add_argument('--config_path', type=str,default='./data/llama-70b.json', help='Configuration File Path')
+        args = parser.parse_args()
+        
+        if args.config_path:
+            console.log(f"Config {args.config_path} detected!")
+            with open(args.config_path, 'r') as config_f:
+                config = json.load(config_f)
+        else:
+            console.log(f"No config detected. Let me ask you a few questions:)")
+            config = config_generator(console)
+    
+    # Step 2. Load Handlers
+    with console.status("[bold green] Loading components...") as status:
+        # Step 2.1. Load graph handler
         graph_handler = CiscoGraph(config['graph_url'], config['graph_user'], config['graph_pwd'])
         time.sleep(3)
         console.log(f"[bold cyan]Graph Handler[/bold cyan] Load Completed!")
     
-        # Step 2. Load llm handler
+        # Step 2.2. Load llm handler
         llm_caller = None
         if config["type"] == "openai":
             llm_caller = OpenAICaller(config, console)
@@ -232,6 +250,4 @@ if __name__ == "__main__":
     # Step 3. Let's go
     product_worker(console, graph_handler, llm_caller, config)
     # software_worker(console, graph_handler, llm_caller, config)
-    
-    console.save_html(f"luna_log.html")
     

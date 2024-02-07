@@ -3,14 +3,39 @@
 # Author: Du Mingzhe (mingzhe@nus.edu.sg)
 # Date: 29/12/2023
 
+import json
 import pandas as pd
 from rich import print
 from rich.prompt import Prompt
+from rich.progress import track
 from collections import defaultdict
+from src.datatypes import SR_Metadata, SR_Note
 
 def banner():
     with open('./data/banner', 'r') as banner_f:
         print(banner_f.read())
+        
+def load_metadata(file_path):
+    with open(file_path) as file_handler:
+        data = json.load(file_handler)
+
+    sr_set, sr_data = set(), list()
+    for instance in track(data, description=f"Parsing raw metadata from {file_path}..."):
+        if instance["sr"] not in sr_set:
+            sr_data += [SR_Metadata(instance)]
+            sr_set.add(instance["sr"])
+    
+    return sr_data
+
+def load_notes(file_path):
+    with open(file_path) as file_handler:
+        data = json.load(file_handler)
+        
+    sr_data = list()
+    for instance in track(data, description=f"Parsing raw notes from {file_path}..."):
+        sr_data += [SR_Note(instance)]
+        
+    return sr_data
 
 def config_generator(console):
     config = dict()
