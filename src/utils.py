@@ -148,6 +148,30 @@ def config_generator(console):
         else:
             config['graph_pwd'] = graph_pwd_input
             break
+    
+    # graph_metadata
+    while True:
+        graph_metadata_default = './data/NUS_Case_Metadata.json'
+        print(f'[blue]Luna[/blue]: Where is your metadata path? [[u]{graph_metadata_default}[/u]]')
+        graph_metadata_input = Prompt.ask('You')
+        if graph_metadata_input == "":
+            config['graph_metadata'] = graph_metadata_default
+            break
+        else:
+            config['graph_metadata'] = graph_metadata_input
+            break
+    
+    # graph_notes
+    while True:
+        graph_notes_default = './data/NUS_Case_Notes.json'
+        print(f'[blue]Luna[/blue]: Where is your notes path? [[u]{graph_notes_default}[/u]]')
+        graph_notes_input = Prompt.ask('You')
+        if graph_notes_input == "":
+            config['graph_notes'] = graph_notes_default
+            break
+        else:
+            config['graph_notes'] = graph_notes_input
+            break
         
     # fields
     while True:

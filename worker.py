@@ -7,13 +7,33 @@ import json
 import time
 import argparse
 import pandas as pd
+from rich.progress import track
 from rich.console import Console
 from src.graph import CiscoGraph
 from src.caller import OpenAICaller, LlamaCaller
 from src.evaluator import LCSEvaluator, SDASEvaluator
 from src.utils import get_product_mapping, get_swv_mapping, save_results, banner, config_generator, load_metadata, load_notes
 
-
+def graph_worker(console, graph_handler):
+    metadata = load_metadata("./data/NUS_Case_Metadata.json")
+    notes = load_notes("./data/NUS_Case_Notes.json")
+    
+    # Loding Metadata
+    for instance in track(metadata, description="Loading metadata to Neo4J..."):
+        graph_handler.node_create(node_type="Metadata", node_attributes=instance.to_cypher())
+    
+    # Loading Notes
+    for instance in track(notes, description="Loading notes to Neo4J..."):
+        note_node = graph_handler.node_create(node_type="Note", node_attributes=instance.to_cypher())
+        note_node_id = note_node.element_id
+        sr_node_id = graph_handler.node_id_query("Metadata", "sr", instance.sr_uuid)
+        graph_handler.edge_create(sr_node_id, note_node_id, "Has", {})
+    
+    # Assign Gold Nodes
+    graph_handler.add_gold_set()
+    
+    console.log("Data Loaded Successfully!")
+        
 def product_worker(console, graph_handler, caller, config):
     with console.status("[bold green] Loading product mapping file...") as status:
         p_mapping = get_product_mapping('./data/tech_subtech_pnames.xlsx')
@@ -198,27 +218,12 @@ def software_worker(console, graph_handler, caller, config):
 if __name__ == "__main__":
     console = Console(record=True)
     banner()
-    
-    # Step 0. Load Containers
-    with console.status("[bold green]Loading Containers...") as status:
-        # Step 1.1. LLM Container
-        status.update(f"[bold green]Loading the LLM Container...")
-        console.log("Start a LLM Container.")
-        time.sleep(3)
-        console.log(f"[bold cyan]LLM Container[/bold cyan] Load Completed!")
         
-        # Step 1.2. KG Container
-        status.update(f"[bold green]Loading the KG Container...")
-        metadata = load_metadata("./data/NUS_Case_Metadata.json")
-        notes = load_notes("./data/NUS_Case_Notes.json")
-        
-        time.sleep(3)
-        console.log(f"[bold cyan]KG Container[/bold cyan] Load Completed!")
-    
     # Step 1. Load Configuration
     with console.status("[bold green] Loading configuration...") as status:
         parser = argparse.ArgumentParser(description='Luna 0.2')
         parser.add_argument('--config_path', type=str,default='./data/llama-70b.json', help='Configuration File Path')
+        parser.add_argument('--task', type=str,default='graph', help='Task Assigning')
         args = parser.parse_args()
         
         if args.config_path:
@@ -248,6 +253,11 @@ if __name__ == "__main__":
         console.log(f"[bold cyan]LLM Handler[/bold cyan] Load Completed!")
     
     # Step 3. Let's go
-    product_worker(console, graph_handler, llm_caller, config)
-    # software_worker(console, graph_handler, llm_caller, config)
+    console.log(f"[bold cyan]Worker[/bold cyan] Current task: {args.task}")
+    if args.task == "graph":
+        graph_worker(console, graph_handler)
+    elif args.task == "product":
+        product_worker(console, graph_handler, llm_caller, config)
+    elif args.task == "software":
+        software_worker(console, graph_handler, llm_caller, config)
     
