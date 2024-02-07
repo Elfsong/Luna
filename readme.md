@@ -45,6 +45,6 @@ python worker.py --task [product/software]
 ```
 
 Please feel free to let me know if you have any concerns. Thank you!
-Email: Mingzhe@nus.edu.sg
+Email: mingzhe@nus.edu.sg
 
 ![Demo](data/demo.png)
