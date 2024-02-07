@@ -11,7 +11,7 @@ mkdir results
 ### Step 1. Set up Containers (Optional)
 In most cases, you don't need to do this section by yourself. However, if you are curious, there is something you can check out:
 * Knowledge Graph Installation (see section 'Installation' in https://shorturl.at/lyKTZ)
-* LLM Inference Engine (run 'start_llm.sh')
+* LLM Inference Engine (run 'start_llm.sh'. For local models only)
 
 You can also try the LLM inference engine by CURL:
 ```
