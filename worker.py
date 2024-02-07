@@ -26,7 +26,7 @@ def product_worker(console, graph_handler, caller, config):
         console.log(f"Got {len(mnodes)} nodes from the graph.")
     
     results = list()
-    total, correct_sum = 0, 0
+    total, correct_sum, overlap_sum = 0, 0, 0
     
     with console.status("[bold green] Node Processing...") as status:
         for index, mnode in enumerate(mnodes):
@@ -82,6 +82,7 @@ def product_worker(console, graph_handler, caller, config):
             
             total += 1
             correct_sum += correct
+            overlap_sum += overlap
             
             console.log(f'Ground truth: [bold green]{mnode_product}[/bold green] Prediction: [bold yellow]{prediction}[/bold yellow] Overlap: {overlap} Passed: {str(correct)}')
             console.log(f'Explanation: [i]{explanation}[/i]')
@@ -98,10 +99,11 @@ def product_worker(console, graph_handler, caller, config):
     
     with console.status("[bold green] Result Saving...") as status:
         accuracy = correct_sum / total
+        overlap = overlap_sum / total
         save_file_path = f"./results/{config['model_name']}_{accuracy}.csv"
         save_results(pd.DataFrame.from_dict(results), save_file_path)
         time.sleep(3)
-        console.log(f"Well done. The accuracy for this run is {accuracy}. Please check the detailed result at '{save_file_path}'.")
+        console.log(f"Well done. The accuracy is {accuracy}. The overlap is {overlap}. Please check the detailed result at '{save_file_path}'.")
 
 def software_worker(console, graph_handler, caller, config):
     with console.status("[bold green] Loading software version mapping file...") as status:
@@ -198,7 +200,7 @@ if __name__ == "__main__":
     banner()
     
     # Step 0. Load configuration
-    parser = argparse.ArgumentParser(description='Luna 0.1')
+    parser = argparse.ArgumentParser(description='Luna 0.2')
     parser.add_argument('--config_path', type=str,default='./data/gpt-3.json', help='Configuration File Path')
     args = parser.parse_args()
     
