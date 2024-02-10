@@ -1,4 +1,4 @@
-# Welcome to Luna 月神 🔮
+# Welcome to Luna 🔮
 
 ### Step 0. Prepare Environment
 ```shell
