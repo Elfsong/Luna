@@ -25,23 +25,23 @@ curl 10.246.112.13:8080/generate \
 #### Graph Construction Task
 To use pre-defined config in the 'data' folder, please try:
 ```shell
-python worker.py --config_path [CONFIG_PATH] --task graph
+python cli_worker.py --config_path [CONFIG_PATH] --task graph
 ```
 
 If you would like to use other metadata/notes, please run:
 ```shell
-python worker.py --task graph
+python cli_worker.py --task graph
 ```
 
 #### Product_Name/Software_version Inference Task
 If you would like to use pre-defined config in the 'data' folder, please try:
 ```shell
-python worker.py --config_path [CONFIG_PATH] --task [product/software]
+python cli_worker.py --config_path [CONFIG_PATH] --task [product/software]
 ```
 
 Otherwise, you can also try this one. The script will help you to generate the config:
 ```shell
-python worker.py --task [product/software]
+python cli_worker.py --task [product/software]
 ```
 
 Please feel free to let me know if you have any concerns. Thank you!
