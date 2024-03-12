@@ -17,10 +17,10 @@ class Caller(object):
     def call(self, prompt: str) -> str:
         raise NotImplementedError("Don't call the interface directly")
     
-    def product_analysis(self, docs: str, question: str, choice_list, status) -> str:
+    def product_analysis(self, docs: str, question: str, choice_list, status=None) -> str:
         raise NotImplementedError("Don't call the interface directly")
     
-    def software_analysis(self, docs: str, question: str, choice_list, status) -> str:
+    def software_analysis(self, docs: str, question: str, choice_list, status=None) -> str:
         raise NotImplementedError("Don't call the interface directly")
 
 class OpenAICaller(Caller):
@@ -40,7 +40,7 @@ class OpenAICaller(Caller):
         )
         return response.choices[0].message.content
     
-    def product_analysis(self, docs, question, choice_list, status) -> str:
+    def product_analysis(self, docs, question, choice_list, status=None) -> str:
         chunks = list()
         assert isinstance(docs, list)
         
@@ -52,7 +52,8 @@ class OpenAICaller(Caller):
         # Step 1. map these chunks
         map_results = list()
         for index, chunk in enumerate(chunks):
-            status.update(f"[bold green] Mapping chunk [{index+1}/{len(chunks)}]...")
+            if status:
+                status.update(f"[bold green] Mapping chunk [{index+1}/{len(chunks)}]...")
             
             # MCQ Switch
             if choice_list:
@@ -69,7 +70,8 @@ class OpenAICaller(Caller):
         # Step 2. reduce these results        
         reduce_results = map_results[::-1]
         while True:
-            status.update(f"[bold green] Reducing chunks from {len(reduce_results)} -> 1...")
+            if status:
+                status.update(f"[bold green] Reducing chunks from {len(reduce_results)} -> 1...")
             if len(reduce_results) == 1: break
             
             reduce_result_str = ""
@@ -83,7 +85,7 @@ class OpenAICaller(Caller):
             
         return reduce_results[0]
     
-    def software_analysis(self, docs, question, choice_list, status) -> str:
+    def software_analysis(self, docs, question, choice_list, status=None) -> str:
         chunks = list()
         assert isinstance(docs, list)
         
@@ -95,7 +97,8 @@ class OpenAICaller(Caller):
         # Step 1. map these chunks
         map_results = list()
         for index, chunk in enumerate(chunks):
-            status.update(f"[bold green] Mapping chunk [{index+1}/{len(chunks)}]...")
+            if status:
+                status.update(f"[bold green] Mapping chunk [{index+1}/{len(chunks)}]...")
             
             # MCQ Switch
             if choice_list:
@@ -112,7 +115,8 @@ class OpenAICaller(Caller):
         # Step 2. reduce these results        
         reduce_results = map_results[::-1]
         while True:
-            status.update(f"[bold green] Reducing chunks from {len(reduce_results)} -> 1...")
+            if status:
+                status.update(f"[bold green] Reducing chunks from {len(reduce_results)} -> 1...")
             if len(reduce_results) == 1: break
             
             reduce_result_str = ""
@@ -136,7 +140,7 @@ class LlamaCaller(Caller):
         response = response.strip()
         return response
     
-    def product_analysis(self, docs, question, choice_list, status) -> str:
+    def product_analysis(self, docs, question, choice_list, status=None) -> str:
         chunks = list()
         assert isinstance(docs, list)
         
@@ -148,7 +152,8 @@ class LlamaCaller(Caller):
         # Step 1. map these chunks
         map_results = list()
         for index, chunk in enumerate(chunks):
-            status.update(f"[bold green] Mapping chunk [{index+1}/{len(chunks)}]...")
+            if status:
+                status.update(f"[bold green] Mapping chunk [{index+1}/{len(chunks)}]...")
             
             # MCQ Switch
             if choice_list:
@@ -167,7 +172,8 @@ class LlamaCaller(Caller):
         # Step 2. reduce these results 
         reduce_results = map_results[::-1]
         while True:
-            status.update(f"[bold green] Reducing chunks from {len(reduce_results)} -> 1...")
+            if status:
+                status.update(f"[bold green] Reducing chunks from {len(reduce_results)} -> 1...")
             if len(reduce_results) == 1: break
             
             reduce_result_str = ""
@@ -184,7 +190,7 @@ class LlamaCaller(Caller):
             
         return reduce_results[0]
     
-    def software_analysis(self, docs, question, choice_list, status) -> str:
+    def software_analysis(self, docs, question, choice_list, status=None) -> str:
         chunks = list()
         assert isinstance(docs, list)
         
@@ -196,7 +202,8 @@ class LlamaCaller(Caller):
         # Step 1. map these chunks
         map_results = list()
         for index, chunk in enumerate(chunks):
-            status.update(f"[bold green] Mapping chunk [{index+1}/{len(chunks)}]...")
+            if status:
+                status.update(f"[bold green] Mapping chunk [{index+1}/{len(chunks)}]...")
             
             # MCQ Switch
             if choice_list:
@@ -215,7 +222,8 @@ class LlamaCaller(Caller):
         # Step 2. reduce these results 
         reduce_results = map_results[::-1]
         while True:
-            status.update(f"[bold green] Reducing chunks from {len(reduce_results)} -> 1...")
+            if status:
+                status.update(f"[bold green] Reducing chunks from {len(reduce_results)} -> 1...")
             if len(reduce_results) == 1: break
             
             reduce_result_str = ""

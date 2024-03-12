@@ -15,5 +15,5 @@
         "description",
         "summary"
     ],
-    "mcq": false
+    "mcq": true
 }
