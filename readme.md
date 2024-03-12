@@ -47,5 +47,8 @@ python worker.py --task [product/software]
 Please feel free to let me know if you have any concerns. Thank you!
 Email: mingzhe@nus.edu.sg
 
+---
+
+Watch the demo video ⬇️
 
 [![Demo](data/demo.png)](https://www.youtube.com/watch?v=ZA4cExEgurE)
