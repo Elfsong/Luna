@@ -47,7 +47,8 @@ class OpenAICaller(Caller):
         # Step 0. split docs into chunks
         for doc in docs:
             chunks += self.text_splitter.split_text(doc)
-        self.console.log(f"Document input length: {len(doc)}, which has been split into {len(chunks)} chunks.")
+        if self.console:
+            self.console.log(f"Document input length: {len(doc)}, which has been split into {len(chunks)} chunks.")
             
         # Step 1. map these chunks
         map_results = list()
@@ -92,7 +93,8 @@ class OpenAICaller(Caller):
         # Step 0. split docs into chunks
         for doc in docs:
             chunks += self.text_splitter.split_text(doc)
-        self.console.log(f"Document input length: {len(doc)}, which has been split into {len(chunks)} chunks.")
+        if self.console:
+            self.console.log(f"Document input length: {len(doc)}, which has been split into {len(chunks)} chunks.")
             
         # Step 1. map these chunks
         map_results = list()
