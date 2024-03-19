@@ -19,7 +19,7 @@ from src.utils import get_product_mapping, get_swv_mapping, save_results, banner
 
 # Title
 st.set_page_config(page_title="Luna", page_icon='🌘')
-st.header('🌘 Luna', divider='rainbow')
+st.header('🌘 Luna - Product Name Prediction Demo', divider='rainbow')
 
 # Status Initialization
 if "sr" not in st.session_state:
