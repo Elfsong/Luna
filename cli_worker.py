@@ -10,7 +10,7 @@ import pandas as pd
 from rich.progress import track
 from rich.console import Console
 from src.graph import CiscoGraph
-from src.caller import OpenAICaller, LlamaCaller
+from src.caller import OpenAICaller, TGICaller
 from src.evaluator import LCSEvaluator, SDASEvaluator
 from src.utils import get_product_mapping, get_swv_mapping, save_results, banner, config_generator, load_metadata, load_notes
 
@@ -246,7 +246,7 @@ if __name__ == "__main__":
         if config["type"] == "openai":
             llm_caller = OpenAICaller(config, console)
         elif config["type"] == "llama":
-            llm_caller = LlamaCaller(config, console)
+            llm_caller = TGICaller(config, console)
         else:
             raise NotImplementedError(f'Unknown Type [{config["type"]}]')
         time.sleep(3)
