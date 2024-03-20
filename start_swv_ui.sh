@@ -1,0 +1,1 @@
+streamlit run software_ui.py --server.port 9001
