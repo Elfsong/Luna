@@ -15,5 +15,6 @@
         "description",
         "summary"
     ],
-    "mcq": true
+    "mcq": true,
+    "local_llm_url": "http://10.246.112.13:8088"
 }
