@@ -9,7 +9,7 @@ from huggingface_hub import InferenceClient
 from langchain.text_splitter import TokenTextSplitter
 
 class Caller(object):
-    def __init__(self, config, console) -> None:
+    def __init__(self, config, console=None) -> None:
         self.config = config
         self.console = console
         self.text_splitter = TokenTextSplitter(chunk_size=config['chunk_size'], chunk_overlap=config['chunk_overlap'])
@@ -132,13 +132,13 @@ class OpenAICaller(Caller):
             
         return reduce_results[0]
     
-class LlamaCaller(Caller):
-    def __init__(self, config, console) -> None:
+class TGICaller(Caller):
+    def __init__(self, config, console=None) -> None:
         super().__init__(config, console)
-        self.client = InferenceClient(model=config['llm_url'])
+        self.client = InferenceClient(model=config['local_llm_url'])
     
-    def call(self, prompt) -> str:
-        response = self.client.text_generation(prompt=prompt, max_new_tokens=1024, stop_sequences=['\n\n', '"}'])
+    def call(self, prompt, max_new_tokens=1024) -> str:
+        response = self.client.text_generation(prompt=prompt, max_new_tokens=max_new_tokens, stop_sequences=['\n\n', '"}'])
         response = response.strip()
         return response
     
@@ -241,7 +241,3 @@ class LlamaCaller(Caller):
             reduce_results.append(result)
             
         return reduce_results[0]
-    
-    
-    
-    

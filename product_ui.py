@@ -12,7 +12,7 @@ import streamlit as st
 from rich.progress import track
 from rich.console import Console
 from src.graph import CiscoGraph
-from src.caller import OpenAICaller, LlamaCaller
+from src.caller import OpenAICaller, TGICaller
 from src.evaluator import LCSEvaluator, SDASEvaluator
 from src.utils import get_product_mapping, get_swv_mapping, save_results, banner, config_generator, load_metadata, load_notes
 
