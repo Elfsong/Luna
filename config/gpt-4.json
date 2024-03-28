@@ -9,6 +9,8 @@
     "graph_pwd": "yyids123",
     "graph_metadata": "./data/NUS_Case_Metadata.json",
     "graph_notes": "./data/NUS_Case_Notes.json",
+    "test_sr" : [],
+    "eval" : false,
     "fields": [
         "notes",
         "symptom",
