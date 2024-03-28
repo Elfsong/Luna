@@ -24,20 +24,20 @@ curl 10.246.112.13:8080/generate \
 ### Step 2. Change the config file
 #### Adding the OpenAi Key and the choosing the inference model 
 
-[![change](data/openai.png)]
+![change](data/openai.png)
 
 First you have to replace the open_ai_key field in the config file by your own openai key, see more details at [openai_website](https://platform.openai.com/api-keys)
-Second, you have to replace the model_name field in the config file with a valid openai model name. It is highly advised to use "gpt-4-0125-preview" or 'gpt-3.5-turbo-0125' models.
+Second, you have to replace the model_name field in the config file with a valid openai model name. It is highly advised to use ```gpt-4-0125-preview``` or ```gpt-3.5-turbo-0125``` models.
 
 #### Changing the metadata files and the case notes files
 
-[![change](data/change_files.png)]
+![change](data/change_files.png)
 
-you have to change the "graph_metadata" and the "graph_notes" fields in the config file with the paths to you json file containing the metadata and the case notes data respectively. 
+You have to change the "graph_metadata" and the "graph_notes" fields in the config file with the paths to you json file containing the metadata and the case notes data respectively. 
 
 #### Further config changes
 
-[![change](data/testing_srs.png)]
+![change](data/testing_srs.png)
 
 You can change the "test_sr" field in the config file, by specifying the SRs for which you want to test, if you keep this field as an empty list [], the cli will test for all the SRs present in the metadata files that have case notes in the casenote file
 
