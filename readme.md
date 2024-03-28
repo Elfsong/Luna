@@ -22,7 +22,7 @@ curl 10.246.112.13:8080/generate \
 ```
 
 ### Step 2. Change the config file
-#### Adding the OpenAi Key and the choosing the inference model 
+#### Adding the OpenAi Key and choosing the inference model 
 
 ![change](data/openai.png)
 
