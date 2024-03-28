@@ -22,6 +22,8 @@ curl 10.246.112.13:8080/generate \
 ```
 
 ### Step 2. Change the config file
+The config file can be found in the config directory, changing this file is crucial to run the inference model.
+
 #### Adding the OpenAi Key and choosing the inference model 
 
 ![change](data/openai.png)
