@@ -10,6 +10,7 @@ from rich.prompt import Prompt
 from rich.progress import track
 from collections import defaultdict
 from src.datatypes import SR_Metadata, SR_Note
+import tiktoken
 
 def banner():
     with open('./data/banner', 'r') as banner_f:
@@ -241,3 +242,18 @@ def get_norm_swv_mapping(file_path: str) -> dict:
 
 def save_results(df: pd.DataFrame, file_path: str) -> None:
     df.to_csv(file_path)
+
+def get_price(model_name, text):
+    price_base = 0
+    if model_name == 'gpt-4-0125-preview' or model_name == 'gpt-4-1106-preview' :
+        price_base  = 1/100000
+    if model_name == 'gpt-4':
+        price_base  = 3/100000
+    if model_name == 'gpt-3.5-turbo-0125':
+        price_base  = 5/10000000
+    if model_name == 'gpt-3.5-turbo-instruct':
+        price_base  = 15/10000000
+    encoding = tiktoken.get_encoding("cl100k_base")
+    num_tokens = len(encoding.encode(text))
+    price  = num_tokens * price_base
+    return price, num_tokens

@@ -40,12 +40,36 @@ class CiscoGraph:
         with self.driver.session() as session:
             query = """
                 MATCH (n:Metadata)
-                WHERE n.sr IN ['694745866', '694540632', '695268540', '695816345', '694117912', '695579249', '694515784', '694925180', '694641874', '695960852', '695138053', '694180958', '694208469', '695443169', '695684373', '694111541', '695138158', '695109716', '694180161', '694498853', '694642521', '695503784', '694624943', '694069586', '694913120', '695077555', '695644022', '695545329', '694249113', '694068972', '694105276', '693988553', '694168349', '694870141', '693929980', '694831371', '695942943', '695940399', '694925542', '695069319', '695618886', '694914231', '694482515', '695146873', '694180060', '694140893', '694571397', '694935054', '694952109', '694907945', '694888348', '695605404', '695571422', '695810508', '695648768']
+                WHERE n.sr IN ['695942943', '694068972', '695810508', '695648768', '695618886', '695605404', '695545329', '695940399', '695503784', '695571422', '695579249', '695684373', '695960852']
                 SET n:Metadata:Gold
             """
             session.run(query)
             return None
+    def add_gold_set_2(self,nodes):
+        with self.driver.session() as session:
+            query = """
+                MATCH (n:Metadata)
+                WHERE n.sr IN """ + str(nodes) + """
+                SET n:Metadata:Gold
+            """
+            session.run(query)
+            return None
+    def get_nodes(self, nodes):
+        with self.driver.session() as session:
+            query = """
+                MATCH (n:Metadata)
+                WHERE n.sr IN """ + str(nodes) + """
+                RETURN n
+            """
+            notes = dict()
+            records = session.run(query)
+            for record in records:
+                node_id = record.values()[0]._element_id
+                data = record.values()[0]._properties
+                notes[node_id] = data
+            return notes
 
+        
     def get_all_notes(self, sr):
         with self.driver.session() as session:
             query = f"""
