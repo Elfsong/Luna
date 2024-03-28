@@ -14,10 +14,11 @@ from src.caller import OpenAICaller, TGICaller
 from src.evaluator import LCSEvaluator, SDASEvaluator
 from src.utils import get_product_mapping, get_swv_mapping, save_results, banner, config_generator, load_metadata, load_notes
 
-def graph_worker(console, graph_handler):
-    metadata = load_metadata("./data/NUS_Case_Metadata.json")
-    notes = load_notes("./data/NUS_Case_Notes.json")
-    
+def graph_worker(console, graph_handler, config):
+    metadata = load_metadata(config["graph_metadata"])
+    notes = load_notes(config['graph_notes'])
+
+    graph_handler.node_delete_all()
     # Loding Metadata
     for instance in track(metadata, description="Loading metadata to Neo4J..."):
         graph_handler.node_create(node_type="Metadata", node_attributes=instance.to_cypher())
@@ -35,6 +36,7 @@ def graph_worker(console, graph_handler):
     console.log("Data Loaded Successfully!")
         
 def product_worker(console, graph_handler, caller, config):
+    graph_worker(console, graph_handler,config)
     with console.status("[bold green] Loading product mapping file...") as status:
         p_mapping = get_product_mapping('./data/tech_subtech_pnames.xlsx')
         time.sleep(3)
@@ -126,13 +128,18 @@ def product_worker(console, graph_handler, caller, config):
         console.log(f"Well done. The accuracy is {accuracy}. The overlap is {overlap}. Please check the detailed result at '{save_file_path}'.")
 
 def software_worker(console, graph_handler, caller, config):
+
+    graph_worker(console, graph_handler,config)
     with console.status("[bold green] Loading software version mapping file...") as status:
         s_mapping = get_swv_mapping('./data/tech_subtech_swv.xlsx')
         time.sleep(3)
         console.log(f'Software version mapping file loaded.')
     
     with console.status("[bold green]Retrieving nodes from the graph...") as status:
-        mnodes = graph_handler.raw_excute("MATCH (m:Gold) RETURN m")
+        if config['test_sr'] == []:
+            mnodes = graph_handler.raw_excute("MATCH (m:Metadata) WHERE (m)--() RETURN m")
+        else:
+            mnodes = graph_handler.raw_excute("MATCH (m:Metadata) WHERE m.sr IN " + str(config['test_sr']) + " RETURN m")
         time.sleep(3)
         console.log(f"Got {len(mnodes)} nodes from the graph.")
     
@@ -145,9 +152,9 @@ def software_worker(console, graph_handler, caller, config):
             console.log("=" * 30)
             mnode_data = mnode["m"]
             mnode_sr = mnode_data["sr"]
-            mnode_swv = mnode_data["SW_Version__c"]
-            mnode_product = mnode_data["Product_Name__c"]
-            
+            if config["eval"]:
+                mnode_swv = mnode_data["SW_Version__c"]
+                mnode_product = mnode_data["Product_Name__c"]
             mnode_tech = mnode_data["Technology_Text__c"]
             mnode_subtech = mnode_data["Sub_Technology_Text__c"]
             s_list = s_mapping[mnode_tech][mnode_subtech]
@@ -188,32 +195,50 @@ def software_worker(console, graph_handler, caller, config):
                 console.log(f"[bold red] [Worker] Json parse error: {e}. Using the original response instead.")
                 prediction = response
             
-            valid_sr = mnode_swv in doc
-            correct = SDASEvaluator.eval(mnode_swv, prediction, 0.3)
-            
-            total += 1
-            valid_total += 1 if valid_sr else 0
-            correct_sum += correct
-            
-            console.log(f'Ground truth: [bold green]{mnode_swv}[/bold green] Prediction: [bold yellow]{prediction}[/bold yellow] Valid: {str(valid_sr)} Passed: {str(correct)}')
-            console.log(f'Explanation: [i]{explanation}[/i]')
-            
-            results += [{
-                "sr": mnode_sr,
-                "software_version": mnode_swv,
-                "prediction": prediction,
-                "explanation": explanation,
-                "valid_sr": valid_sr,
-                "summary": summary,
-                "correct": correct,
-            }]
+
+            if config["eval"]:
+                valid_sr = mnode_swv in doc
+                correct = SDASEvaluator.eval(mnode_swv, prediction, 0.3)
+                
+                total += 1
+                valid_total += 1 if valid_sr else 0
+                correct_sum += correct
+                
+                console.log(f'Ground truth: [bold green]{mnode_swv}[/bold green] Prediction: [bold yellow]{prediction}[/bold yellow] Valid: {str(valid_sr)} Passed: {str(correct)}')
+                console.log(f'Explanation: [i]{explanation}[/i]')
+                
+                results += [{
+                    "sr": mnode_sr,
+                    "software_version": mnode_swv,
+                    "prediction": prediction,
+                    "explanation": explanation,
+                    "valid_sr": valid_sr,
+                    "summary": summary,
+                    "correct": correct,
+                }]
+                
+            else: 
+                results += [{
+                    "sr": mnode_sr,
+                    "prediction": prediction,
+                    "explanation": explanation,
+                    "summary": summary,
+                }]
+                console.log(f' Prediction: [bold yellow]{prediction}[/bold yellow]')
+                console.log(f'Explanation: [i]{explanation}[/i]')
+
     
     with console.status("[bold green] Result Saving...") as status:
-        # accuracy = correct_sum / valid_total
+        
         save_file_path = f"./results/{config['model_name']}_{correct_sum}.csv"
         save_results(pd.DataFrame.from_dict(results), save_file_path)
         time.sleep(3)
-        console.log(f"Well done. There are {valid_total} valid instances. We have {correct_sum} correct predictions. Please check the detailed result at '{save_file_path}'.")
+        if config["eval"]:
+            console.log(f"Well done. There are {valid_total} valid instances. We have {correct_sum} correct predictions. Please check the detailed result at '{save_file_path}'.")
+            accuracy = correct_sum / valid_total
+            console.log(accuracy)
+        else:
+            console.log(f" Please check the detailed result at '{save_file_path}'.")
 
 if __name__ == "__main__":
     console = Console(record=True)
@@ -255,7 +280,7 @@ if __name__ == "__main__":
     # Step 3. Let's go
     console.log(f"[bold cyan]Worker[/bold cyan] Current task: {args.task}")
     if args.task == "graph":
-        graph_worker(console, graph_handler)
+        graph_worker(console, graph_handler, config)
     elif args.task == "product":
         product_worker(console, graph_handler, llm_caller, config)
     elif args.task == "software":
