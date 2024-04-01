@@ -43,7 +43,10 @@ def product_worker(console, graph_handler, caller, config):
         console.log(f'Product mapping file loaded.')
     
     with console.status("[bold green] Retrieving nodes from the graph...") as status:
-        mnodes = graph_handler.raw_excute("MATCH (m:Gold) RETURN m")
+        if config['test_sr'] == []:
+            mnodes = graph_handler.raw_excute("MATCH (m:Metadata) WHERE (m)--() RETURN m")
+        else:
+            mnodes = graph_handler.raw_excute("MATCH (m:Metadata) WHERE m.sr IN " + str(config['test_sr']) + " RETURN m")
         time.sleep(3)
         console.log(f"Got {len(mnodes)} nodes from the graph.")
     
@@ -235,7 +238,7 @@ def software_worker(console, graph_handler, caller, config):
         time.sleep(3)
         if config["eval"]:
             console.log(f"Well done. There are {valid_total} valid instances. We have {correct_sum} correct predictions. Please check the detailed result at '{save_file_path}'.")
-            accuracy = correct_sum / valid_total
+            accuracy = correct_sum / len(mnodes)
             console.log(accuracy)
         else:
             console.log(f" Please check the detailed result at '{save_file_path}'.")
