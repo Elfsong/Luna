@@ -7,8 +7,8 @@
     "graph_url": "bolt://10.245.89.103:7687",
     "graph_user": "neo4j",
     "graph_pwd": "yyids123",
-    "graph_metadata": "./data/NUS_Case_Metadata.json",
-    "graph_notes": "./data/NUS_Case_Notes.json",
+    "graph_metadata": "./samples/Sample_Metadata.json",
+    "graph_notes": "./samples/Sample_Case_Notes.json",
     "test_sr" : [],
     "eval" : false,
     "fields": [
