@@ -34,12 +34,12 @@ def graph_worker(console, graph_handler, config):
 def general_worker(console, graph_handler, caller, config):
     graph_worker(console, graph_handler,config)
     with console.status("[bold green] Loading software version mapping file...") as status:
-        s_mapping = get_swv_mapping('./data/tech_subtech_swv.xlsx')
+        s_mapping = get_swv_mapping('./resources/tech_subtech_swv.xlsx')
         time.sleep(3)
         console.log(f'Software version mapping file loaded.')
 
     with console.status("[bold green] Loading product mapping file...") as status:
-        p_mapping = get_product_mapping('./data/tech_subtech_pnames.xlsx')
+        p_mapping = get_product_mapping('./resources/tech_subtech_pnames.xlsx')
         time.sleep(3)
         console.log(f'Product mapping file loaded.')
 

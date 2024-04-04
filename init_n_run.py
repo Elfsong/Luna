@@ -10,13 +10,16 @@ def install_libraries():
             subprocess.check_call(["python", "-m", 'pip', 'install', '-r', './config/requirements.txt' ,'--upgrade-strategy' ,'only-if-needed'])
     else:
         print("requirements.txt not found")
+    if os.path.exists('./results'):
+        pass
+    else:
+        os.makedirs('./results')
 
 # Function to check if two xlsx files exist in a directory
 def check_xlsx_files(directory):
     files = os.listdir(directory)
     list_of_files = [file for file in files if file.endswith('.xlsx')]
-    print(list_of_files)
-    if 'tech_subtech_pnames.xlsx' in list_of_files and 'tech_subtech_swv_norm.xlsx' in list_of_files:
+    if 'tech_subtech_pnames.xlsx' in list_of_files and 'tech_subtech_swv.xlsx' in list_of_files:
         print("resources exist")
     else:
         print("Creating ressources")
@@ -57,6 +60,7 @@ def run_cli(key,eval_flag):
         subprocess.check_call(cmd)
     else:
         print("cli_worker_general.py not found")
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Initializing the environment')
     parser.add_argument('--resources_path', type=str,default='./resources', help='Resources Files path')

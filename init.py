@@ -11,12 +11,17 @@ def install_libraries():
     else:
         print("requirements.txt not found")
 
+    if os.path.exists('./results'):
+        pass
+    else:
+        os.makedirs('./results')
+
 # Function to check if two xlsx files exist in a directory
 def check_xlsx_files(directory):
     files = os.listdir(directory)
     list_of_files = [file for file in files if file.endswith('.xlsx')]
     print(list_of_files)
-    if 'tech_subtech_pnames.xlsx' in list_of_files and 'tech_subtech_swv_norm.xlsx' in list_of_files:
+    if 'tech_subtech_pnames.xlsx' in list_of_files and 'tech_subtech_swv.xlsx' in list_of_files:
         print("resources exist")
     else:
         print("Creating ressources")
@@ -46,6 +51,7 @@ def check_pretrained_model(directory):
         except:
             subprocess.check_call(["python", "-m", 'pip', 'install', '-r', './config/requirements_train.txt' ,'--upgrade-strategy' ,'only-if-needed'])
         subprocess.check_call(["python",'flant5-train-test.py', '--train_path',"./data/train2_data.csv" ,'--test_path', "./data/test_gold_data.csv"])
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Initializing the environment')
