@@ -5,7 +5,7 @@
 conda create -n luna python=3.9
 conda activate luna
 python init.py 
-python init_n_run.py
+python init_n_run.py --openai_key "YOUR_KEY"
 ```
 
 ### Step 1. Set up Containers (Optional)
