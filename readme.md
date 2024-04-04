@@ -4,8 +4,8 @@
 ```shell
 conda create -n luna python=3.9
 conda activate luna
-pip install -r requirements.txt
-mkdir results
+python init.py 
+python init_n_run.py
 ```
 
 ### Step 1. Set up Containers (Optional)
