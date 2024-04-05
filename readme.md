@@ -39,8 +39,8 @@ Our precomputed train/test data files are listed in  ```"data/test_gold_data.csv
 
 The relevant scripts to generate new training data are also listed in this directory. Further documentation on how to do this for new data is TBD (and will be ready next week)
 
-Creating Product Name and Software Version lists for use in predictions
+### 4. Creating Product Name and Software Version lists for use in predictions
 
 The relevant scripts to compile software name and product name lists are provided in src/create_lists. 
-We also include version extraction scripts to normalize all software mentions. 
-Further documentation on how to do this for new data is TBD (and will be ready next week)
+We will include version extraction scripts to normalize all software mentions. 
+TBD (and will be ready next week)
