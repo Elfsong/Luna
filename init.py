@@ -56,7 +56,7 @@ def check_pretrained_model(directory):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Initializing the environment')
     parser.add_argument('--resources_path', type=str,default='./resources', help='Resources Files path')
-    parser.add_argument('--filter_path', type=str,default="./filter", help='Filter model path')
+    parser.add_argument('--filter_path', type=str,default="./filter_model", help='Filter model path')
     args = parser.parse_args()
     # Install libraries from requirements.txt
     install_libraries()
