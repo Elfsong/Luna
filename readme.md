@@ -17,7 +17,7 @@ b) Trains the necessary "Call GPT or NOT binary classifier" using training data 
 c) Uses your provided OPENAI key to extract product_names and software_versions using the sample data from "samples".
 
 
-To avoid training the model in step (b) please download the trained model from [MOUAD LINK] and place it in "filter_model"
+To avoid training the model in step (b) please download the trained model from [MOUAD LINK](https://drive.google.com/drive/folders/1qTd5yGKpNt8sCREOLPrHpYVDk79-ZvhQ?usp=sharing) and place it in "filter_model"
 
 ### 2. Running on new data
 
