@@ -8,20 +8,27 @@ python init.py
 python init_n_run.py --openai_key "YOUR_KEY"
 ```
 
-### Step 1. Set up Containers (Optional)
-In most cases, you don't need to do this section by yourself. However, if you are curious, there is something you can check out:
-* Knowledge Graph Installation (see section 'Installation' in https://shorturl.at/lyKTZ)
-* LLM Inference Engine (run 'start_llm.sh'. For local models only)
+### Quick run
+First start by downloading the filter model and store it in a directory under the name ``` "filter" ```, make sure this directory is in the same level as ```init_run.sh``` file. Otherwise the code will train a model from scratch with the default data, this may take time and depend on the computational capabilities of your machine. we highly suggest that you download the filter model from the following link: "the_link" .
 
-You can also try the LLM inference engine by CURL:
+Afterward run the following command and make sure you replace the field in capital letters with your own openai key.
 ```
-curl 10.246.112.13:8080/generate \
-    -X POST \
-    -d '{"inputs":"What is Deep Learning?","parameters":{"max_new_tokens":20}}' \
-    -H 'Content-Type: application/json'
+bash int_run.sh --openai_key "YOUR_OPENAI_KEY"
 ```
 
-### Step 2. Change the config file
+### Train your own model
+
+If you want to retrain the filter with your own data run the following command
+```
+flant5-train-test.py --train_path "TRAINING FILE PATH" --test_path "TESTING FILE PATH" --batch_size "BATCH_SIZE" --do_test "TRUE/FALSE"
+```
+
+Make sure you specify a train/test file path and that the files are in the correct format.
+
+the batch size will depend on the size of your GPU default is 8
+
+the do_test flag will evaluate the model on the test_set
+
 The config file can be found in the config directory, changing this file is crucial to run the inference model.
 
 #### Adding the OpenAi Key and choosing the inference model 
