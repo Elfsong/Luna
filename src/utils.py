@@ -205,7 +205,7 @@ def config_generator(console):
     return config
 
 def get_product_mapping(file_path: str) -> dict:
-    df = pd.read_excel(file_path)
+    df = pd.read_csv(file_path)
     p_mapping = defaultdict(lambda: defaultdict(lambda: list()))
 
     for _, row in df.iterrows():
@@ -229,7 +229,7 @@ def get_swv_mapping(file_path: str) -> dict:
     return s_mapping
 
 def get_norm_swv_mapping(file_path: str) -> dict:
-    df = pd.read_excel(file_path)
+    df = pd.read_csv(file_path)
     s_mapping = defaultdict(lambda: defaultdict(lambda: list()))
 
     for _, row in df.iterrows():
