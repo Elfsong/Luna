@@ -3,10 +3,19 @@
 # Author: Du Mingzhe (mingzhe@nus.edu.sg)
 # Date: 29/12/2023
 
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "3"
+
 from openai import OpenAI
 from rich.progress import track
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+import torch
 from huggingface_hub import InferenceClient
 from langchain.text_splitter import TokenTextSplitter
+
+
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 class Caller(object):
     def __init__(self, config, console=None) -> None:
@@ -241,3 +250,18 @@ class TGICaller(Caller):
             reduce_results.append(result)
             
         return reduce_results[0]
+    
+class LocalCaller(Caller):
+    def __init__(self, config, console=None) -> None:
+        super().__init__(config, console)
+        self.tokenizer = AutoTokenizer.from_pretrained(config['model_path'],local_files_only=True)
+        self.model = AutoModelForSeq2SeqLM.from_pretrained(config['model_path'],local_files_only=True).to(device)
+            
+    def call(self, prompt) -> str:
+        self.model.eval()
+        with torch.no_grad():
+            ids = self.tokenizer.encode(prompt, return_tensors="pt").to(device, dtype = torch.long)
+            generated_ids = self.model.generate(input_ids = ids)
+            preds = self.tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
+        response = preds.strip()
+        return response
