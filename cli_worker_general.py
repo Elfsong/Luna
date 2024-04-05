@@ -8,7 +8,7 @@ from src.filter import Filter
 from src.graph import CiscoGraph
 from src.caller import OpenAICaller, TGICaller
 from src.evaluator import LCSEvaluator, SDASEvaluator
-from src.utils import get_product_mapping, get_swv_mapping, save_results, banner, config_generator, load_metadata, load_notes
+from src.utils import get_product_mapping, get_norm_swv_mapping, save_results, banner, config_generator, load_metadata, load_notes
 
 def graph_worker(console, graph_handler, config):
     metadata = load_metadata(config["graph_metadata"])
@@ -34,12 +34,12 @@ def graph_worker(console, graph_handler, config):
 def general_worker(console, graph_handler, caller, config):
     graph_worker(console, graph_handler,config)
     with console.status("[bold green] Loading software version mapping file...") as status:
-        s_mapping = get_swv_mapping('./resources/tech_subtech_swv.xlsx')
+        s_mapping = get_norm_swv_mapping('./resources/tech_subtech_swv_norm2.csv')
         time.sleep(3)
         console.log(f'Software version mapping file loaded.')
 
     with console.status("[bold green] Loading product mapping file...") as status:
-        p_mapping = get_product_mapping('./resources/tech_subtech_pnames.xlsx')
+        p_mapping = get_product_mapping('./resources/tech_subtech_pnames.csv')
         time.sleep(3)
         console.log(f'Product mapping file loaded.')
 
@@ -71,8 +71,12 @@ def general_worker(console, graph_handler, caller, config):
             mnode_tech = mnode_data["Technology_Text__c"]
             mnode_subtech = mnode_data["Sub_Technology_Text__c"]
             s_list = s_mapping[mnode_tech][mnode_subtech]
+            s_set = set(s_list)
+            s_list = list(s_set)
             s_str = "/ ".join(s_list)
             p_list = p_mapping[mnode_tech][mnode_subtech]
+            p_set = set(p_list)
+            p_list = list(p_set)
             p_str = "/ ".join(p_list)
             
             notes = list()  
@@ -149,9 +153,9 @@ def general_worker(console, graph_handler, caller, config):
                 correct_sum += correct
                 correct_sum_p += correct_p
                 
-                console.log(f'Ground truth: [bold green]{mnode_swv}[/bold green] Prediction: [bold yellow]{prediction}[/bold yellow] Valid: {str(valid_sr)} Passed: {str(correct)}')
+                console.log(f'Ground truth: [bold green]{mnode_swv}[/bold green] SWV Prediction: [bold yellow]{prediction}[/bold yellow] Valid: {str(valid_sr)} Passed: {str(correct)}')
                 console.log(f'Explanation: [i]{explanation}[/i]')
-                console.log(f'Ground truth: [bold green]{mnode_product}[/bold green] Prediction: [bold yellow]{prediction_p}[/bold yellow] Overlap: {overlap} Passed: {str(correct_p)}')
+                console.log(f'Ground truth: [bold green]{mnode_product}[/bold green] PN Prediction: [bold yellow]{prediction_p}[/bold yellow] Overlap: {overlap} Passed: {str(correct_p)}')
                 console.log(f'Explanation: [i]{explanation_p}[/i]')
                 
                 results += [{
@@ -181,9 +185,9 @@ def general_worker(console, graph_handler, caller, config):
                     "explanation_p": explanation,
                     "summary_p": summary_p,
                 }]
-                console.log(f' Prediction: [bold yellow]{prediction}[/bold yellow]')
+                console.log(f' Software version Prediction: [bold yellow]{prediction}[/bold yellow]')
                 console.log(f'Explanation: [i]{explanation}[/i]')
-                console.log(f' Prediction: [bold yellow]{prediction_p}[/bold yellow]')
+                console.log(f' Product name Prediction: [bold yellow]{prediction_p}[/bold yellow]')
                 console.log(f'Explanation: [i]{explanation_p}[/i]')
 
     
@@ -221,7 +225,6 @@ if __name__ == "__main__":
         else:
             console.log(f"No config detected. Let me ask you a few questions:)")
             config = config_generator(console)
-
         if args.openai_key:
             config['openai_api_key'] = args.openai_key
         if args.eval:
