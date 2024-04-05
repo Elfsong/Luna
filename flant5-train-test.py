@@ -22,8 +22,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     df_train = pd.read_csv(args.train_path)
-    if args.do_test:
-        df_test = pd.read_csv(args.test_path)
+    df_test = pd.read_csv(args.test_path)
 
 
 def set_seed(seed):
