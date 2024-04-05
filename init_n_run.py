@@ -64,7 +64,7 @@ def run_cli(key,eval_flag):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Initializing the environment')
     parser.add_argument('--resources_path', type=str,default='./resources', help='Resources Files path')
-    parser.add_argument('--filter_path', type=str,default="./filter", help='Filter model path')
+    parser.add_argument('--filter_path', type=str,default="./filter_model", help='Filter model path')
     parser.add_argument('--openai_key', type=str,default=None, help='your openai key')
     parser.add_argument('--eval', type=bool,default=False,help="evaluate on glod SRs")
     args = parser.parse_args()
