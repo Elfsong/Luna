@@ -164,7 +164,7 @@ trainer = Seq2SeqTrainer(
 
 trainer.train()
 
-trainer.save_model("./filter/")
+trainer.save_model("./filter_model/")
 
 def validate(tokenizer, model, device, loader):
 
