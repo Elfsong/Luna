@@ -12,9 +12,9 @@ This script:
 
 a) Installs the necessary Python libraries (specified in requirements.txt).
 
-b) Trains the necessary "Call GPT or NOT binary classifier" using training data created by us (in "data").
+a) Trains the necessary "Call GPT or NOT binary classifier" using training data created by us (in "data").
 
-c) Uses your provided OPENAI key to extract product_names and software_versions using the sample data from "samples".
+a) Uses your provided OPENAI key to extract product_names and software_versions using the sample data from "samples".
 
 
 To avoid training the model in step (b) please download the trained model from [MOUAD LINK] and place it in "filter_model"
