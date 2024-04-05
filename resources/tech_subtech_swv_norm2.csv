@@ -1,0 +1,867 @@
+Technology_Text__c,Sub_Technology_Text__c,SW_Version__c,num,Norm_SWV
+Router and IOS-XE Architecture,IOS-XE Unexpected Reload,asr1000rpx86-universalk9.17.03.04a.SPA.bin,3,17.03.04a
+Router and IOS-XE Architecture,IOS-XE Unexpected Reload,cat3k_caa-universalk9.16.03.05b.SPA.bin,3,16.03.05b
+Router and IOS-XE Architecture,IOS-XE Unexpected Reload,1,2,1
+Router and IOS-XE Architecture,IOS-XE Unexpected Reload,16.12.1s,1,16.12.1s
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wired),NA - COMPONENT ONLY,3,NA - COMPONENT ONLY
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wired),16.12.3s,2,16.12.3s
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wired),DNAC-SW-2.3.3.3.iso,3,2.3.3.3
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wired),17.6.4,2,17.6.4
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wired),16.12.4,3,16.12.4
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wired),DNAC-SW-2.2.2.5.iso,3,2.2.2.5
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wired),DNAC-SW-1.3.3.6.iso,3,1.3.3.6
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wired),cat9k_iosxe.16.12.03s.SPA.bin,3,16.12.03s
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wired),asr1000rpx86-universalk9.16.12.01s.SPA.bin,6,16.12.01s
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wired),cat9k_iosxe.16.12.04.SPA.bin,12,16.12.04
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wired),16.12.1s,2,16.12.1s
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wired),2.2.3.3,1,2.2.3.3
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wired),THIRD_PARTY_PRODUCT_SW,3,THIRD_PARTY_PRODUCT_SW
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wired),Gibraltar-16.12.1s,1,16.12.1s
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wired),1.3.3.7,2,1.3.3.7
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wired),1.3.3.9,1,1.3.3.9
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wired),DNAC-SW-2.3.3.7.iso,3,2.3.3.7
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wired),2.1.2.7,1,2.1.2.7
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wired),2.2.3.6,1,2.2.3.6
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wired),cat9k_iosxe.17.06.02.SPA.bin,3,17.06.02
+Security - Network Firewalls and Intrusion Prevention Systems,Firepower Threat Defense (FTD) non-VPN,ASA,3,ASA
+Security - Network Firewalls and Intrusion Prevention Systems,Firepower Threat Defense (FTD) non-VPN,9.9.2 Interim,1,9.9.2
+Security - Network Firewalls and Intrusion Prevention Systems,Firepower Threat Defense (FTD) non-VPN,THIRD_PARTY_PRODUCT_SW,6,THIRD_PARTY_PRODUCT_SW
+Security - Network Firewalls and Intrusion Prevention Systems,Firepower Threat Defense (FTD) non-VPN,Cisco_Firepower_Threat_Defense_Virtual-6.4.0-102.tar.gz,3,6.4.0.102
+Security - Network Firewalls and Intrusion Prevention Systems,Firepower Threat Defense (FTD) non-VPN,6.2.3.7,1,6.2.3.7
+Security - Network Firewalls and Intrusion Prevention Systems,Firepower Threat Defense (FTD) non-VPN,9.9,1,9.9
+Security - Network Firewalls and Intrusion Prevention Systems,Firepower Threat Defense (FTD) non-VPN,15.2(2)E,1,15.2.2
+Security - Network Firewalls and Intrusion Prevention Systems,Firepower Threat Defense (FTD) non-VPN,cisco-asa.9.10.1.40.SPA.csp,3,9.10.1.40
+Security - Network Firewalls and Intrusion Prevention Systems,Firepower Threat Defense (FTD) non-VPN,6.4.0.10,1,6.4.0.10
+Security - Network Firewalls and Intrusion Prevention Systems,Firepower Threat Defense (FTD) non-VPN,6.6.0,1,6.6.0
+LAN Switching,Cat9300,cat9k_lite_iosxe.16.12.04.SPA.bin,3,16.12.04
+LAN Switching,Cat9300,NA - COMPONENT ONLY,3,NA - COMPONENT ONLY
+LAN Switching,Cat9300,THIRD_PARTY_PRODUCT_SW,6,THIRD_PARTY_PRODUCT_SW
+LAN Switching,Cat9300,NA - RMA,45,NA - RMA
+LAN Switching,Cat9300,cat9k_iosxe.16.12.04.SPA.bin,18,16.12.04
+LAN Switching,Cat9300,ucs-k9-bundle-b-series.3.2.3o.B.bin,3,3.2.3o
+LAN Switching,Cat9300,15.0(2)SE2,1,15.0.2
+LAN Switching,Cat9300,cat9k_iosxe.16.06.07.SPA.bin,3,16.06.07
+LAN Switching,Cat9300,cat9k_iosxe.16.12.03s.SPA.bin,6,16.12.03s
+LAN Switching,Cat9300,1,5,1
+LAN Switching,Cat9300,cat9k_iosxe.16.06.08.SPA.bin,3,16.06.08
+LAN Switching,Cat9300,Gibraltar-16.12.1s,1,16.12.1s
+LAN Switching,Cat9300,cat9k_iosxe.17.03.05.SPA.bin,6,17.03.05
+LAN Switching,Cat9300,16.12.4,12,16.12.4
+LAN Switching,Cat9300,16.9.5,3,16.9.5
+LAN Switching,Cat9300,cat9k_lite_iosxe.16.12.01s.SPA.bin,3,16.12.01s
+LAN Switching,Cat9300,PRODUCT_NOT_FOUND,3,PRODUCT_NOT_FOUND
+LAN Switching,Cat9300,16.3.5,1,16.3.5
+LAN Switching,Cat9300,16.12.3s,4,16.12.3s
+LAN Switching,Cat9300,cat9k_iosxe.16.09.02.SPA.bin,3,16.09.02
+LAN Switching,Cat9300,16.12.3a,1,16.12.3a
+LAN Switching,Cat9300,16.12.1s,1,16.12.1s
+LAN Switching,Cat9300,17.6.4,1,17.6.4
+Cisco DNA Center - On-Prem,"Cisco DNA Center - Network Settings (wireless maps, network credentials, etc.)",DNA Center-2.3.3.7.72328,1,2.3.3.7.72328
+Cisco DNA Center - On-Prem,"Cisco DNA Center - Network Settings (wireless maps, network credentials, etc.)",2.3.3.6,1,2.3.3.6
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - 8000/7000 series switched/routed/hybrid interfaces, NAT, stacking, clustering (Sourcefire)",cisco-ftd.6.4.0.102.SPA.csp,3,6.4.0.102
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - 8000/7000 series switched/routed/hybrid interfaces, NAT, stacking, clustering (Sourcefire)",CISCO FIREPOWER,9,CISCO FIREPOWER
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - 8000/7000 series switched/routed/hybrid interfaces, NAT, stacking, clustering (Sourcefire)",Sourcefire_3D_Device_S3_Patch-6.1.0.3-57.sh,9,6.1.0.3.57
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - 8000/7000 series switched/routed/hybrid interfaces, NAT, stacking, clustering (Sourcefire)",ASA,6,ASA
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - 8000/7000 series switched/routed/hybrid interfaces, NAT, stacking, clustering (Sourcefire)",Cisco_Firepower_NGIPS_Appliance_Upgrade-6.4.0-102.sh.REL.tar,3,6.4.0.102
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - 8000/7000 series switched/routed/hybrid interfaces, NAT, stacking, clustering (Sourcefire)",Cisco_Network_Sensor_Patch-6.2.3.15-38.sh.REL.tar,3,6.2.3.15.38
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - 8000/7000 series switched/routed/hybrid interfaces, NAT, stacking, clustering (Sourcefire)",THIRD_PARTY_PRODUCT_SW,9,THIRD_PARTY_PRODUCT_SW
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - 8000/7000 series switched/routed/hybrid interfaces, NAT, stacking, clustering (Sourcefire)",Cisco_Firepower_Mgmt_Center_Virtual_KVM-6.4.0-102.qcow2,3,6.4.0.102
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - 8000/7000 series switched/routed/hybrid interfaces, NAT, stacking, clustering (Sourcefire)",ftd-6.2.3-80.pkg,6,6.2.3.80
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - 8000/7000 series switched/routed/hybrid interfaces, NAT, stacking, clustering (Sourcefire)",ftd-6.2.3-83.pkg,3,6.2.3.83
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - 8000/7000 series switched/routed/hybrid interfaces, NAT, stacking, clustering (Sourcefire)",Cisco_Firepower_Mgmt_Center-6.4.0-102-Restore.iso,3,6.4.0.102
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - 8000/7000 series switched/routed/hybrid interfaces, NAT, stacking, clustering (Sourcefire)",asasfr-5500x-boot-6.5.0-1.img,3,6.5.0.1
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - 8000/7000 series switched/routed/hybrid interfaces, NAT, stacking, clustering (Sourcefire)",Cisco_FTD_Patch-6.2.3.15-38.sh.REL.tar,3,6.2.3.15.38
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - 8000/7000 series switched/routed/hybrid interfaces, NAT, stacking, clustering (Sourcefire)",6.4.0,2,6.4.0
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - 8000/7000 series switched/routed/hybrid interfaces, NAT, stacking, clustering (Sourcefire)",6.3.0,1,6.3.0
+Identity Services Engine (ISE) - 3.0,ISE Profiling,2.6.0,1,2.6.0
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",ASA,39,ASA
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",CISCO FIRESIGHT DEFENSE CENTER,3,CISCO FIRESIGHT DEFENSE CENTER
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",asa971-4-lfbff-k8.SPA,3,971.4
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",fxos-k9-manager.4.8.1.157.SPA,3,4.8.1.157
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",cisco-ftd-fp2k.6.2.2-81.SPA,3,6.2.2.81
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",asa962-7-smp-k8.bin,3,962.7
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",Cisco_FTD_Patch-6.2.3.15-38.sh.REL.tar,3,6.2.3.15.38
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",FPHIGH,3,FPHIGH
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",fxos-k9.2.1.1.77.SPA,6,2.1.1.77
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",fxos-k9.2.2.2.91.SPA,3,2.2.2.91
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",THIRD_PARTY_PRODUCT_SW,6,THIRD_PARTY_PRODUCT_SW
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",FXOS,21,FXOS
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",Cisco_FTD_Patch-6.4.0.7-53.sh.REL.tar,3,6.4.0.7.53
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",ftd-6.4.0-102.pkg,3,6.4.0.102
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",cisco-asa.9.7.1.4.SPA.csp,3,9.7.1.4
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",9.8.3,1,9.8.3
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",FX-OS,6,FX-OS
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",cisco-ftd-fp2k.6.2.3-79.SPA,3,6.2.3.79
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",9.8,1,9.8
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",ftd-6.1.0-330.pkg.MFG,3,6.1.0.330
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",asa981-7-lfbff-k8.SPA,3,981.7
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",Sourcefire_3D_Defense_Center_S3_Patch-6.2.0.1-59.sh,3,6.2.0.1.59
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",asa981-lfbff-k8.SPA,3,981
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",9.14.2 Interim,1,9.14.2
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",IPS,3,IPS
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",9.6.2 Interim,1,9.6.2
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",cisco-asa.9.10.1.42.SPA.csp,3,9.10.1.42
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",Version: 2.8(1.152),1,2.8.1.152
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",fxos-k9.2.2.2.26.SPA,3,2.2.2.26
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",Cisco_FTD_SSP_FP1K_Patch-6.4.0.9-62.sh.REL.tar,3,6.4.0.9.62
+Security - Network Firewalls and Intrusion Prevention Systems,"Firepower eXtensible Operating System (FXOS) on Firepower 9300, 4100 platforms",asa984-3-lfbff-k8.SPA,3,984.3
+LAN Switching,Cat6800 (Supervisor 6T) VSS,15.5(1)SY1,2,15.5.1
+LAN Switching,Cat6800 (Supervisor 6T) VSS,s6t64-adventerprisek9_npe-mz.SPA.155-1.SY,6,155.1
+LAN Switching,Cat6800 (Supervisor 6T) VSS,THIRD_PARTY_PRODUCT_SW,3,THIRD_PARTY_PRODUCT_SW
+LAN Switching,Cat6800 (Supervisor 6T) VSS,s2t54-adventerprisek9-mz.SPA.152-1.SY3,3,152.1
+LAN Switching,Cat6800 (Supervisor 6T) VSS,s2t54-adventerprisek9_npe-mz.SPA.151-2.SY4a,3,151.2
+LAN Switching,Cat6800 (Supervisor 6T) VSS,s6t64-adventerprisek9-mz.SPA.155-1.SY,3,155.1
+LAN Switching,Cat6800 (Supervisor 6T) VSS,NA - RMA,3,NA - RMA
+LAN Switching,Cat6800 (Supervisor 6T) VSS,15.5(1)SY,1,15.5.1
+Security - Access Control - AAA and Policy Management,Cisco Secure ACS 5.x (not Express),ISE,3,ISE
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Hardware Failure (8000 / 7000 Series, Series 3, Sourcefire)",Cisco_Firepower_Mgmt_Center_Virtual_KVM-6.4.0-102.qcow2,3,6.4.0.102
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Hardware Failure (8000 / 7000 Series, Series 3, Sourcefire)",CISCO FIREPOWER,18,CISCO FIREPOWER
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Hardware Failure (8000 / 7000 Series, Series 3, Sourcefire)",6.6.4,1,6.6.4
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Hardware Failure (8000 / 7000 Series, Series 3, Sourcefire)",NA - RMA,3,NA - RMA
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Hardware Failure (8000 / 7000 Series, Series 3, Sourcefire)",9.12.4 Interim,2,9.12.4
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Hardware Failure (8000 / 7000 Series, Series 3, Sourcefire)",CISCO FIRESIGHT DEFENSE CENTER,3,CISCO FIRESIGHT DEFENSE CENTER
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",THIRD_PARTY_PRODUCT_SW,3,THIRD_PARTY_PRODUCT_SW
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",CISCO FIRESIGHT DEFENSE CENTER,3,CISCO FIRESIGHT DEFENSE CENTER
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",CISCO FIREPOWER,18,CISCO FIREPOWER
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",Cisco_FTD_SSP_Patch-6.1.0.5-45.sh,3,6.1.0.5.45
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",ftd-6.0.1-1206.pkg.MFG,3,6.0.1.1206
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",Cisco_FTD_SSP_FP2K_Patch-6.2.3.10-59.sh.REL.tar,3,6.2.3.10.59
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",cisco-ftd-fp2k.6.4.0-102.SPA,3,6.4.0.102
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",SF-ASA-8.3-K8,3,8.3
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",Cisco_FTD_Patch-6.3.0.2-67.sh.REL.tar,3,6.3.0.2.67
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",FPHIGH,6,FPHIGH
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",Cisco_Network_Sensor_Patch-5.4.0.8-23.sh,3,5.4.0.8.23
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",PRODUCT_NOT_FOUND,3,PRODUCT_NOT_FOUND
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",6.2.3,2,6.2.3
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",ftd-6.2.3-83.pkg,3,6.2.3.83
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",Cisco_FTD_SSP_FP2K_Patch-6.4.0.8-28.sh.REL.tar,3,6.4.0.8.28
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",asa961-lfbff-k8.SPA,3,961
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",6.4.0,2,6.4.0
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",ftd-6.4.0-102.pkg,3,6.4.0.102
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",Sourcefire_3D_Device_S3_Patch-6.1.0.3-57.sh,3,6.1.0.3.57
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",ftd-6.2.3-80.pkg,3,6.2.3.80
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",NA-CIN_CLOSE_SW,3,NA-CIN_CLOSE_SW
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",6.4.0.10,1,6.4.0.10
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",Cisco_Firepower_Threat_Defense_Virtual-6.2.3-80.qcow2,3,6.2.3.80
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",6.7.0.1,1,6.7.0.1
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",NCS ALARMS & EVENTS,3,NCS ALARMS & EVENTS
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",Cisco_Network_Sensor_Patch-6.4.0.9-62.sh.REL.tar,3,6.4.0.9.62
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",asasfr-5500x-boot-6.2.3-4.img,3,6.2.3.4
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",ASA,3,ASA
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",Cisco_FTD_Patch-6.2.3.10-59.sh.REL.tar,3,6.2.3.10.59
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",6.6.5,1,6.6.5
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",Cisco_Network_Sensor_Patch-6.2.3.10-59.sh.REL.tar,3,6.2.3.10.59
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",9.10.1 Interim,1,9.10.1
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",6.6.4,1,6.6.4
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",6.1,1,6.1
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - Intrusion Detection and Prevention (IDS / IPS), Snort Engine (Sourcefire)",6.2.3.6,1,6.2.3.6
+Telepresence,"Telepresence Camera (Quad Camera, P60, P40, 12X, 4X, 2.5X, and USB PHD Cameras)",CE 9.14.3 EFT Drop 1,1,9.14.3
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C System/Other Issues,NA - RMA,9,NA - RMA
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C System/Other Issues,ucs-6300-k9-bundle-infra.4.1.1c.A.bin,3,4.1.1c
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C System/Other Issues,PRODUCT_NOT_FOUND,3,PRODUCT_NOT_FOUND
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C System/Other Issues,ucs-k9-bundle-infra.3.2.3i.A.bin,3,3.2.3i
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C System/Other Issues,ucs-c240m5-huu-4.0.4c.iso,3,4.0.4c
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C System/Other Issues,1,1,1
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C System/Other Issues,3.2(3d),3,3.2.3d
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C System/Other Issues,4.2(1i),1,4.2.1i
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C System/Other Issues,N10-MGT UCSM 3.1(2),3,3.1.2
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C System/Other Issues,ucs-c240m5-huu-4.1.3c.iso,3,4.1.3c
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C System/Other Issues,ucs-6300-k9-bundle-infra.3.2.2c.A.bin,3,3.2.2c
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C System/Other Issues,ucs-k9-bundle-infra.4.1.3d.A.bin,3,4.1.3d
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C System/Other Issues,4.1(3c),4,4.1.3c
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C System/Other Issues,ucs-k9-bundle-infra.4.1.2b.A.bin,3,4.1.2b
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C System/Other Issues,2,1,2
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C System/Other Issues,NA - COMPONENT ONLY,6,NA - COMPONENT ONLY
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C System/Other Issues,THIRD_PARTY_PRODUCT_SW,3,THIRD_PARTY_PRODUCT_SW
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C System/Other Issues,CIMC 2.0,3,2
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C System/Other Issues,4.0(4g),2,4.0.4g
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C System/Other Issues,ucs-k9-bundle-infra.4.1.3c.A.bin,3,4.1.3c
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C System/Other Issues,5.2(1)SV3(2.8),1,5.2.1
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C System/Other Issues,4.0(2f),1,4.0.2f
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C System/Other Issues,3.0(2),2,3.0.2
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C System/Other Issues,2.2(8k),1,2.2.8k
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C System/Other Issues,4.1.4.13,1,4.1.4.13
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Install,xxx,1,xxx
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Install,ucs-catalog.3.2.3j.T.bin,3,3.2.3j
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Install,4.0(4g),1,4.0.4g
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Call Home / Smart Call Home for Unified Computing System,N10-MGT UCSM 3.0(1),3,3.0.1
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Call Home / Smart Call Home for Unified Computing System,THIRD_PARTY_PRODUCT_SW,3,THIRD_PARTY_PRODUCT_SW
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Call Home / Smart Call Home for Unified Computing System,NA - COMPONENT ONLY,9,NA - COMPONENT ONLY
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Call Home / Smart Call Home for Unified Computing System,N10-MGT UCSM 2.2(7),3,2.2.7
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Call Home / Smart Call Home for Unified Computing System,N10-MGT UCSM 2.2(3),3,2.2.3
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Call Home / Smart Call Home for Unified Computing System,N10-MGT UCSM 2.2(1),3,2.2.1
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Call Home / Smart Call Home for Unified Computing System,CIMC_3.2.3.bin,3,3.2.3
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Call Home / Smart Call Home for Unified Computing System,PRODUCT_NOT_FOUND,3,PRODUCT_NOT_FOUND
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Call Home / Smart Call Home for Unified Computing System,NA - RMA,6,NA - RMA
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Call Home / Smart Call Home for Unified Computing System,4.0(4g),1,4.0.4g
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Call Home / Smart Call Home for Unified Computing System,CIMC 2.2.1,3,2.2.1
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Call Home / Smart Call Home for Unified Computing System,1.5,1,1.5
+Security - Network Firewalls and Intrusion Prevention Systems,Adaptive Security Appliance (ASA) non-VPN problem,Cisco_Firepower_Management_Center_VMware-6.0.0-1005.tar.gz,3,6.0.0.1005
+Security - Network Firewalls and Intrusion Prevention Systems,Adaptive Security Appliance (ASA) non-VPN problem,FPHIGH,6,FPHIGH
+Security - Network Firewalls and Intrusion Prevention Systems,Adaptive Security Appliance (ASA) non-VPN problem,asa964-3-smp-k8.bin,3,964.3
+Security - Network Firewalls and Intrusion Prevention Systems,Adaptive Security Appliance (ASA) non-VPN problem,9.14(2)15,1,9.14.2.15
+Security - Network Firewalls and Intrusion Prevention Systems,Adaptive Security Appliance (ASA) non-VPN problem,CISCO FIREPOWER,3,CISCO FIREPOWER
+Security - Network Firewalls and Intrusion Prevention Systems,Adaptive Security Appliance (ASA) non-VPN problem,ASA,9,ASA
+Security - Network Firewalls and Intrusion Prevention Systems,Adaptive Security Appliance (ASA) non-VPN problem,9.8(4)7,1,9.8.4.7
+Security - Network Firewalls and Intrusion Prevention Systems,Adaptive Security Appliance (ASA) non-VPN problem,9.8.3 Interim,1,9.8.3
+Security - Network Firewalls and Intrusion Prevention Systems,Adaptive Security Appliance (ASA) non-VPN problem,9.12.4 Interim,1,9.12.4
+Security - Network Firewalls and Intrusion Prevention Systems,Adaptive Security Appliance (ASA) non-VPN problem,9.8.1,1,9.8.1
+Security - Network Firewalls and Intrusion Prevention Systems,Adaptive Security Appliance (ASA) non-VPN problem,9.14.3,1,9.14.3
+Security - Network Firewalls and Intrusion Prevention Systems,Adaptive Security Appliance (ASA) non-VPN problem,9.8.2,1,9.8.2
+Security - Network Firewalls and Intrusion Prevention Systems,Adaptive Security Appliance (ASA) non-VPN problem,9.14(2)4,1,9.14.2.4
+Other,Entitlement / Service Relations,THIRD_PARTY_PRODUCT_SW,9,THIRD_PARTY_PRODUCT_SW
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),1,1,1
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),AIR-CT8540-K9-8-10-151-0.aes,15,8.10.151.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),MFG_CTVM_SMALL_8.10.171.0.iso,3,8.10.171.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),WLC 802.11AC,6,802.11AC
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),AIR-CT8500-K9-8-5-171-0.aes,3,8.5.171.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),MFG_CTVM_SMALL_8.10.183.0.iso,3,8.10.183.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),8.10.130.0,4,8.10.130.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),AIR-CT8540-K9-8-10-171-0.aes,3,8.10.171.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),THIRD_PARTY_PRODUCT_SW,9,THIRD_PARTY_PRODUCT_SW
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),8.5.135.0,1,8.5.135.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),AIR-CT8540-K9-8-3-143-0.aes,6,8.3.143.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),NA-CIN_CLOSE_SW,3,NA-CIN_CLOSE_SW
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),AIR-CT8540-K9-8-5-140-0.aes,3,8.5.140.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),ucs-c240m4-huu-4.0.1a.iso,3,4.0.1a
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),WLC CLIENT INTEROP,3,WLC CLIENT INTEROP
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),12.0(13)W5(19b),1,12.0.13
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),AIR-CT8540-K9-8-5-151-0.aes,3,8.5.151.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),8.4.X,1,8.4
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),cat8540m-wp-mz.120-13.W5(19b),3,120.13
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),AIR-CT5500-K9-8-5-160-0.aes,3,8.5.160.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),8.10.151.0,3,8.10.151.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),8.3.143.0,1,8.3.143.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),8.3.131.0,1,8.3.131.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),AIR-CT8500-K9-8-3-150-0.aes,3,8.3.150.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),AIR-CT8540-K9-8-5-135-0.aes,3,8.5.135.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),8.5.161.0,3,8.5.161.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),ap3g3-ME-3800-k9w8-ubifs-8.10.185.0.img,3,8.10.185.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),AIR-CT8540-K9-8-2-166-0.aes,6,8.2.166.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),8.5.140.0,1,8.5.140.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),AIR-CT8500-K9-8-5-151-0.aes,3,8.5.151.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),8.3.150.0,1,8.3.150.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),16.12.3s,1,16.12.3s
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),WLC RRM/RF/CLEANAIR,3,WLC RRM/RF/CLEANAIR
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),AIR-CT5500-K9-8-5-151-0.aes,3,8.5.151.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),AIR-CT8540-K9-8-10-130-0.aes,9,8.10.130.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),NA - COMPONENT ONLY,3,NA - COMPONENT ONLY
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),AIR-CT8540-K9-8-10-162-0.aes,6,8.10.162.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),AIR-AP3800-K9-ME-8-3-140-0.tar,3,8.3.140.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),8.10.150.0,1,8.10.150.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),crete-single_8-10-183-0.img,3,8.10.183.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),8.10.161.0,2,8.10.161.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),8.10.185.0,1,8.10.185.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),AIR-CT5520-K9-8-5-151-0.aes,3,8.5.151.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),16.12.4,1,16.12.4
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),17.3.5b,1,17.3.5b
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),8.10.183.0,2,8.10.183.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),8.10.171.0,1,8.10.171.0
+Wireless,8540 Series Wireless LAN Controller (AIR-CT8540),8.5.171.0,1,8.5.171.0
+Router and IOS-XE Architecture,IOS-XE - NETCONF and RESTCONF and YANG,asr1000-universalk9.17.03.04a.SPA.bin,3,17.03.04a
+Router and IOS-XE Architecture,IOS-XE - NETCONF and RESTCONF and YANG,17.3.4a,1,17.3.4a
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,4.2(1i),1,4.2.1i
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,ucs-k9-bundle-infra.4.1.3j.A.bin,3,4.1.3j
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,N10-MGT UCSM 2.2(6),6,2.2.6
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,N10-MGT UCSM 3.1(2),18,3.1.2
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,THIRD_PARTY_PRODUCT_SW,6,THIRD_PARTY_PRODUCT_SW
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,CIMC 2.0,9,2
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,N10-MGT UCSM 2.2(3),9,2.2.3
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,1,3,1
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,1.4(3),1,1.4.3
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,ucs-k9-bundle-infra.4.1.3c.A.bin,5,4.1.3c
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,CIMC 2.2.2,9,2.2.2
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,ucs-k9-bundle-infra.4.2.1m.A.bin,6,4.2.1m
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,xxx,2,xxx
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,N10-MGT UCSM 3.1(1),3,3.1.1
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,ucs-k9-bundle-infra.3.2.2b.A.bin,3,3.2.2b
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,NA - RMA,6,NA - RMA
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,NA - COMPONENT ONLY,6,NA - COMPONENT ONLY
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,ucs-k9-bundle-infra.4.0.4g.A.bin,3,4.0.4g
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,4.1(3c),5,4.1.3c
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,N10-MGT UCSM 2.2(2),3,2.2.2
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,4.1(3j),2,4.1.3j
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,ucs-catalog.1.0.16.T.bin,3,1.0.16
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,4.0(4g),2,4.0.4g
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,N10-MGT UCSM 2.2(1),3,2.2.1
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,2.1(3b),1,2.1.3b
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,ucs-6300-k9-bundle-infra.4.1.1b.A.bin,3,4.1.1b
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,4.0(4d),1,4.0.4d
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,castor-4_0_1a05-pid-ctlg-update.bin,3,4
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,ucs-k9-bundle-infra.4.1.3b.A.bin,3,4.1.3b
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,ucs-c240m6-huu-4.2.1f.iso,3,4.2.1f
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,3.2(3d),1,3.2.3d
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B System/Other Issues,4.1(3d),1,4.1.3d
+XR-Routing-Platforms,"ASR 9000 Series - Hardware failures, Environmental Issues (Power, Fans, etc)",ASR9K-x64-iosxr-px-7.7.1.tar,3,7.7.1
+XR-Routing-Platforms,"ASR 9000 Series - Hardware failures, Environmental Issues (Power, Fans, etc)",ASR9K-iosxr-px-6.3.3-turboboot.tar,3,6.3.3
+XR-Routing-Platforms,"ASR 9000 Series - Hardware failures, Environmental Issues (Power, Fans, etc)",ASR9K-x64-iosxr-px-7.3.2.tar,3,7.3.2
+XR-Routing-Platforms,"ASR 9000 Series - Hardware failures, Environmental Issues (Power, Fans, etc)",NA - RMA,3,NA - RMA
+XR-Routing-Platforms,"ASR 9000 Series - Hardware failures, Environmental Issues (Power, Fans, etc)",7.3.2,1,7.3.2
+Security - Management,Sourcefire Defense Center / FireSIGHT Management Center,THIRD_PARTY_PRODUCT_SW,6,THIRD_PARTY_PRODUCT_SW
+Security - Management,Sourcefire Defense Center / FireSIGHT Management Center,CISCO FIREPOWER,39,CISCO FIREPOWER
+Security - Management,Sourcefire Defense Center / FireSIGHT Management Center,Cisco_FTD_SSP_Patch-6.2.2.1-73.sh.REL.tar,3,6.2.2.1.73
+Security - Management,Sourcefire Defense Center / FireSIGHT Management Center,CISCO FIRESIGHT DEFENSE CENTER,6,CISCO FIRESIGHT DEFENSE CENTER
+Security - Management,Sourcefire Defense Center / FireSIGHT Management Center,15454-6_23_MIBS.zip,3,15454.6
+Security - Management,Sourcefire Defense Center / FireSIGHT Management Center,Sourcefire_3D_Device_S3_Patch-6.1.0.3-57.sh,3,6.1.0.3.57
+Security - Management,Sourcefire Defense Center / FireSIGHT Management Center,Cisco_Firepower_Management_Center_Virtual-6.2.0-362.qcow2,3,6.2.0.362
+Security - Management,Sourcefire Defense Center / FireSIGHT Management Center,NA-CIN_CLOSE_SW,3,NA-CIN_CLOSE_SW
+Security - Management,Sourcefire Defense Center / FireSIGHT Management Center,FPHIGH,6,FPHIGH
+Security - Management,Sourcefire Defense Center / FireSIGHT Management Center,Cisco_Network_Sensor_Patch-6.1.0.3-57.sh,3,6.1.0.3.57
+Security - Management,Sourcefire Defense Center / FireSIGHT Management Center,6.7.0.3,1,6.7.0.3
+Security - Management,Sourcefire Defense Center / FireSIGHT Management Center,Sourcefire_3D_Defense_Center_S3_Patch-6.2.3.1-43.sh.REL.tar,3,6.2.3.1.43
+Security - Management,Sourcefire Defense Center / FireSIGHT Management Center,Cisco_FTD_SSP_FP2K_Patch-7.2.0.1-12.sh.REL.tar,3,7.2.0.1.12
+Security - Management,Sourcefire Defense Center / FireSIGHT Management Center,ASA,3,ASA
+Security - Management,Sourcefire Defense Center / FireSIGHT Management Center,SF-ASA-8.3-K8,3,8.3
+Security - Management,Sourcefire Defense Center / FireSIGHT Management Center,15.2(2)E,1,15.2.2
+Security - Management,Sourcefire Defense Center / FireSIGHT Management Center,cisco-ftd.6.2.3.83.SPA.csp,3,6.2.3.83
+Security - Management,Sourcefire Defense Center / FireSIGHT Management Center,6.4.0,1,6.4.0
+Voice - Communications Manager,Communications Manager Admin and Web Page,11.5.1,2,11.5.1
+Voice - Communications Manager,Communications Manager Admin and Web Page,12.5(1)SU3 EFT,1,12.5.1
+Voice - Communications Manager,Communications Manager Admin and Web Page,THIRD_PARTY_PRODUCT_SW,3,THIRD_PARTY_PRODUCT_SW
+Voice - Communications Manager,Communications Manager Admin and Web Page,CM SERVICE - ALL OTHERS,3,CM SERVICE - ALL OTHERS
+Identity Services Engine (ISE) - 2.3 and Prior,ISE Authentication / Authorization,ise-2.1.0.474.SPA.x86_64.iso,3,2.1.0.474
+Identity Services Engine (ISE) - 2.3 and Prior,ISE Authentication / Authorization,ISE,3,ISE
+Identity Services Engine (ISE) - 2.3 and Prior,ISE Authentication / Authorization,cat3k_caa-universalk9.16.06.01.SPA.bin,3,16.06.01
+Identity Services Engine (ISE) - 2.3 and Prior,ISE Authentication / Authorization,ISE-2.3.0.298-virtual-eval.ova,3,2.3.0.298
+Identity Services Engine (ISE) - 2.3 and Prior,ISE Authentication / Authorization,ise-2.3.0.298.SPA.x86_64.iso,12,2.3.0.298
+Identity Services Engine (ISE) - 2.3 and Prior,ISE Authentication / Authorization,2.2.0,1,2.2.0
+Identity Services Engine (ISE) - 2.3 and Prior,ISE Authentication / Authorization,ISE-2.2.0.470-virtual-SNS3595-200.ova,3,2.2.0.470
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wireless),2.2.2.9,5,2.2.2.9
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wireless),DNAC-SW-2.2.2.9.iso,6,2.2.2.9
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wireless),DNAC-SW-2.1.2.7.iso,15,2.1.2.7
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wireless),asr1000-universalk9.16.12.01s.SPA.bin,3,16.12.01s
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wireless),DNAC-SW-2.1.2.7.bin,3,2.1.2.7
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wireless),ucs-c480m5-huu-4.0.4b.iso,3,4.0.4b
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wireless),PRODUCT_NOT_FOUND,3,PRODUCT_NOT_FOUND
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wireless),17.3.3,1,17.3.3
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wireless),DNAC-SW-1.3.3.9.bin,3,1.3.3.9
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wireless),17.3.4a,1,17.3.4a
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wireless),1.3.3.7,2,1.3.3.7
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wireless),2.2.3.6,1,2.2.3.6
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wireless),DNAC-SW-2.2.2.3.iso,3,2.2.2.3
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wireless),2.1.2.0,1,2.1.2.0
+Cisco DNA Center - On-Prem,Cisco Software-Defined Access (SDA Wireless),2.1.2.7,1,2.1.2.7
+Security - Access Control - AAA and Policy Management,"Flex Auth (Dot1x, MAC Bypass, Web Auth)",THIRD_PARTY_PRODUCT_SW,3,THIRD_PARTY_PRODUCT_SW
+Security - Access Control - AAA and Policy Management,"Flex Auth (Dot1x, MAC Bypass, Web Auth)",ISE,6,ISE
+Cisco DNA Center - On-Prem,"Cisco DNA Center - Infrastructure (Services, UI, API, etc.)",NA - COMPONENT ONLY,3,NA - COMPONENT ONLY
+Cisco DNA Center - On-Prem,"Cisco DNA Center - Infrastructure (Services, UI, API, etc.)",DNAC-SW-2.2.3.4.bin,3,2.2.3.4
+Cisco DNA Center - On-Prem,"Cisco DNA Center - Infrastructure (Services, UI, API, etc.)",cat9k_iosxe.16.12.04.SPA.bin,3,16.12.04
+Cisco DNA Center - On-Prem,"Cisco DNA Center - Infrastructure (Services, UI, API, etc.)",DNAC-SW-2.1.2.7.iso,15,2.1.2.7
+Cisco DNA Center - On-Prem,"Cisco DNA Center - Infrastructure (Services, UI, API, etc.)",DNAC-SW-2.2.2.9.iso,3,2.2.2.9
+Cisco DNA Center - On-Prem,"Cisco DNA Center - Infrastructure (Services, UI, API, etc.)",DNAC-SW-2.2.2.8.iso,3,2.2.2.8
+Cisco DNA Center - On-Prem,"Cisco DNA Center - Infrastructure (Services, UI, API, etc.)",DNAC-SW-1.3.1.4.iso,3,1.3.1.4
+Cisco DNA Center - On-Prem,"Cisco DNA Center - Infrastructure (Services, UI, API, etc.)",DNAC-SW-2.3.3.4.iso,3,2.3.3.4
+Cisco DNA Center - On-Prem,"Cisco DNA Center - Infrastructure (Services, UI, API, etc.)",DNAC-SW-2.3.3.7.iso,12,2.3.3.7
+Cisco DNA Center - On-Prem,"Cisco DNA Center - Infrastructure (Services, UI, API, etc.)",DNAC-SW-2.2.2.8.bin,3,2.2.2.8
+Cisco DNA Center - On-Prem,"Cisco DNA Center - Infrastructure (Services, UI, API, etc.)",DNAC-SW-1.3.3.7.iso,9,1.3.3.7
+Cisco DNA Center - On-Prem,"Cisco DNA Center - Infrastructure (Services, UI, API, etc.)",cat9k_lite_iosxe.17.03.03.SPA.bin,3,17.03.03
+Cisco DNA Center - On-Prem,"Cisco DNA Center - Infrastructure (Services, UI, API, etc.)",2.1.2.7,2,2.1.2.7
+Cisco DNA Center - On-Prem,"Cisco DNA Center - Infrastructure (Services, UI, API, etc.)",1.3.3.7,2,1.3.3.7
+Cisco DNA Center - On-Prem,"Cisco DNA Center - Infrastructure (Services, UI, API, etc.)",2.2.2.9,4,2.2.2.9
+Cisco DNA Center - On-Prem,"Cisco DNA Center - Infrastructure (Services, UI, API, etc.)",2.3.3.7,1,2.3.3.7
+Cisco DNA Center - On-Prem,"Cisco DNA Center - Infrastructure (Services, UI, API, etc.)",16.12.4,1,16.12.4
+Cisco DNA Center - On-Prem,"Cisco DNA Center - Infrastructure (Services, UI, API, etc.)",DNAC-SW-2.2.3.5.iso,9,2.2.3.5
+Cisco DNA Center - On-Prem,"Cisco DNA Center - Infrastructure (Services, UI, API, etc.)",2.2.3.6,1,2.2.3.6
+Cisco DNA Center - On-Prem,"Cisco DNA Center - Infrastructure (Services, UI, API, etc.)",DNAC-SW-2.2.2.9.bin,3,2.2.2.9
+Cisco DNA Center - On-Prem,"Cisco DNA Center - Infrastructure (Services, UI, API, etc.)",ucs-c480m5-huu-4.0.4b.iso,3,4.0.4b
+Cisco DNA Center - On-Prem,"Cisco DNA Center - Infrastructure (Services, UI, API, etc.)",2.2.3.4,1,2.2.3.4
+Cisco DNA Center - On-Prem,"Cisco DNA Center - Infrastructure (Services, UI, API, etc.)",2.2.2.8,1,2.2.2.8
+Cisco DNA Center - On-Prem,"Cisco DNA Center - Infrastructure (Services, UI, API, etc.)",2.1.2.6,1,2.1.2.6
+Cisco DNA Center - On-Prem,"Cisco DNA Center - Infrastructure (Services, UI, API, etc.)",2.2.3.5,1,2.2.3.5
+Routing Protocols (Includes NAT and HSRP),BGP,THIRD_PARTY_PRODUCT_SW,3,THIRD_PARTY_PRODUCT_SW
+Routing Protocols (Includes NAT and HSRP),BGP,asr1000-universalk9.16.03.01.SPA.bin,3,16.03.01
+Routing Protocols (Includes NAT and HSRP),BGP,asr1001x-universalk9.16.07.02.SPA.bin,3,16.07.02
+Routing Protocols (Includes NAT and HSRP),BGP,c6500-fpd-pkg.122-33.SXH1,3,122.33
+Wireless,9120AX Series Access Point,1,6,1
+Wireless,9120AX Series Access Point,8.5.140.0,1,8.5.140.0
+Wireless,9120AX Series Access Point,NA - RMA,15,NA - RMA
+Wireless,9120AX Series Access Point,16.12.4,1,16.12.4
+Wireless,9120AX Series Access Point,8.10.161.0,1,8.10.161.0
+Wireless,9120AX Series Access Point,15.3(3)M,1,15.3.3
+Identity Services Engine (ISE) - 3.0,ISE Authentication / Authorization,3.1.0,1,3.1.0
+Identity Services Engine (ISE) - 3.0,ISE Authentication / Authorization,ise-2.7.0.356.SPA.x86_64.iso,3,2.7.0.356
+Identity Services Engine (ISE) - 3.0,ISE Authentication / Authorization,ise-3.0.0.458.SPA.x86_64.iso,9,3.0.0.458
+Identity Services Engine (ISE) - 3.0,ISE Authentication / Authorization,3.0.0-BETA-DROP4,2,3.0.0
+Identity Services Engine (ISE) - 3.0,ISE Authentication / Authorization,cat9k_iosxe.17.03.04.SPA.bin,3,17.03.04
+Identity Services Engine (ISE) - 3.0,ISE Authentication / Authorization,THIRD_PARTY_PRODUCT_SW,3,THIRD_PARTY_PRODUCT_SW
+Identity Services Engine (ISE) - 3.0,ISE Authentication / Authorization,2.7.0,2,2.7.0
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Access Control Rule (Firewall, Sourcefire)",ASA,3,ASA
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Access Control Rule (Firewall, Sourcefire)",FPHIGH,3,FPHIGH
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Access Control Rule (Firewall, Sourcefire)",CISCO FIREPOWER,9,CISCO FIREPOWER
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Access Control Rule (Firewall, Sourcefire)",6.2.3.5,1,6.2.3.5
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Access Control Rule (Firewall, Sourcefire)",6.2.3,1,6.2.3
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Access Control Rule (Firewall, Sourcefire)",6.2,1,6.2
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Access Control Rule (Firewall, Sourcefire)",CISCO FIRESIGHT DEFENSE CENTER,6,CISCO FIRESIGHT DEFENSE CENTER
+Identity Services Engine (ISE) - 3.0,ISE Performance (High CPU / Memory / IO / GUI Slowness),ise-3.0.0.458.SPA.x86_64.iso,18,3.0.0.458
+Identity Services Engine (ISE) - 3.0,ISE Performance (High CPU / Memory / IO / GUI Slowness),ise-2.7.0.356.SPA.x86_64.iso,3,2.7.0.356
+Identity Services Engine (ISE) - 3.0,ISE Performance (High CPU / Memory / IO / GUI Slowness),ise-3.0.0.448.SPA.x86_64.iso,3,3.0.0.448
+Identity Services Engine (ISE) - 3.0,ISE Performance (High CPU / Memory / IO / GUI Slowness),ISE-3.0.0.458-virtual-SNS3695-2400.ova,3,3.0.0.458
+Identity Services Engine (ISE) - 3.0,ISE Performance (High CPU / Memory / IO / GUI Slowness),3.0.0-BETA-DROP4,1,3.0.0
+LAN Switching,Cat6500/6800 (Supervisor 2T) VSS,THIRD_PARTY_PRODUCT_SW,3,THIRD_PARTY_PRODUCT_SW
+LAN Switching,Cat6500/6800 (Supervisor 2T) VSS,12.2(33)SXH,1,12.2.33
+LAN Switching,Cat6500/6800 (Supervisor 2T) VSS,s6t64-adventerprisek9_npe-mz.SPA.155-1.SY1,3,155.1
+LAN Switching,Cat6500/6800 (Supervisor 2T) VSS,s6t64-adventerprisek9-mz.SPA.155-1.SY3,6,155.1
+LAN Switching,Cat6500/6800 (Supervisor 2T) VSS,1,1,1
+Data Center and Storage Networking,Nexus 9200 - VXLAN/EVPN/LISP,9.3(5),1,9.3.5
+Data Center and Storage Networking,Nexus 9200 - VXLAN/EVPN/LISP,2.2,1,2.2
+SWL - L1 - Enterprise,SWL - L1 - Enterprise - Switching,ucs-c220m5-huu-4.1.2a.iso,3,4.1.2a
+Cisco DNA Center - On-Prem,Cisco DNA Center - Provisioning,DNAC-SW-2.2.3.6.iso,3,2.2.3.6
+Cisco DNA Center - On-Prem,Cisco DNA Center - Provisioning,DNAC-SW-2.2.3.6.bin,3,2.2.3.6
+Cisco DNA Center - On-Prem,Cisco DNA Center - Provisioning,2.3.3.7,1,2.3.3.7
+Cisco DNA Center - On-Prem,Cisco DNA Center - Provisioning,2.2.2.9,1,2.2.2.9
+Wireless,CMX 10.x (Connected Mobile Experience),10.6.3,9,10.6.3
+Wireless,CMX 10.x (Connected Mobile Experience),10.X,4,10
+Wireless,CMX 10.x (Connected Mobile Experience),CISCO_CMX-3365-10.6.2-89.iso,3,3365.10.6.2.89
+Wireless,CMX 10.x (Connected Mobile Experience),8.5.130.0,1,8.5.130.0
+Wireless,CMX 10.x (Connected Mobile Experience),16.12.2s,1,16.12.2s
+Wireless,CMX 10.x (Connected Mobile Experience),CISCO_CMX-10.4.0-93.cmx,3,10.4.0.93
+Wireless,CMX 10.x (Connected Mobile Experience),NA-CIN_CLOSE_SW,6,NA-CIN_CLOSE_SW
+Wireless,CMX 10.x (Connected Mobile Experience),CISCO_CMX-10.6.2-72.cmx,6,10.6.2.72
+Wireless,CMX 10.x (Connected Mobile Experience),NA - COMPONENT ONLY,3,NA - COMPONENT ONLY
+Wireless,CMX 10.x (Connected Mobile Experience),7.2.101.0,1,7.2.101.0
+Wireless,CMX 10.x (Connected Mobile Experience),10.6.0,2,10.6.0
+Wireless,CMX 10.x (Connected Mobile Experience),cisco_cmx-10.1.1-2.tar.gz,3,10.1.1.2
+Wireless,CMX 10.x (Connected Mobile Experience),THIRD_PARTY_PRODUCT_SW,6,THIRD_PARTY_PRODUCT_SW
+Wireless,CMX 10.x (Connected Mobile Experience),CISCO_CMX-10.6.1-47.cmx,3,10.6.1.47
+Wireless,CMX 10.x (Connected Mobile Experience),C9800-80-universalk9_wlc.16.12.01s.SPA.bin,3,16.12.01s
+Wireless,CMX 10.x (Connected Mobile Experience),MSE-VA-8-0-150-0.ova,3,8.0.150.0
+Wireless,CMX 10.x (Connected Mobile Experience),CISCO_CMX-10.2.0-213.cmx,3,10.2.0.213
+Wireless,CMX 10.x (Connected Mobile Experience),CISCO_CMX-10.4.1-15.cmx,3,10.4.1.15
+Wireless,CMX 10.x (Connected Mobile Experience),CISCO_CMX-10.6.2-89.cmx,3,10.6.2.89
+Wireless,CMX 10.x (Connected Mobile Experience),10.6.2,3,10.6.2
+Wireless,CMX 10.x (Connected Mobile Experience),CMX10.4.1-15,1,10.4.1.15
+Wireless,CMX 10.x (Connected Mobile Experience),10.3.1,1,10.3.1
+Wireless,CMX 10.x (Connected Mobile Experience),CISCO_CMX-10.6.2-57.cmx,3,10.6.2.57
+Wireless,CMX 10.x (Connected Mobile Experience),8.0.140.0,1,8.0.140.0
+Wireless,CMX 10.x (Connected Mobile Experience),10.2.2,2,10.2.2
+Wireless,CMX 10.x (Connected Mobile Experience),8.2.X,1,8.2
+Wireless,CMX 10.x (Connected Mobile Experience),1,1,1
+LAN Switching,"Cat6000, 6500 Layer 3 Switching (MLS and CEF)",NA - RMA,3,NA - RMA
+Security - Network Firewalls and Intrusion Prevention Systems,FirePOWER - SSL Appliance (Sourcefire),Sourcefire_3D_Device_S3_Upgrade-6.2.0-362.sh,3,6.2.0.362
+Security - Network Firewalls and Intrusion Prevention Systems,FirePOWER - SSL Appliance (Sourcefire),asa983-11-lfbff-k8.SPA,3,983.11
+Security - Network Firewalls and Intrusion Prevention Systems,FirePOWER - SSL Appliance (Sourcefire),CISCO FIREPOWER,3,CISCO FIREPOWER
+Security - Network Firewalls and Intrusion Prevention Systems,FirePOWER - SSL Appliance (Sourcefire),6.6.0,1,6.6.0
+Data Center Storage and Storage Area Networking (SAN),HyperFlex Data Platform - Cisco Container Platform (CCP),HYPERFLEX 2.0.1,3,2.0.1
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Upgrade,ucs-k9-bundle-infra.4.1.2b.A.bin,3,4.1.2b
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Upgrade,ucs-k9-bundle-b-series.4.1.3c.B.bin,3,4.1.3c
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Upgrade,THIRD_PARTY_PRODUCT_SW,3,THIRD_PARTY_PRODUCT_SW
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Upgrade,4.0(4g),1,4.0.4g
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Upgrade,4.1(1b),1,4.1.1b
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Upgrade,4.1(2a),1,4.1.2a
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Upgrade,ucs-k9-bundle-infra.4.2.2d.A.bin,3,4.2.2d
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Upgrade,N10-MGT UCSM 2.2(2),3,2.2.2
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Upgrade,ucs-k9-bundle-infra.4.1.3c.A.bin,3,4.1.3c
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Upgrade,ucs-6300-k9-bundle-infra.4.1.3h.A.bin,3,4.1.3h
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Upgrade,2.1(3b),1,2.1.3b
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Upgrade,4.1(3i),1,4.1.3i
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Upgrade,3.1(1g),1,3.1.1g
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Upgrade,4.1(2b),1,4.1.2b
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Upgrade,4.2(2c),1,4.2.2c
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Upgrade,4.1(3c),1,4.1.3c
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Application Control, VDB, Network Discovery, Open AVC (Sourcefire)",FPHIGH,3,FPHIGH
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Application Control, VDB, Network Discovery, Open AVC (Sourcefire)",Sourcefire_3D_Defense_Center_S3_Patch-6.2.0.1-59.sh,3,6.2.0.1.59
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Application Control, VDB, Network Discovery, Open AVC (Sourcefire)",Sourcefire_3D_Defense_Center_S3_Patch-6.1.0.3-57.sh,3,6.1.0.3.57
+Identity Services Engine (ISE) - 2.4,ISE Guest / Sponsor / SAML,2.4.0,1,2.4.0
+Identity Services Engine (ISE) - 2.6 and Prior,ISE Dashboards / LiveLogs / Context Visibility,ise-2.6.0.156.SPA.x86_64.iso,3,2.6.0.156
+Hardware,"Hardware failure, Need Replacement (RMA)",NA - RMA,30,NA - RMA
+Hardware,"Hardware failure, Need Replacement (RMA)",16.6.4,1,16.6.4
+Hardware,"Hardware failure, Need Replacement (RMA)",1,4,1
+Hardware,"Hardware failure, Need Replacement (RMA)",9.6(4)3,1,9.6.4.3
+Voice - Communications Manager Express (CME) and/or Unity Express (CUE),Communications Manager Express (CME),THIRD_PARTY_PRODUCT_SW,3,THIRD_PARTY_PRODUCT_SW
+Identity Services Engine (ISE) - 2.3 and Prior,ISE Admin Access,ise-2.3.0.298.SPA.x86_64.iso,6,2.3.0.298
+Identity Services Engine (ISE) - 2.3 and Prior,ISE Admin Access,ISE,3,ISE
+Identity Services Engine (ISE) - 2.3 and Prior,ISE Admin Access,ISE-2.3.0.298-virtual-SNS3515-600.ova,3,2.3.0.298
+NMS (Network Management Services),"Prime Infrastructure 3.0  (performance, process crash and wired)",PRIME INFRASTRUCTURE,3,PRIME INFRASTRUCTURE
+LAN Switching,Cat3650 - Switching Issues,cat3k_caa-universalk9.SPA.03.07.05.E.152-3.E5.bin,3,03.07.05
+LAN Switching,Cat3650 - Switching Issues,NA - COMPONENT ONLY,12,NA - COMPONENT ONLY
+LAN Switching,Cat3650 - Switching Issues,3.7.3E,1,3.7.3E
+LAN Switching,Cat3650 - Switching Issues,cat3k_caa-universalk9.SPA.03.06.04.E.152-2.E4.bin,6,03.06.04
+LAN Switching,Cat3650 - Switching Issues,cat3k_caa-universalk9.16.03.07.SPA.bin,6,16.03.07
+LAN Switching,Cat3650 - Switching Issues,cat3k_caa-universalk9.16.03.05b.SPA.bin,9,16.03.05b
+LAN Switching,Cat3650 - Switching Issues,cat3k_caa-universalk9.SPA.03.07.04.E.152-3.E4.bin,3,03.07.04
+LAN Switching,Cat3650 - Switching Issues,NA - RMA,6,NA - RMA
+LAN Switching,Cat3650 - Switching Issues,cat3k_caa-universalk9.16.06.05.SPA.bin,3,16.06.05
+LAN Switching,Cat3650 - Switching Issues,1,1,1
+LAN Switching,Cat3650 - Switching Issues,cat3k_caa-universalk9.16.03.06.SPA.bin,3,16.03.06
+LAN Switching,Cat3650 - Switching Issues,16.12.2,1,16.12.2
+LAN Switching,Cat3650 - Switching Issues,cat3k_caa-universalk9.16.05.01a.SPA.bin,3,16.05.01a
+LAN Switching,Cat3650 - Switching Issues,16.3.6,2,16.3.6
+LAN Switching,Cat3650 - Switching Issues,5.6.2,1,5.6.2
+XR-Routing-Platforms,"ASR 9000 Series - Software Infra (Processes, Crashes, memory, CPU utilization)",1,1,1
+Wireless,8500 Series Wireless Controller (AIR-CT8500),AIR-CT8500-K9-8-3-143-0.aes,3,8.3.143.0
+Wireless,8500 Series Wireless Controller (AIR-CT8500),AIR-CT5500-K9-8-2-166-0.aes,3,8.2.166.0
+Wireless,8500 Series Wireless Controller (AIR-CT8500),WLC RRM/RF/CLEANAIR,3,WLC RRM/RF/CLEANAIR
+Wireless,8500 Series Wireless Controller (AIR-CT8500),AIR-CT8500-K9-8-2-141-0.aes,3,8.2.141.0
+LAN Switching,Cat6500/6800 (Supervisor 2T) Standalone,s6t64-adventerprisek9-mz.SPA.155-1.SY3,3,155.1
+LAN Switching,Cat6500/6800 (Supervisor 2T) Standalone,1,1,1
+Data Center and Storage Networking,"Nexus 7000 Series Switch - Interface, Port Channel (inc. VPC), Trunk, VLAN, Spanning Tree",8.4(2),1,8.4.2
+Data Center and Storage Networking,"Nexus 7000 Series Switch - Interface, Port Channel (inc. VPC), Trunk, VLAN, Spanning Tree",n7000-s2-dk9-npe.8.2.3.bin,3,8.2.3
+Data Center and Storage Networking,"Nexus 7000 Series Switch - Interface, Port Channel (inc. VPC), Trunk, VLAN, Spanning Tree",7.3(5)D1(1),1,7.3.5
+Data Center and Storage Networking,"Nexus 7000 Series Switch - Interface, Port Channel (inc. VPC), Trunk, VLAN, Spanning Tree",9.3(9)EFT,2,9.3.9
+Data Center and Storage Networking,"Nexus 7000 Series Switch - Interface, Port Channel (inc. VPC), Trunk, VLAN, Spanning Tree",n5000-uk9-kickstart.7.3.7.N1.1.bin,3,7.3.7
+LAN Switching,Cat6500/6800 Troubleshooting High CPU (all Supervisors),s6t64-adventerprisek9-mz.SPA.155-1.SY3,3,155.1
+LAN Switching,Cat6500/6800 Troubleshooting High CPU (all Supervisors),15.5(1)SY,1,15.5.1
+LAN Switching,Cat6500/6800 Troubleshooting High CPU (all Supervisors),15.5(1)SY3,1,15.5.1
+LAN Switching,Cat6500/6800 Troubleshooting High CPU (all Supervisors),15.1(2)SY1,1,15.1.2
+LAN Switching,Cat6500/6800 Troubleshooting High CPU (all Supervisors),12.2(33)SXH1,1,12.2.33
+Identity Services Engine (ISE) - 2.3 and Prior,ISE Dashboards / LiveLogs / Context Visibility,ISE-2.3.0.298-virtual-eval.ova,6,2.3.0.298
+Identity Services Engine (ISE) - 2.3 and Prior,ISE Dashboards / LiveLogs / Context Visibility,ise-2.4.0.357.SPA.x86_64.iso,3,2.4.0.357
+Identity Services Engine (ISE) - 2.3 and Prior,ISE Dashboards / LiveLogs / Context Visibility,ise-2.3.0.298.SPA.x86_64.iso,3,2.3.0.298
+Cisco DNA - Software-Defined Access,Cisco DNA Center Appliance (SD-Access),1.3,1,1.3
+Data Center Storage and Storage Area Networking (SAN),Hyperflex Hardware Infrastructure - Upgrade,storfs-packages-4.5.2b-39637.tgz,3,4.5.2b
+LAN Switching,Cat6500 Virtual Switch System (VSS),s72033-advipservicesk9_wan-mz.122-33.SXI2,3,122.33
+LAN Switching,Cat6500 Virtual Switch System (VSS),c7200-adventerprisek9-mz.122-33.SRE2,3,122.33
+LAN Switching,Cat6500 Virtual Switch System (VSS),s72033-advipservicesk9_wan-vz.122-33.SXI2a,3,122.33
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Security Intelligence, Geolocation and URL Filtering, DNS Policy (Sourcefire)",CISCO FIREPOWER,6,CISCO FIREPOWER
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Security Intelligence, Geolocation and URL Filtering, DNS Policy (Sourcefire)",Cisco_Firepower_Mgmt_Center_Upgrade-6.4.0-102.sh,3,6.4.0.102
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Security Intelligence, Geolocation and URL Filtering, DNS Policy (Sourcefire)",Sourcefire_3D_Defense_Center_S3_Patch-6.2.3.15-38.sh.REL.tar,3,6.2.3.15.38
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Security Intelligence, Geolocation and URL Filtering, DNS Policy (Sourcefire)",FPMP,3,FPMP
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Security Intelligence, Geolocation and URL Filtering, DNS Policy (Sourcefire)",NA-CIN_CLOSE_SW,3,NA-CIN_CLOSE_SW
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Security Intelligence, Geolocation and URL Filtering, DNS Policy (Sourcefire)",Sourcefire_3D_Device_S3_Patch-6.1.0.3-57.sh,3,6.1.0.3.57
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Security Intelligence, Geolocation and URL Filtering, DNS Policy (Sourcefire)",6.4.0.7,1,6.4.0.7
+Cisco DNA Center - Cloud,Cisco DNA Center Cloud - Assurance,cat9k_iosxe.17.03.03.SPA.bin,3,17.03.03
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Network Connectivity,3.2(3i),1,3.2.3i
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Network Connectivity,ucs-k9-bundle-b-series.4.2.1i.B.bin,3,4.2.1i
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Network Connectivity,ucs-6300-k9-bundle-infra.3.1.2c.A.bin,3,3.1.2c
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Network Connectivity,N10-MGT UCSM 3.1(2),6,3.1.2
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Network Connectivity,4.1(3j),1,4.1.3j
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Network Connectivity,CIMC 2.0,3,2
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Network Connectivity,NA - COMPONENT ONLY,3,NA - COMPONENT ONLY
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Network Connectivity,4.1(3c),3,4.1.3c
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Network Connectivity,4.0(2d),2,4.0.2d
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Network Connectivity,ucs-k9-bundle-infra.4.1.3j.A.bin,3,4.1.3j
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Network Connectivity,4.1(2a),1,4.1.2a
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Network Connectivity,4.1(3e),1,4.1.3e
+Security - Management,Cisco Security Manager (CSM) - Application Issues,CSM4.12.0Service_Pack1.exe,3,4.12.0Se
+Security - Management,Cisco Security Manager (CSM) - Application Issues,CS-MANAGER,6,CS-MANAGER
+Security - Management,Cisco Security Manager (CSM) - Application Issues,CISCO FIREPOWER,3,CISCO FIREPOWER
+Security - Management,Cisco Security Manager (CSM) - Application Issues,asa964-25-smp-k8.bin,3,964.25
+Security - Management,Cisco Security Manager (CSM) - Application Issues,ASA,6,ASA
+Security - Management,Cisco Security Manager (CSM) - Application Issues,6.2.3.10,1,6.2.3.10
+Security - Management,Cisco Security Manager (CSM) - Application Issues,THIRD_PARTY_PRODUCT_SW,3,THIRD_PARTY_PRODUCT_SW
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),"UCS-C Thermal, Fans, and Power Supply Alerts",4.1(3c),1,4.1.3c
+Wireless,5520 Series Wireless LAN Controller (AIR-CT5520),AIR-CT5520-K9-8-5-120-0.aes,3,8.5.120.0
+Wireless,5520 Series Wireless LAN Controller (AIR-CT5520),8.5.151.0,1,8.5.151.0
+Wireless,5520 Series Wireless LAN Controller (AIR-CT5520),AIR-CT8540-K9-8-5-140-0.aes,3,8.5.140.0
+Wireless,5520 Series Wireless LAN Controller (AIR-CT5520),8.10.130.0,6,8.10.130.0
+Wireless,5520 Series Wireless LAN Controller (AIR-CT5520),AIR-CT5500-K9-8-0-150-0.aes,3,8.0.150.0
+Wireless,5520 Series Wireless LAN Controller (AIR-CT5520),AIR-CT5500-K9-8-2-166-0.aes,3,8.2.166.0
+Wireless,5520 Series Wireless LAN Controller (AIR-CT5520),AIR-CT8500-K9-8-2-166-0.aes,3,8.2.166.0
+Wireless,5520 Series Wireless LAN Controller (AIR-CT5520),AIR-CT5520-K9-8-10-121-0.aes,3,8.10.121.0
+Wireless,5520 Series Wireless LAN Controller (AIR-CT5520),AIR-CT8500-K9-8-0-152-0.aes,3,8.0.152.0
+Wireless,5520 Series Wireless LAN Controller (AIR-CT5520),AIR-CT5520-K9-8-3-143-0.aes,3,8.3.143.0
+Wireless,5520 Series Wireless LAN Controller (AIR-CT5520),8.5.135.0,2,8.5.135.0
+Wireless,5520 Series Wireless LAN Controller (AIR-CT5520),AIR-CT8540-K9-8-10-151-0.aes,3,8.10.151.0
+Wireless,5520 Series Wireless LAN Controller (AIR-CT5520),15.3(3)JA,1,15.3.3
+Wireless,5520 Series Wireless LAN Controller (AIR-CT5520),8.3.X,1,8.3
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - CPU and Memory Utilization, Network and System Performance (Sourcefire)",ASA,6,ASA
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - CPU and Memory Utilization, Network and System Performance (Sourcefire)",CISCO FIREPOWER,12,CISCO FIREPOWER
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - CPU and Memory Utilization, Network and System Performance (Sourcefire)",FSIGHT,3,FSIGHT
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - CPU and Memory Utilization, Network and System Performance (Sourcefire)",Sourcefire_3D_Device_S3_Patch-6.1.0.3-57.sh,3,6.1.0.3.57
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - CPU and Memory Utilization, Network and System Performance (Sourcefire)",9.6(1),1,9.6.1
+Hardware,Cat6000/Cat6500 Hardware Failure,NA - RMA,9,NA - RMA
+Telepresence,TelePresence CMS - Cisco Meeting Server (Acano Server),CMS3.1.1,1,3.1.1
+Telepresence,TelePresence CMS - Cisco Meeting Server (Acano Server),CMS3.1,1,3.1
+Wireless,Cisco Prime Infrastructure (PI) 2.x and below - Wireless,PRIME INFRASTRUCTURE UNSUPPORTED FEATURE,3,PRIME INFRASTRUCTURE UNSUPPORTED FEATURE
+Wireless,Prime Infrastructure 3.x and above (wireless device interop),NA-CIN_CLOSE_SW,6,NA-CIN_CLOSE_SW
+Identity Services Engine (ISE) - 2.3 and Prior,ISE Performance (High CPU / Memory / IO / GUI Slowness),ISE-2.3.0.298-virtual-SNS3415-600.ova,3,2.3.0.298
+Identity Services Engine (ISE) - 2.3 and Prior,ISE Performance (High CPU / Memory / IO / GUI Slowness),2.4.0,1,2.4.0
+Identity Services Engine (ISE) - 2.3 and Prior,ISE Performance (High CPU / Memory / IO / GUI Slowness),ise-2.3.0.298.SPA.x86_64.iso,6,2.3.0.298
+Identity Services Engine (ISE) - 2.3 and Prior,ISE Performance (High CPU / Memory / IO / GUI Slowness),2.3.0,1,2.3.0
+Identity Services Engine (ISE) - 2.3 and Prior,ISE Performance (High CPU / Memory / IO / GUI Slowness),ISE-2.3.0.298-virtual-eval.ova,3,2.3.0.298
+Identity Services Engine (ISE) - 2.3 and Prior,ISE Performance (High CPU / Memory / IO / GUI Slowness),ISE,3,ISE
+Data Center and Storage Networking,Nexus 7000 Series Switch - Switching Issue,PRODUCT_NOT_FOUND,3,PRODUCT_NOT_FOUND
+Data Center and Storage Networking,Nexus 7000 Series Switch - Switching Issue,n7700-s2-dk9.8.2.6.bin,3,8.2.6
+Data Center and Storage Networking,Nexus 7000 Series Switch - Switching Issue,7.3(3)D1(1),1,7.3.3
+Data Center and Storage Networking,Nexus 7000 Series Switch - Switching Issue,n5000-uk9.7.3.7.N1.1a.bin,3,7.3.7
+Data Center and Storage Networking,Nexus 7000 Series Switch - Switching Issue,n7000-s2-dk9.7.3.3.D1.1.bin,3,7.3.3
+Data Center and Storage Networking,Nexus 7000 Series Switch - Switching Issue,8.2(6),2,8.2.6
+Data Center and Storage Networking,Nexus 7000 Series Switch - Switching Issue,7.3(3)E4,1,7.3.3
+Data Center and Storage Networking,Nexus 7000 Series Switch - Switching Issue,NA - RMA,3,NA - RMA
+Data Center and Storage Networking,Nexus 7000 Series Switch - Switching Issue,1,1,1
+Data Center Storage and Storage Area Networking (SAN),Hyperflex Data Platform - System/Other,3.5(2a),1,3.5.2a
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),"UCS-B Storage - Local (Hard Disk, FlexFlash, NVMe, etc.)",NA - RMA,3,NA - RMA
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),"UCS-B Storage - Local (Hard Disk, FlexFlash, NVMe, etc.)",N10-MGT UCSM 2.2(3),3,2.2.3
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),"UCS-B Storage - Local (Hard Disk, FlexFlash, NVMe, etc.)",4.1(3c),2,4.1.3c
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),"UCS-B Storage - Local (Hard Disk, FlexFlash, NVMe, etc.)",4.0(2d),2,4.0.2d
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),"UCS-B Storage - Local (Hard Disk, FlexFlash, NVMe, etc.)",4.0(4g),1,4.0.4g
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),"UCS-B Storage - Local (Hard Disk, FlexFlash, NVMe, etc.)",4.1(3i),1,4.1.3i
+Cisco DNA Center - On-Prem,Cisco DNA Center - LAN Automation (SDA),asr1000rpx86-universalk9.17.03.04a.SPA.bin,3,17.03.04a
+Cisco DNA Center - On-Prem,Cisco DNA Center - LAN Automation (SDA),17.3.5,1,17.3.5
+Cisco DNA Center - On-Prem,Cisco DNA Center - LAN Automation (SDA),2.2.2.8-AIRGAP,1,2.2.2.8
+LAN Switching,"Cat6000, 6500 Hardware Failure",NA - RMA,24,NA - RMA
+Router and IOS-XE Architecture,IOS-XE Boot Failure,s6t64-adventerprisek9_npe-mz.SPA.155-1.SY,3,155.1
+LAN Switching,Industrial Ethernet 4000 / 5000 (IE-4000 / 5000),1,2,1
+LAN Switching,Industrial Ethernet 4000 / 5000 (IE-4000 / 5000),NA - COMPONENT ONLY,6,NA - COMPONENT ONLY
+Telepresence,Telepresence Management Suite Extension for Microsoft Exchange (TMSXE),TMSXE_5.13,2,5.13
+Telepresence,Telepresence Management Suite Extension for Microsoft Exchange (TMSXE),TMS_15.6.0,1,15.6.0
+Telepresence,Telepresence Management Suite Extension for Microsoft Exchange (TMSXE),TMSXE_5.7,1,5.7
+Telepresence,Telepresence Management Suite Extension for Microsoft Exchange (TMSXE),TMS_15.6.1,1,15.6.1
+Security - Access Control - AAA and Policy Management,"Cisco Trusted Security (TrustSec, SGT, SGACL, SXP, SGFW)",ISE-2.3.0.298-virtual-eval.ova,9,2.3.0.298
+Security - Access Control - AAA and Policy Management,"Cisco Trusted Security (TrustSec, SGT, SGACL, SXP, SGFW)",ISE-2.3.0.298-virtual-SNS3415-200.ova,3,2.3.0.298
+Security - Access Control - AAA and Policy Management,"Cisco Trusted Security (TrustSec, SGT, SGACL, SXP, SGFW)",3.0.0-BETA-DROP4,1,3.0.0
+Security - Access Control - AAA and Policy Management,"Cisco Trusted Security (TrustSec, SGT, SGACL, SXP, SGFW)",cat9k_iosxe.16.12.04.SPA.bin,3,16.12.04
+Security - Access Control - AAA and Policy Management,"Cisco Trusted Security (TrustSec, SGT, SGACL, SXP, SGFW)",ISE,3,ISE
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Software and Security Update, Reimage and Migrate (Sourcefire)",CISCO FIREPOWER,9,CISCO FIREPOWER
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Software and Security Update, Reimage and Migrate (Sourcefire)",9.4,1,9.4
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Software and Security Update, Reimage and Migrate (Sourcefire)",Cisco_FTD_Patch-6.4.0.7-53.sh.REL.tar,3,6.4.0.7.53
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Software and Security Update, Reimage and Migrate (Sourcefire)",6.1,1,6.1
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Software and Security Update, Reimage and Migrate (Sourcefire)",6.6.1,1,6.6.1
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Software and Security Update, Reimage and Migrate (Sourcefire)",6.4.0,1,6.4.0
+NMS (Network Management Services),"Prime Infrastructure 3.8 (performance, process crash and wired)",15.4(3)M3,1,15.4.3
+NMS (Network Management Services),"Prime Infrastructure 3.8 (performance, process crash and wired)",PI_3_8_1-1.0.6.ubf,3,1.1.0.6
+NMS (Network Management Services),Cisco Prime Infrastructure (PI) 2.x and below - WAN (Wired),NCS LICENSING,3,NCS LICENSING
+NMS (Network Management Services),Cisco Prime Infrastructure (PI) 2.x and below - WAN (Wired),PRIME INFRASTRUCTURE,3,PRIME INFRASTRUCTURE
+Wireless,2800 Series Access Point,AIR-CT8500-K9-8-5-103-0.aes,3,8.5.103.0
+Wireless,2800 Series Access Point,WLC AP JOIN,6,WLC AP JOIN
+Wireless,2800 Series Access Point,AIR-CT5520-K9-8-3-143-0.aes,3,8.3.143.0
+Wireless,2800 Series Access Point,AIR-CT8500-K9-8-3-143-0.aes,3,8.3.143.0
+Wireless,2800 Series Access Point,WLC INTERFACES/DHCP,3,WLC INTERFACES/DHCP
+Wireless,2800 Series Access Point,1,1,1
+Cisco DNA Center - On-Prem,Cisco DNA Center - Assurance,1.3.3.7,2,1.3.3.7
+Cisco DNA Center - On-Prem,Cisco DNA Center - Assurance,2.2.3.6-AIRGAP,1,2.2.3.6
+Cisco DNA Center - On-Prem,Cisco DNA Center - Assurance,cat9k_iosxe.16.12.04.SPA.bin,3,16.12.04
+Cisco DNA Center - On-Prem,Cisco DNA Center - Assurance,2.3.3.6,1,2.3.3.6
+Cisco DNA Center - On-Prem,Cisco DNA Center - Assurance,2.3.3.7-72323,1,2.3.3.7.72323
+Cisco DNA Center - On-Prem,Cisco DNA Center - Assurance,2.3.3.7,1,2.3.3.7
+Cisco DNA Center - On-Prem,Cisco DNA Center - Assurance,2.1.2.7,2,2.1.2.7
+Cisco DNA Center - On-Prem,Cisco DNA Center - Assurance,Cisco Catalyst Center-2.3.3.7.72328,1,2.3.3.7.72328
+Cisco DNA Center - On-Prem,Cisco DNA Center - Assurance,DNAC-SW-2.3.3.4.iso,3,2.3.3.4
+Cisco DNA Center - On-Prem,Cisco DNA Center - Assurance,2.2.2.9,1,2.2.2.9
+Cisco DNA Center - On-Prem,Cisco DNA Center - Assurance,2.1.2.7-AIRGAP,1,2.1.2.7
+Wireless,MSE / WIPS,AIR-MSE,3,AIR-MSE
+Wireless,MSE / WIPS,MSE-VA-8-0-130-0.ova,3,8.0.130.0
+Wireless,MSE / WIPS,WLC MGMT/ERROR MSG,3,WLC MGMT/ERROR MSG
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),"UCS-B Unexpected Infrastructure Reboot (IOM, Fabric Interconnect, etc.)",ucs-c240m5-huu-4.1.2b.iso,3,4.1.2b
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),"UCS-B Unexpected Infrastructure Reboot (IOM, Fabric Interconnect, etc.)",N10-MGT UCSM 3.1(2),3,3.1.2
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),"UCS-B Unexpected Infrastructure Reboot (IOM, Fabric Interconnect, etc.)",4.1(3c),1,4.1.3c
+Data Center and Storage Networking,Nexus 2000 Series Fabric Extenders - Switching Issue,NA - RMA,3,NA - RMA
+Identity Services Engine (ISE) - 2.1 and Prior,Authentication / Authorization,THIRD_PARTY_PRODUCT_SW,3,THIRD_PARTY_PRODUCT_SW
+Cisco DNA Center - On-Prem,Cisco DNA Center - License Manager (Licensing),DNAC-SW-2.2.2.6.bin,3,2.2.2.6
+Cisco DNA Center - On-Prem,Cisco DNA Center - Plug and Play (PnP),2.2.3.5,1,2.2.3.5
+LAN Switching,"Cat6000, 6500 Troubleshooting Module and port issues",C3745_RM2.srec.122-8r.T2,3,122.8r
+Identity Services Engine (ISE) - 2.3 and Prior,ISE Install / Upgrade / Patch / Password Recovery / Backup / Restore / Hardware Failure / Licensing,THIRD_PARTY_PRODUCT_SW,3,THIRD_PARTY_PRODUCT_SW
+Identity Services Engine (ISE) - 2.3 and Prior,ISE Install / Upgrade / Patch / Password Recovery / Backup / Restore / Hardware Failure / Licensing,ISE-2.4.0.357-6.5OVA-Eval.ova,3,2.4.0.357.6.5OV
+Identity Services Engine (ISE) - 2.3 and Prior,ISE Install / Upgrade / Patch / Password Recovery / Backup / Restore / Hardware Failure / Licensing,ISE-2.3.0.298-virtual-eval.ova,6,2.3.0.298
+Identity Services Engine (ISE) - 2.3 and Prior,ISE Install / Upgrade / Patch / Password Recovery / Backup / Restore / Hardware Failure / Licensing,ise-2.3.0.298.SPA.x86_64.iso,12,2.3.0.298
+Identity Services Engine (ISE) - 2.3 and Prior,ISE Install / Upgrade / Patch / Password Recovery / Backup / Restore / Hardware Failure / Licensing,15216EdfaFw_2.3.14,3,15216Ed
+Identity Services Engine (ISE) - 2.3 and Prior,ISE Install / Upgrade / Patch / Password Recovery / Backup / Restore / Hardware Failure / Licensing,ISE-2.3.0.298-virtual-SNS3495-200.ova,3,2.3.0.298
+Identity Services Engine (ISE) - 2.3 and Prior,ISE Install / Upgrade / Patch / Password Recovery / Backup / Restore / Hardware Failure / Licensing,2.3.0,1,2.3.0
+Voice - Communications Manager,"Certificates (CTL, ITL, TVS, TLS, SRTP, eTokens, Agent Flow SSO, Secure Conferencing)",11.5.1,2,11.5.1
+Voice - Communications Manager,"Certificates (CTL, ITL, TVS, TLS, SRTP, eTokens, Agent Flow SSO, Secure Conferencing)",THIRD_PARTY_PRODUCT_SW,3,THIRD_PARTY_PRODUCT_SW
+Data Center Storage and Storage Area Networking (SAN),HyperFlex - Cisco Intersight,storfs-packages-4.0.2d-35606.tgz,3,4.0.2d
+Data Center Storage and Storage Area Networking (SAN),HyperFlex - Cisco Intersight,ucs-6400-k9-bundle-infra.4.2.1l.A.bin,3,4.2.1l
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS Virtualization Software - VMware (ISV1 contract required),NA - RMA,3,NA - RMA
+Security - Management,Cisco Security Manager (CSM) - Firewall Issues,THIRD_PARTY_PRODUCT_SW,3,THIRD_PARTY_PRODUCT_SW
+Security - Management,Cisco Security Manager (CSM) - Firewall Issues,6.6.5,1,6.6.5
+Security - Management,Cisco Security Manager (CSM) - Firewall Issues,9.6.4,1,9.6.4
+Data Center and Storage Networking,Nexus 5000 Series Switch - Switching Issue,n5000-uk9-kickstart.5.2.1.N1.1.bin,3,5.2.1
+Data Center and Storage Networking,Nexus 5000 Series Switch - Switching Issue,THIRD_PARTY_PRODUCT_SW,3,THIRD_PARTY_PRODUCT_SW
+Data Center and Storage Networking,Nexus 5000 Series Switch - Switching Issue,N5000-UK9.7.1.4.N1.1,3,7.1.4
+Identity Services Engine (ISE) - 2.3,Authentication / Authorization,2.3.0,4,2.3.0
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Unexpected Server Reboot,THIRD_PARTY_PRODUCT_SW,3,THIRD_PARTY_PRODUCT_SW
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Unexpected Server Reboot,N10-MGT UCSM 3.1(2),3,3.1.2
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Unexpected Server Reboot,4.2(1m),1,4.2.1m
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Unexpected Server Reboot,4.1(3c),1,4.1.3c
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-B Unexpected Server Reboot,4.1(3i),1,4.1.3i
+SWL - L1 - Non tech specific,SWL - L1 - Smart Account support,NA-CIN_CLOSE_SW,3,NA-CIN_CLOSE_SW
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C UCSM Integration,PRODUCT_NOT_FOUND,3,PRODUCT_NOT_FOUND
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C UCSM Integration,N10-MGT UCSM 3.1(2),3,3.1.2
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C UCSM Integration,4.1(3c),1,4.1.3c
+Security - Network Firewalls and Intrusion Prevention Systems,FWSM (Firewall Services Module),ASA,3,ASA
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),"UCS-C Authentication and Monitoring Issues (LDAP, RADIUS, TACACS, Users, Roles, SNMP, Traffic Monitoring / SPAN )",N10-MGT UCSM 2.2(5),3,2.2.5
+Identity Services Engine (ISE) - 2.6 and Prior,ISE Install / Upgrade / Patch / Password Recovery / Backup / Restore / Hardware Failure / Licensing,ise-2.6.0.156.SPA.x86_64.iso,12,2.6.0.156
+Identity Services Engine (ISE) - 2.3,Install / Upgrade / Patch / Password Recovery / Backup / Restore / Hardware Failure / Licensing,2.2.0,1,2.2.0
+Identity Services Engine (ISE) - 2.3,Install / Upgrade / Patch / Password Recovery / Backup / Restore / Hardware Failure / Licensing,2.3.0,3,2.3.0
+Identity Services Engine (ISE) - 2.3,Install / Upgrade / Patch / Password Recovery / Backup / Restore / Hardware Failure / Licensing,2,1,2
+Identity Services Engine (ISE) - 2.3,Install / Upgrade / Patch / Password Recovery / Backup / Restore / Hardware Failure / Licensing,xxx,1,xxx
+Identity Services Engine (ISE) - 2.3,Install / Upgrade / Patch / Password Recovery / Backup / Restore / Hardware Failure / Licensing,2.1.0,1,2.1.0
+Identity Services Engine (ISE) - 2.3,Install / Upgrade / Patch / Password Recovery / Backup / Restore / Hardware Failure / Licensing,2.4.0,1,2.4.0
+NMS (Network Management Services),"Prime Infrastructure 3.2  (performance, process crash and wired)",3.2,1,3.2
+LAN Switching,Cat9000 - Unexpected Reboot,cat9k_iosxe.16.12.04.SPA.bin,3,16.12.04
+LAN Switching,Cat9000 - Unexpected Reboot,16.12.4,1,16.12.4
+LAN Switching,"Catalyst Security - DHCP Snooping, IP Source Guard, Dynamic ARP Inspection",asr1000rpx86-universalk9.17.03.04a.SPA.bin,3,17.03.04a
+LAN Switching,"Catalyst Security - DHCP Snooping, IP Source Guard, Dynamic ARP Inspection",cat9k_iosxe.16.12.04.SPA.bin,3,16.12.04
+Wireless,Wireless Services Module 2 (WS-SVC-WISM2),WLC SOFTWARE/UPGRADE,6,WLC SOFTWARE/UPGRADE
+Data Center and Storage Networking,Nexus 7000 Series Switch - IPv4 Routing Protocols (BGP),n7000-s1-dk9.6.2.16.bin,3,6.2.16
+Data Center and Storage Networking,Nexus 7000 Series Switch - IPv4 Routing Protocols (BGP),6.2(2),1,6.2.2
+Identity Services Engine (ISE) - 2.3 and Prior,APIs (pxGrid / REST),2.6.0,1,2.6.0
+Voice - Communications Manager,Business Edition 6000 series / 7000 series with UCM,11.5.1,1,11.5.1
+Smart Services Capabilities,Smart Call Home(No Smart licensing),THIRD_PARTY_PRODUCT_SW,3,THIRD_PARTY_PRODUCT_SW
+Smart Services Capabilities,Smart Call Home(No Smart licensing),SMART CALL HOME (SCH),6,SMART CALL HOME (SCH)
+Data Center and Storage Networking,Nexus 2000 Series Fabric Extenders - Unexpected Reboot,nxos.7.0.3.I7.3.bin,3,7.0.3
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),"UCS-B Storage - SAN/Remote Boot (iSCSI, FCoE, Fibre Channel, etc.)",3.1(2),2,3.1.2
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),"UCS-B Storage - SAN/Remote Boot (iSCSI, FCoE, Fibre Channel, etc.)",1,1,1
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),"UCS-B Storage - SAN/Remote Boot (iSCSI, FCoE, Fibre Channel, etc.)",N10-MGT UCSM 2.2(3),3,2.2.3
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),"UCS-B Storage - SAN/Remote Boot (iSCSI, FCoE, Fibre Channel, etc.)",ucs-catalog.4.0.2d.T.bin,3,4.0.2d
+Voice - Communications Manager Express (CME) and/or Unity Express (CUE),Communications Manager Express (CME) with SRST,THIRD_PARTY_PRODUCT_SW,3,THIRD_PARTY_PRODUCT_SW
+Voice - Communications Manager Express (CME) and/or Unity Express (CUE),Communications Manager Express (CME) with SRST,c2900-adventerprisek9-mz.SSA.151-100.T,3,151.1
+Wireless,1530 Series Access Point/Outdoor Mesh,NA - COMPONENT ONLY,3,NA - COMPONENT ONLY
+Cisco DNA Center - On-Prem,Cisco DNA Center - ISE Integration,DNAC-SW-2.3.3.7.iso,2,2.3.3.7
+Cisco DNA Center - On-Prem,Cisco DNA Center - ISE Integration,1.3.3.7,1,1.3.3.7
+Cisco DNA Center - On-Prem,Cisco DNA Center - ISE Integration,DNAC-SW-2.2.2.3.iso,3,2.2.2.3
+Data Center Storage and Storage Area Networking (SAN),Cisco HyperFlex Systems,HYPERFLEX 2.0.1,6,2.0.1
+Data Center Storage and Storage Area Networking (SAN),Cisco HyperFlex Systems,NA-CIN_CLOSE_SW,3,NA-CIN_CLOSE_SW
+Data Center and Storage Networking,"Nexus 7000 - Routing Services (Including ACL, BFD, DHCP, HSRP, ITD, NAT, NETFLOW, NTP, PBR, PTP, SFLOW)",8.4(2),1,8.4.2
+Identity Services Engine (ISE) - 3.0,ISE Upgrade/Patch/Licensing,3.1.0,1,3.1.0
+Identity Services Engine (ISE) - 3.0,ISE Upgrade/Patch/Licensing,ISE-3.0.0.458-virtual-SNS3695-2400.ova,3,3.0.0.458
+Identity Services Engine (ISE) - 3.0,ISE Upgrade/Patch/Licensing,ise-upgradebundle-3.0.0.458.SPA.x86_64.tar.gz,3,3.0.0.458
+Identity Services Engine (ISE) - 3.0,ISE Upgrade/Patch/Licensing,3.0.0-BETA-DROP4,1,3.0.0
+Wireless,5500 Series Wireless LAN Controller (AIR-CT5508),8.10.151.0,2,8.10.151.0
+Wireless,5500 Series Wireless LAN Controller (AIR-CT5508),WLC SOFTWARE/UPGRADE,3,WLC SOFTWARE/UPGRADE
+Identity Services Engine (ISE) - 2.2,Authentication / Authorization,ise-2.3.0.298.SPA.x86_64.iso,3,2.3.0.298
+Security - Network Firewalls and Intrusion Prevention Systems,Sourcefire FirePOWER Services for ASA (SFR Modules),6.2.3,1,6.2.3
+Cisco DNA Center - On-Prem,Cisco DNA Center - Software Image Management (SWIM),DNAC-SW-2.3.3.6.iso,3,2.3.3.6
+Cisco DNA Center - On-Prem,Cisco DNA Center - Software Image Management (SWIM),THIRD_PARTY_PRODUCT_SW,3,THIRD_PARTY_PRODUCT_SW
+Cisco DNA Center - On-Prem,Cisco DNA Center - Software Image Management (SWIM),2.2.2.9,1,2.2.2.9
+Cisco Secure Firewall Firepower - 6.4 and below,Firepower 7000 / 8000 Series Appliance 6.4 and below,7.0.4,1,7.0.4
+Cisco Secure Firewall Firepower - 6.4 and below,Firepower 7000 / 8000 Series Appliance 6.4 and below,6.4.0,1,6.4.0
+Identity Services Engine (ISE) - 2.7,ISE Posture,2.7.0,1,2.7.0
+Identity Services Engine (ISE) - 2.3 and Prior,ISE Guest / Sponsor / SAML,2.4.0,1,2.4.0
+,,Sourcefire_3D_Defense_Center_S3_Patch-6.1.0.3-57.sh,3,6.1.0.3.57
+Identity Services Engine (ISE) - 2.3 and Prior,Authentication / Authorization,2.6.0,1,2.6.0
+Application Networking Services,CSM (Content Switch Module),THIRD_PARTY_PRODUCT_SW,3,THIRD_PARTY_PRODUCT_SW
+Application Networking Services,CSM (Content Switch Module),CSM,6,CSM
+LAN Switching,LAN Switching Cat6500 (Supervisor 720) Standalone,cat4500e-universalk9.SPA.03.02.05.SG.150-2.SG5.bin,3,03.02.05
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Integration (Estreamer, SIEM, API, Connector, SAL)",ftd-6.3.0-83.pkg,3,6.3.0.83
+Adaptive Security Appliance,ASA Firepower Devices - Non-VPN,9.16(2)3,1,9.16.2.3
+Adaptive Security Appliance,ASA Firepower Devices - Non-VPN,cisco-asa.9.14.2.4.SPA.csp,3,9.14.2.4
+Adaptive Security Appliance,ASA Firepower Devices - Non-VPN,9.14(2)4,1,9.14.2.4
+Adaptive Security Appliance,ASA Firepower Devices - Non-VPN,9.14.1,1,9.14.1
+Identity Services Engine (ISE) - 2.6 and Prior,ISE Authentication / Authorization,2.6.0,1,2.6.0
+Identity Services Engine (ISE) - 2.6 and Prior,ISE Authentication / Authorization,ISE-2.6.0.156-virtual-SNS3615-SNS3655-200.ova,3,2.6.0.156
+Application Networking Services,ACE10/20 Application Control Engine Module,CSM,3,CSM
+Data Center and Storage Networking,"Nexus 7000 Series Switch - IPv4 Routing Protocols (OSPF, EIGRP, ISIS, RIP)",n7000-s1-dk9-npe.7.2.1.D1.1.bin,3,7.2.1
+Data Center and Storage Networking,"Nexus 7000 Series Switch - IPv4 Routing Protocols (OSPF, EIGRP, ISIS, RIP)",n7700-s2-dk9.7.3.0.DX.1.bin,3,7.3.0
+Data Center and Storage Networking,"Nexus 7000 Series Switch - IPv4 Routing Protocols (OSPF, EIGRP, ISIS, RIP)",7.3(3)D1(1),1,7.3.3
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),"UCS-B Thermal, Fans, and Power Supply Alerts",CIMC 2.0,3,2
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),"UCS-B Thermal, Fans, and Power Supply Alerts",NA - RMA,3,NA - RMA
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),"UCS-B Thermal, Fans, and Power Supply Alerts",N10-MGT UCSM 3.1(2),3,3.1.2
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),"UCS-B Thermal, Fans, and Power Supply Alerts",2.1(1),1,2.1.1
+LAN Switching,"Cat6000, 6500 (Supervisor 1, 1a, 2, or 720)",NA - COMPONENT ONLY,6,NA - COMPONENT ONLY
+LAN Switching,"Cat6000, 6500 (Supervisor 1, 1a, 2, or 720)",THIRD_PARTY_PRODUCT_SW,6,THIRD_PARTY_PRODUCT_SW
+Data Center and Storage Networking,Nexus 9300 ( Non EX/FX/GX/R Series) - VXLAN/EVPN/LISP,9.3(5),1,9.3.5
+LAN Switching,QoS on Catalyst Switches,c6848x-adventerprisek9-mz.SPA.155-1.SY1,3,155.1
+Cisco Secure Firewall Firepower - 7.2,Firepower - Crash / Traceback / Coredump / Other Platform Issues - 7.2,7.0.4,1,7.0.4
+Security - Network Firewalls and Intrusion Prevention Systems,"FireSIGHT / FirePOWER - Identity Policy, Realms, User Agent, External Authentication, ISE Integration, pxGrid Integration (Sourcefire)",Cisco_FTD_Patch-6.4.0.5-23.sh.REL.tar,3,6.4.0.5.23
+Other,Other,NA-CIN_CLOSE_SW,3,NA-CIN_CLOSE_SW
+Wireless,1810 Series Wallplate Access Points (AIR-AP1810W),8.3.90.36,1,8.3.90.36
+Cisco DNA Center - On-Prem,Cisco DNA Center - Certificate Management,2.2.2.9,1,2.2.2.9
+Telepresence,Expressway-C and E (Do not use for MRA or Collab Edge),X12.6.1,1,12.6.1
+Telepresence,Expressway-C and E (Do not use for MRA or Collab Edge),X12.7.1,1,12.7.1
+Telepresence,Expressway-C and E (Do not use for MRA or Collab Edge),X12.5.1,2,12.5.1
+Telepresence,Expressway-C and E (Do not use for MRA or Collab Edge),X8.9.1,1,8.9.1
+Data Center and Storage Networking,Data Center Network Manager (DCNM),11.5(1),6,11.5.1
+Cloud and Hybrid Products,Webex user management,CISCO SPARK CONTROL HUB 56,3,56
+Cloud and Hybrid Products,Webex user management,PRODUCT_NOT_FOUND,3,PRODUCT_NOT_FOUND
+Identity Services Engine (ISE) - 2.4,ISE Dashboards / LiveLogs / Context Visibility,THIRD_PARTY_PRODUCT_SW,3,THIRD_PARTY_PRODUCT_SW
+LAN Switching,Cat9200,cat9k_lite_iosxe.16.12.04.SPA.bin,3,16.12.04
+Security - VPN and Mobility,VPN with Routers (IPsec),9.9.2 Interim,1,9.9.2
+Security - Access Control - AAA and Policy Management,TACACS-Plus/AAA,2.7.0,1,2.7.0
+Security - Access Control - AAA and Policy Management,TACACS-Plus/AAA,9.3(5),1,9.3.5
+Identity Services Engine (ISE) - 2.7,ISE APIs (pxGrid / REST),3.0.0,1,3.0.0
+Identity Services Engine (ISE) - 2.4,ISE Install / Upgrade / Patch / Password Recovery / Backup / Restore / Hardware Failure / Licensing,ISE-2.2.0.470-eval.ova,3,2.2.0.470
+Identity Services Engine (ISE) - 2.4,ISE Install / Upgrade / Patch / Password Recovery / Backup / Restore / Hardware Failure / Licensing,ISE-2.3.0.298-virtual-SNS3515-600.ova,3,2.3.0.298
+Identity Services Engine (ISE) - 2.6,Authentication / Authorization,2.6.0,1,2.6.0
+Identity Services Engine (ISE) - 2.4,ISE Performance (High CPU / Disk Full / GUI Slowness),2.6.0.156,1,2.6.0.156
+Identity Services Engine (ISE) - 2.4,ISE Performance (High CPU / Disk Full / GUI Slowness),2.4.0,1,2.4.0
+Other,Smart Software Licensing,ASA,3,ASA
+Other,Smart Software Licensing,NA-CIN_CLOSE_SW,3,NA-CIN_CLOSE_SW
+LAN Switching,Cat6800 (Supervisor 6T) Standalone,cat3k_caa-universalk9.16.06.04.SPA.bin,3,16.06.04
+LAN Switching,Cat6800 (Supervisor 6T) Standalone,NA - RMA,3,NA - RMA
+XR-Routing-Platforms,ASR 9000 Series Routers,6.3.3,1,6.3.3
+XR-Routing-Platforms,ASR 9000 Series Routers,NA - COMPONENT ONLY,3,NA - COMPONENT ONLY
+XR-Routing-Platforms,ASR 9000 Series Routers,ASR9K-iosxr-px-6.6.3.tar,3,6.6.3
+XR-Routing-Platforms,ASR 9000 Series Routers,ASR9K-iosxr-px-6.4.2.tar,3,6.4.2
+XR-Routing-Platforms,ASR 9000 Series Routers,6.1.4,1,6.1.4
+XR-Routing-Platforms,ASR 9000 Series Routers,ASR9K-iosxr-px-6.1.4.tar,3,6.1.4
+XR-Routing-Platforms,ASR 9000 Series Routers,6.6.3,1,6.6.3
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),"UCS-B Authentication and Monitoring Issues (LDAP, RADIUS, TACACS, Users, Roles, SNMP, Traffic Monitoring / SPAN )",ucs-k9-bundle-infra.3.1.2b.A.bin,3,3.1.2b
+XR-Routing-Platforms,"ASR 9000 Series - Support protocols (HSRP, VRRP, DHCP, BFD, LACP/Bundle, ARP)",7.1.2,1,7.1.2
+XR-Routing-Platforms,"ASR 9000 Series - Network Management (SNMP, AAA, Netconf, Telemetry, Password Recovery)",6.6.3,1,6.6.3
+XR-Routing-Platforms,"ASR 9000 Series - Network Management (SNMP, AAA, Netconf, Telemetry, Password Recovery)",7.3.2,1,7.3.2
+Telepresence,Webex Room Panorama (On-Prem/not cloud registered),cmterm-ce9_6_4-ce8365c8325.k3.cop.sgn,3,8365c
+Identity Services Engine (ISE) - 2.1 and Prior,Install / Upgrade / Patch / Password Recovery / Backup / Restore / Hardware Failure / Licensing,2.3.0,1,2.3.0
+Cisco DNA Center - On-Prem,Cisco DNA Center - Discovery and Inventory,2.2.2.9,3,2.2.2.9
+Cisco DNA Center - On-Prem,Cisco DNA Center - Discovery and Inventory,DNAC-SW-2.2.2.8.iso,3,2.2.2.8
+Cisco DNA Center - On-Prem,Cisco DNA Center - Discovery and Inventory,1.3.3.7-AIRGAP,1,1.3.3.7
+Cisco DNA Center - On-Prem,Cisco DNA Center - Discovery and Inventory,2.2.3.6-AIRGAP,1,2.2.3.6
+Cisco DNA Center - On-Prem,Cisco DNA Center - Discovery and Inventory,1.3.3.7,1,1.3.3.7
+Identity Services Engine (ISE) - 2.6 and Prior,ISE Performance (High CPU / Memory / IO / GUI Slowness),ise-2.6.0.156.SPA.x86_64.iso,3,2.6.0.156
+Identity Services Engine (ISE) - 2.6 and Prior,ISE Performance (High CPU / Memory / IO / GUI Slowness),2.6.0,1,2.6.0
+Identity Services Engine (ISE) - 3.0,ISE Dashboards / LiveLogs / Context Visibility,ISE-3.0.0.458-virtual-SNS3695-2400.ova,3,3.0.0.458
+Security - VPN and Mobility,Adaptive Security Appliance (ASA) VPN problem,9.8(1),2,9.8.1
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),"UCS-C Storage - SAN/Remote Boot (iSCSI, FCoE, Fibre Channel, etc.)",ucs-k9-bundle-infra.4.1.3c.A.bin,3,4.1.3c
+Router and IOS-XE Architecture,Cloud Services Router 1000V (CSR1000V),THIRD_PARTY_PRODUCT_SW,3,THIRD_PARTY_PRODUCT_SW
+Router and IOS-XE Architecture,Cloud Services Router 1000V (CSR1000V),PRODUCT_NOT_FOUND,3,PRODUCT_NOT_FOUND
+Wireless,Prime Infrastructure 3.x and above (MSE/CMX interop),WLC MGMT/ERROR MSG,3,WLC MGMT/ERROR MSG
+Wireless,Prime Infrastructure 3.x and above (MSE/CMX interop),WLC MANAGEMENT,3,WLC MANAGEMENT
+Data Center and Storage Networking,Nexus 9300 (EX/FX/GX/R Series) - VXLAN/EVPN/LISP,9.3(5),1,9.3.5
+Identity Services Engine (ISE) - 2.3 and Prior,Install / Upgrade / Patch / Password Recovery / Backup / Restore / Hardware Failure / Licensing,2.3.0,1,2.3.0
+Telepresence,Telepresence Management Suite TMS Booking and Monitoring (Scheduling and Conference Control Center),TMS_15.10.0,1,15.10.0
+Voice - Communications Manager,"Communications Manager Platform (SNMP, NTP, Operating System)",10.5.2,1,10.5.2
+Wireless,2700 Series Access Point,8.10.130.0,1,8.10.130.0
+Wireless,2700 Series Access Point,8.1.X,1,8.1
+Cisco Secure Firewall Firepower - 7.0,Firepower - Monitoring / Eventing / Logging - 7.0,9.15.1 Interim,1,9.15.1
+Cloud and Hybrid Products,"Webex Calling for VAR, Dedicated Instance (powered by BroadCloud, cloud-registered IP Phones)",WEBEX CALLING BROADCLOUD 194,3,194
+Routing Protocols (Includes NAT and HSRP),Static Routing,NA - COMPONENT ONLY,3,NA - COMPONENT ONLY
+Identity Services Engine (ISE) - 3.0,ISE Install / Password Recovery / Backup / Restore / Hardware Failure,ISE-3.0.0.458-virtual-SNS3615-SNS3655-600.ova,3,3.0.0.458
+Cisco DNA Center - On-Prem,Cisco DNA Center - New Installs and Upgrades,2.2.2.9-AIRGAP,1,2.2.2.9
+Cisco DNA Center - On-Prem,Cisco DNA Center - New Installs and Upgrades,1.3.3.7-AIRGAP,1,1.3.3.7
+Cisco DNA Center - On-Prem,Cisco DNA Center - New Installs and Upgrades,2.1.2.7,2,2.1.2.7
+Identity Services Engine (ISE) - 2.3 and Prior,ISE TC-NAC / ANC,ISE-2.3.0.298-virtual-eval.ova,3,2.3.0.298
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS Central,4.1(3c),1,4.1.3c
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS Central,4.0(4c),1,4.0.4c
+LAN Switching,Cat3560,cat9k_iosxeldpe.16.09.03.SPA.bin,3,16.09.03
+WAN,WebEx Acceleration Node,NA - COMPONENT ONLY,3,NA - COMPONENT ONLY
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C Network Connectivity,N10-MGT UCSM 2.2(3),3,2.2.3
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C Network Connectivity,3.2(3d),1,3.2.3d
+Data Center Computing - (UCS Blade and Rack Mount Server Systems),UCS-C Network Connectivity,3.1(2),1,3.1.2
+Identity Services Engine (ISE) - 2.7,ISE Install / Upgrade / Patch / Password Recovery / Backup / Restore / Hardware Failure / Licensing,2.7.0,1,2.7.0
+LAN Switching,Cat3850 - Switching Issues,NA,1,NA
+LAN Switching,Cat3850 - Switching Issues,1,1,1
+LAN Switching,Cat3850/3650 - Unexpected Reboot,16.3.5b,1,16.3.5b
+Data Center Storage and Storage Area Networking (SAN),Hyperflex Hardware Infrastructure - System/Other Issue,ucs-c240m5-huu-4.1.3c.iso,3,4.1.3c
+Data Center Storage and Storage Area Networking (SAN),Hyperflex Hardware Infrastructure - System/Other Issue,storfs-packages-3.5.2a-31601.tgz,3,3.5.2a
+Identity Services Engine (ISE) - 2.3,Performance (High CPU / Disk Full / GUI Slowness),2.2.0,1,2.2.0
+LAN Switching,Cat6500/6800 Unexpected Reboot,s72033-advipservicesk9_wan-vz.122-33.SXI2a,3,122.33
+LAN Switching,Cat6500/6800 Unexpected Reboot,15.5(1)SY3,1,15.5.1
+Identity Services Engine (ISE) - 2.3,Profiling,2.3.0,1,2.3.0
+XR-Routing-Platforms,ASR 9000 Series - Install/Upgrade/FPD/CSM,ASR9K-x64-iosxr-px-7.5.2.tar,3,7.5.2
+XR-Routing-Platforms,ASR 9000 Series - Install/Upgrade/FPD/CSM,7.4.2,1,7.4.2
+Wireless,Catalyst 9800 Wireless LAN Controller 80 Gbps (C9800-80),8.5.140.0,1,8.5.140.0
+Wireless,Catalyst 9800 Wireless LAN Controller 80 Gbps (C9800-80),17.7.1,1,17.7.1
+Router and IOS-XE Architecture,IOS-XE Memory Leaks,16.12.1s,1,16.12.1s
+Router and IOS-XE Architecture,IOS-XE Memory Leaks,16.6.6,1,16.6.6
+Voice - Communications Manager,"Communications Manager LDAP Services (Sync, Authentication)",CM SERVICE - ALL OTHERS,3,CM SERVICE - ALL OTHERS
+Cisco Secure Firewall Firepower - 7.0,Firepower (NGIPS / NGFW) - Performance Issue (CPU / Memory Utilization / Network / System Performance) - 7.0,6.4.0,1,6.4.0
+Cisco Secure Firewall Firepower - 7.0,Firepower (NGIPS / NGFW) - Performance Issue (CPU / Memory Utilization / Network / System Performance) - 7.0,6.2.3.10,1,6.2.3.10
+Telepresence,Webex Room Kit (On-Prem/not cloud registered),1,1,1
+Telepresence,Webex Room Kit (On-Prem/not cloud registered),CE9.15.3.18,1,9.15.3.18
+Security - Network Firewalls and Intrusion Prevention Systems,"FirePOWER - SSL Decryption, SSL Policy (Sourcefire)",THIRD_PARTY_PRODUCT_SW,3,THIRD_PARTY_PRODUCT_SW
+Data Center and Storage Networking,Data Center Network Manager (DCNM) - DCNM 11.x and below,11.5(1),1,11.5.1
+Data Center and Storage Networking,"Nexus 7000 Series Switch - Packet Drops, Discards and Performance Issues",NA - COMPONENT ONLY,3,NA - COMPONENT ONLY
+Telepresence,Cisco Meeting Management - CMM,1,1,1
+Telepresence,Cisco Meeting Management - CMM,2.6.1,1,2.6.1
+Telepresence,Cisco Meeting Management - CMM,CMS 3.1 Beta 1,1,3.1
+Identity Services Engine (ISE) - 2.6,ISE Admin Access,2.7.0,1,2.7.0
+Security - Access Control - AAA and Policy Management,Radius/AAA,2.4.0,1,2.4.0
+Security - Access Control - AAA and Policy Management,Radius/AAA,2.1.0,1,2.1.0
+Cisco Secure Firewall Firepower - 6.6,Firepower Threat Defense (FTD) - Policy Deployment / Flex-Config Issue-6.6,1,1,1
+Data Center Storage and Storage Area Networking (SAN),Hyperflex Data Platform - VMware vSphere,2.0.1,1,2.0.1
+Collaboration and Conferencing,WebEx Acceleration Node,asr1000-advipservicesk9-(rp1)pkg.122-33.XN,3,122.33
+LAN Switching,Cat2960,NA-CIN_CLOSE_SW,3,NA-CIN_CLOSE_SW
+Wireless,CMX 3375 Appliance,10.X,1,10
+Telepresence,Collaboration Edge / Mobile and Remote Access (MRA),1,1,1
+Telepresence,Collaboration Edge / Mobile and Remote Access (MRA),X12.7.1,1,12.7.1
+LAN Switching,Cat9500,16.6.1,1,16.6.1
+LAN Switching,Cat9000 - Memory Leak,cat9k_iosxe.16.12.04.SPA.bin,3,16.12.04
+Identity Services Engine (ISE) - 2.6,ISE Dashboards / LiveLogs / Context Visibility,2.6 Patch 6,1,2.6
+Security - Network Firewalls and Intrusion Prevention Systems,Intrusion Prevention System (IPS) ASA Security Service Module (AIP-SSM),ASA,3,ASA
+LAN Switching,Cat6880/6840/6824/6816 (Fixed Supervisor) VSS,15.2(1)SY7,1,15.2.1
+Security - Network Firewalls and Intrusion Prevention Systems,"AMP for Networks, Firepower - Advanced Malware Protection (Network AMP)",CISCO FIRESIGHT DEFENSE CENTER,3,CISCO FIRESIGHT DEFENSE CENTER
+Data Center Storage and Storage Area Networking (SAN),Hyperflex Hardware Infrastructure - Compute Node,2.2(8),1,2.2.8
+Identity Services Engine (ISE) - 3.0,ISE APIs (pxGrid / REST),3,1,3
+Data Center and Storage Networking,Nexus 9300 ( Non EX/FX/R Series) - Switching Issue,2.2,1,2.2
+NMS (Network Management Services),"Prime Infrastructure 3.9  (performance, process crash and wired)",3.8.1,1,3.8.1
+Identity Services Engine (ISE) - 3.1,ISE Install / Password Recovery / Backup / Restore / Hardware Failure,1,1,1
