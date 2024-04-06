@@ -27,7 +27,7 @@ At the very beginning, you need to prepare a runnable computer.
 
 **Luna** itself can run across different systems (Windows / Linux / MacOS), but the **NN filter** requires Nvidia GPUs. Therefore, you need a `Nvidia GPU Server` if you intend to enable the **NN filter**.
 
-**Luna** and **NN filter** have been dockerized. You can set up the **Luna** container anywhere, and the **NN filter** on a `Nvidia GPU Server`.
+**Luna** and **NN filter** have been dockerized. You can set up the **Luna** container anywhere, and the **NN filter** on an `Nvidia GPU Server`.
 
 ### Step 0. Git Repo Preparation
 ```shell
@@ -46,7 +46,7 @@ cd ./deployment
 # Docker Login (You have to register an account on https://hub.docker.com/)
 docker login 
 
-# Docker Image Bulid
+# Docker Image Build
 docker build -t luna .
 
 # Check the Image
@@ -87,9 +87,5 @@ docker run --gpus '"device=[GPU_DEVICES]"' -p [LOCAL_PORT]:80 ghcr.io/huggingfac
 
 ### Step 3. Open your browser
 * Open `http://localhost:[DOCKER_PORT]` in your browser.
-* Fill all fields.
+* Fill in all fields.
 * You are all set.
-
-## FAQ
-### Q1: docker: permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
-sudo chmod 666 /var/run/docker.sock
