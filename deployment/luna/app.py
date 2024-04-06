@@ -69,7 +69,7 @@ if st.session_state.current_step > 0:
 
         if not st.session_state.llm_caller:
             st.write("Loading LLM Caller...")
-            st.session_state.llm_caller = OpenAICaller(st.session_state.config, console=None)
+            st.session_state.llm_caller = OpenAICaller(st.session_state.config)
             time.sleep(2)
         st.write("LLM Caller Loaded.")
         
