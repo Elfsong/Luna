@@ -35,13 +35,24 @@ if "config" not in st.session_state:
 
 # Information Initialization
 st.markdown('#### Step 1. Information Initialization')
+
+# OpenAI Token
 st.session_state.openai_api_key = st.text_input(label='OpenAI Token', value='sk-XXXXXXXXXXXXX')
+
+# Filter URL
 st.session_state.filter_url = st.text_input(label="Filter URL (Empty it if you don't need the NN filter)", value='http://10.246.112.13:9001')
+
+# Data
 metadata_f = st.file_uploader("Choose the Metadata file (Don't choose if you wanna use the default config:)")
 notes_f = st.file_uploader("Choose the Notes file (Don't choose if you wanna use the default config:)")
-col1, col2 = st.columns([1, 1])
-regex_filter_switch = col1.checkbox('Enable Regex Filter')
-nn_filter_switch = col2.checkbox('Enable NN Filter')
+
+# Filter Options
+with st.container():
+    st.write("Filter Options")
+    col1, col2 = st.columns([1, 1])
+    regex_filter_switch = col1.checkbox('Enable Regex Filter')
+    nn_filter_switch = col2.checkbox('Enable NN Filter')
+
 if st.button("Confirm and Proceed", type="primary", key="information_checked_btn"):
     st.session_state.current_step = 1
     
