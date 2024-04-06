@@ -1,0 +1,11 @@
+{
+    "chunk_size": 12000,
+    "chunk_overlap": 500,
+    "model_name": "gpt-4-0125-preview",
+    "metadata_file": "./data/Case_Metadata.json",
+    "notes_file": "./data/Case_Notes.json",
+    "p_mapping": "./data/tech_subtech_p_mapping.xlsx",
+    "s_mapping": "./data/tech_subtech_s_mapping.xlsx",
+    "fields": ["notes", "symptom", "description", "summary"],
+    "mcq": true
+}

@@ -4,28 +4,26 @@
 # Date: 29/12/2023
 
 from openai import OpenAI
-from rich.progress import track
 from huggingface_hub import InferenceClient
 from langchain.text_splitter import TokenTextSplitter
 
 class Caller(object):
-    def __init__(self, config, console=None) -> None:
+    def __init__(self, config) -> None:
         self.config = config
-        self.console = console
         self.text_splitter = TokenTextSplitter(chunk_size=config['chunk_size'], chunk_overlap=config['chunk_overlap'])
             
     def call(self, prompt: str) -> str:
         raise NotImplementedError("Don't call the interface directly")
     
-    def product_analysis(self, docs: str, question: str, choice_list, status=None) -> str:
+    def product_analysis(self, docs: str, question: str, choice_list) -> str:
         raise NotImplementedError("Don't call the interface directly")
     
-    def software_analysis(self, docs: str, question: str, choice_list, status=None) -> str:
+    def software_analysis(self, docs: str, question: str, choice_list) -> str:
         raise NotImplementedError("Don't call the interface directly")
 
 class OpenAICaller(Caller):
-    def __init__(self, config, console) -> None:
-        super().__init__(config, console)
+    def __init__(self, config) -> None:
+        super().__init__(config)
         self.client = OpenAI(api_key=config['openai_api_key'])
         
     
@@ -40,22 +38,17 @@ class OpenAICaller(Caller):
         )
         return response.choices[0].message.content
     
-    def product_analysis(self, docs, question, choice_list, status=None) -> str:
+    def product_analysis(self, docs, question, choice_list) -> str:
         chunks = list()
         assert isinstance(docs, list)
         
         # Step 0. split docs into chunks
         for doc in docs:
             chunks += self.text_splitter.split_text(doc)
-        if self.console:
-            self.console.log(f"Document input length: {len(doc)}, which has been split into {len(chunks)} chunks.")
             
         # Step 1. map these chunks
         map_results = list()
-        for index, chunk in enumerate(chunks):
-            if status:
-                status.update(f"[bold green] Mapping chunk [{index+1}/{len(chunks)}]...")
-            
+        for index, chunk in enumerate(chunks):            
             # MCQ Switch
             if choice_list:
                 map_prompt = f'Question: {question} \n \
@@ -71,8 +64,6 @@ class OpenAICaller(Caller):
         # Step 2. reduce these results        
         reduce_results = map_results[::-1]
         while True:
-            if status:
-                status.update(f"[bold green] Reducing chunks from {len(reduce_results)} -> 1...")
             if len(reduce_results) == 1: break
             
             reduce_result_str = ""
@@ -86,22 +77,17 @@ class OpenAICaller(Caller):
             
         return reduce_results[0]
     
-    def software_analysis(self, docs, question, choice_list, status=None) -> str:
+    def software_analysis(self, docs, question, choice_list) -> str:
         chunks = list()
         assert isinstance(docs, list)
         
         # Step 0. split docs into chunks
         for doc in docs:
             chunks += self.text_splitter.split_text(doc)
-        if self.console:
-            self.console.log(f"Document input length: {len(doc)}, which has been split into {len(chunks)} chunks.")
             
         # Step 1. map these chunks
         map_results = list()
-        for index, chunk in enumerate(chunks):
-            if status:
-                status.update(f"[bold green] Mapping chunk [{index+1}/{len(chunks)}]...")
-            
+        for index, chunk in enumerate(chunks):            
             # MCQ Switch
             if choice_list:
                 map_prompt = f'Question: {question} \n \
@@ -117,8 +103,6 @@ class OpenAICaller(Caller):
         # Step 2. reduce these results        
         reduce_results = map_results[::-1]
         while True:
-            if status:
-                status.update(f"[bold green] Reducing chunks from {len(reduce_results)} -> 1...")
             if len(reduce_results) == 1: break
             
             reduce_result_str = ""
@@ -133,30 +117,26 @@ class OpenAICaller(Caller):
         return reduce_results[0]
     
 class TGICaller(Caller):
-    def __init__(self, config, console=None) -> None:
-        super().__init__(config, console)
-        self.client = InferenceClient(model=config['local_llm_url'])
+    def __init__(self, config) -> None:
+        super().__init__(config)
+        self.client = InferenceClient(model=config['local_llm_url'], token=False)
     
     def call(self, prompt, max_new_tokens=1024) -> str:
         response = self.client.text_generation(prompt=prompt, max_new_tokens=max_new_tokens, stop_sequences=['\n\n', '"}'])
         response = response.strip()
         return response
     
-    def product_analysis(self, docs, question, choice_list, status=None) -> str:
+    def product_analysis(self, docs, question, choice_list) -> str:
         chunks = list()
         assert isinstance(docs, list)
         
         # Step 0. split docs into chunks
         for doc in docs:
             chunks += self.text_splitter.split_text(doc)
-        self.console.log(f"Document input length: {len(doc)}, which has been split into {len(chunks)} chunks.")
             
         # Step 1. map these chunks
         map_results = list()
-        for index, chunk in enumerate(chunks):
-            if status:
-                status.update(f"[bold green] Mapping chunk [{index+1}/{len(chunks)}]...")
-            
+        for index, chunk in enumerate(chunks):            
             # MCQ Switch
             if choice_list:
                 map_prompt = f'Question: {question} \n \
@@ -174,8 +154,6 @@ class TGICaller(Caller):
         # Step 2. reduce these results 
         reduce_results = map_results[::-1]
         while True:
-            if status:
-                status.update(f"[bold green] Reducing chunks from {len(reduce_results)} -> 1...")
             if len(reduce_results) == 1: break
             
             reduce_result_str = ""
@@ -192,21 +170,17 @@ class TGICaller(Caller):
             
         return reduce_results[0]
     
-    def software_analysis(self, docs, question, choice_list, status=None) -> str:
+    def software_analysis(self, docs, question, choice_list) -> str:
         chunks = list()
         assert isinstance(docs, list)
         
         # Step 0. split docs into chunks
         for doc in docs:
             chunks += self.text_splitter.split_text(doc)
-        self.console.log(f"Document input length: {len(doc)}, which has been split into {len(chunks)} chunks.")
             
         # Step 1. map these chunks
         map_results = list()
-        for index, chunk in enumerate(chunks):
-            if status:
-                status.update(f"[bold green] Mapping chunk [{index+1}/{len(chunks)}]...")
-            
+        for index, chunk in enumerate(chunks):            
             # MCQ Switch
             if choice_list:
                 map_prompt = f'Question: {question} \n \
@@ -224,8 +198,6 @@ class TGICaller(Caller):
         # Step 2. reduce these results 
         reduce_results = map_results[::-1]
         while True:
-            if status:
-                status.update(f"[bold green] Reducing chunks from {len(reduce_results)} -> 1...")
             if len(reduce_results) == 1: break
             
             reduce_result_str = ""

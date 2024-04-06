@@ -1,6 +1,6 @@
 # coding: utf-8
 
-# Author: Du Mingzhe (mingzhe@nus.edu.sg)
+# Author: Copy directly from Sujatha (idssdg@nus.edu.sg).
 # Date: 22/12/2023
 
 import re
@@ -79,19 +79,21 @@ class NewSDASEvaluator(Evaluator):
     
     @staticmethod 
     def matchBothNumeric(predwds, tgtwds):
-        temp1=""
-        for wd in predwds:
-            if wd=="":
-                continue
-            
-            temp1 +="."+str(int(wd)) #to catch 04 and 4
-        temp2=""
-        for wd in tgtwds:
-            temp2 +="."+str(int(wd)) 
-            
-        if temp1==temp2:
-            return True
-        
+        try:
+            temp1=""
+            for wd in predwds:
+                if wd=="":
+                    continue
+                
+                temp1 +="."+str(int(wd)) #to catch 04 and 4
+            temp2=""
+            for wd in tgtwds:
+                temp2 +="."+str(int(wd)) 
+                
+            if temp1==temp2:
+                return True
+        except Exception as e:
+            return False
         return False
     
     @staticmethod

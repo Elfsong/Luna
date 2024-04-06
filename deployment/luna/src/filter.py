@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-Created on Sat Feb 24 13:55:19 2024
-@author: sdas
-"""
+# Author: Copy directly from Sujatha (idssdg@nus.edu.sg).
+# Date: 24/02/2024
 
 from . caller import TGICaller
 from . evaluator import NewSDASEvaluator

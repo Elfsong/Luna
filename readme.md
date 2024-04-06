@@ -1,54 +1,59 @@
-# Welcome to Luna 🔮
+# Hello, welcome to Luna 🌙
 
-### Step 0. Prepare Environment
+## For Cisco Readers(TL;DR)
 ```shell
-conda create -n luna python=3.9
-conda activate luna
-pip install -r requirements.txt
-mkdir results
+# Set up dockers
+
+# Open your brower
 ```
 
-### Step 1. Set up Containers (Optional)
-In most cases, you don't need to do this section by yourself. However, if you are curious, there is something you can check out:
-* Knowledge Graph Installation (see section 'Installation' in https://shorturl.at/lyKTZ)
-* LLM Inference Engine (run 'start_llm.sh'. For local models only)
 
-You can also try the LLM inference engine by CURL:
-```
-curl 10.246.112.13:8080/generate \
-    -X POST \
-    -d '{"inputs":"What is Deep Learning?","parameters":{"max_new_tokens":20}}' \
-    -H 'Content-Type: application/json'
-```
+## For NUS Readers
 
-### Step 2. Run the Code
-#### Graph Construction Task
-To use pre-defined config in the 'data' folder, please try:
+### Step 0. Git Repo Preparation
 ```shell
-python cli_worker.py --config_path [CONFIG_PATH] --task graph
+# Pull the repo to local
+git clone https://github.com/Elfsong/Luna.git
+
+# Checkout to the branch 'docker'
+git checkout docker
 ```
 
-If you would like to use other metadata/notes, please run:
+### Step 1. Built a Docker Image and Push it to Docker Hub
 ```shell
-python cli_worker.py --task graph
+# Enter the workspace
+cd ./deployment
+
+# Docker Login (You have to register an account on https://hub.docker.com/)
+docker login 
+
+# Docker Image Bulid
+docker build -t luna .
+
+# Check the Image
+docker images
+
+# Start a Docker Container
+# E.g. `docker run -p 9000:9000 -dit 9cde8d37f698`
+docker run -p [LOCAL_PORT]:[DOCKER_PORT] -dit [IMAGE_ID]
+
+# Check the Container
+docker ps -a
+
+# Commit the Container
+# e.g. `docker commit -a "elfsong mingzhe@nus.edu.sg" -m "init" luna luna:1.0`
+docker commit -a "[YOUR NAME] [YOUR EMAIL]" -m "[COMMIT_MESSAGE]" [CONTAINER_ID] [CONTAINER_TAG]
+
+# Tag the Image
+docker tag luna:1.0 elfsong/luna:1.0
+
+# Push the Image to DockerHub
+docker push elfsong/luna:1.0
+
+# Update and Push the Latest Tag (optional)
+docker tag elfsong/luna:1.0 elfsong/luna
+docker push elfsong/luna
 ```
 
-#### Product_Name/Software_version Inference Task
-If you would like to use pre-defined config in the 'data' folder, please try:
-```shell
-python cli_worker.py --config_path [CONFIG_PATH] --task [product/software]
-```
+### Step 2. Set up Dockers
 
-Otherwise, you can also try this one. The script will help you to generate the config:
-```shell
-python cli_worker.py --task [product/software]
-```
-
-Please feel free to let me know if you have any concerns. Thank you!
-Email: mingzhe@nus.edu.sg
-
----
-
-Watch the demo video ⬇️
-
-[![Demo](data/demo.png)](https://www.youtube.com/watch?v=ZA4cExEgurE)

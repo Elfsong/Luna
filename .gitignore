@@ -1,9 +1,2 @@
-results/
-src/__pycache__/
-luna_log.html
-data/tech_subtech_swv_norm.xlsx
-data/NUS_Case_Metadata.json
-data/NUS_Case_Notes.json
-data/gold_data.csv
-__pycache__/
-data/ft5model/
+deployment/luna/data/*
+deployment/luna/src/__pycache__/*
