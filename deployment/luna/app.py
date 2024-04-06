@@ -61,43 +61,38 @@ if st.session_state.current_step > 0:
     st.markdown('#### Step 2. Resource Initialization')
     with st.status("Resource Initialization..."):
         if not st.session_state.config:
-            st.write("Loading configuration...")
+            st.write("🔮 Loading configuration...")
             st.session_state.config = uts.get_config()
             st.session_state.config['openai_api_key'] = st.session_state.openai_api_key
-            time.sleep(1)
-        st.write("Configuration Loaded.")
+        st.write("✅ Configuration Loaded.")
 
         if not st.session_state.llm_caller:
-            st.write("Loading LLM Caller...")
+            st.write("🔮 Loading LLM Caller...")
             st.session_state.llm_caller = OpenAICaller(st.session_state.config)
-            time.sleep(2)
-        st.write("LLM Caller Loaded.")
+        st.write("✅ LLM Caller Loaded.")
         
         if not st.session_state.filter:
-            st.write("Loading Filter...")
+            st.write("🔮 Loading Filter...")
             st.session_state.config['local_llm_url'] = st.session_state.filter_url
             st.session_state.filter = Filter(st.session_state.config) if st.session_state.filter_url else None
-            time.sleep(2)
-        st.write("Filter Loaded.")
+        st.write("✅ Filter Loaded.")
 
         if not st.session_state.p_mapping:
-            st.write("Loading P Mapping...")
+            st.write("🔮 Loading P Mapping...")
             st.session_state.p_mapping = uts.get_p_mapping(st.session_state.config['p_mapping'])
-            time.sleep(2)
-        st.write("P Mapping Loaded.")
+        st.write("✅ P Mapping Loaded.")
             
         if not st.session_state.s_mapping:
-            st.write("Loading S Mapping...")
+            st.write("🔮 Loading S Mapping...")
             st.session_state.s_mapping = uts.get_s_mapping(st.session_state.config['s_mapping'])
-            time.sleep(2)
-        st.write("S Mapping Loaded.")
+        st.write("✅ S Mapping Loaded.")
         
         if not st.session_state.metadata or st.session_state.notes:
-            st.write("Loading Raw Case_Metadata/Notes Data...")
+            st.write("🔮 Loading Raw Case_Metadata/Notes Data...")
             metadata_f = open(st.session_state.config["metadata_file"], "r") if not metadata_f else metadata_f
             notes_f = open(st.session_state.config["notes_file"], "r") if not notes_f else notes_f
             st.session_state.metadata, st.session_state.notes = uts.get_sr_data(metadata_f, notes_f)
-        st.write("Raw Case_Metadata/Notes Data Loaded.")
+        st.write("✅ Raw Case_Metadata/Notes Data Loaded.")
         
         st.session_state.current_step = 2
 
