@@ -1,17 +1,14 @@
 # Hello, welcome to Luna 🌙
 
 ## For Cisco Readers(TL;DR)
-```shell
-# Download the `data` folder, unzip and place it [SOMEWHERE].
 
-# Set up the Luna container.
-docker run -p 9000:9000 -v [SOMEWHERE]:/data -dit elfsong/luna:latest
+* Download `data` from `https://mynbox.nus.edu.sg/u/hbmxb6y5sUWXubFB/dd83324d-b5b4-4545-ae44-63c51579a543?l`. Unzip and place it at [SOMEWHERE]. Hope you have the access code:)
 
-# Set up the NN filter container (optional).
-docker run --gpus '"device=3"' -p [FILTER_PORT]:80 ghcr.io/huggingface/text-generation-inference:1.4 --model-id Elfsong/mouadsfilter
-```
+* `docker run -p 9000:9000 -v [SOMEWHERE]:/data -dit elfsong/luna:latest`
 
-Open your browser at `http://[YOUR_IP_ADDRESS]:9000`. Then, you are all set.
+* `docker run --gpus '"device=3"' -p [FILTER_PORT]:80 ghcr.io/huggingface/text-generation-inference:1.4 --model-id Elfsong/mouadsfilter`
+
+* Open your browser at `http://[YOUR_IP_ADDRESS]:9000`. Then, you're all set.
 
 ## For NUS Readers
 
