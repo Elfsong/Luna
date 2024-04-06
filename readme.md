@@ -2,7 +2,7 @@
 
 ## For Cisco Readers (TL;DR)
 
-* Download `data` from `https://mynbox.nus.edu.sg/u/hbmxb6y5sUWXubFB/dd83324d-b5b4-4545-ae44-63c51579a543?l`. Hope you have the access code:)
+* Download `data` from [the link](https://mynbox.nus.edu.sg/u/hbmxb6y5sUWXubFB/dd83324d-b5b4-4545-ae44-63c51579a543?l). Hope you have the [access code](mailto:mingzhe@nus.edu.sg) 😃.
 
 * Unzip and place `data` at [SOMEWHERE]. 
 
