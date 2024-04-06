@@ -4,7 +4,6 @@
 # Date: 06/04/2024
 
 import time
-import json
 import streamlit as st
 
 import src.utils as uts
