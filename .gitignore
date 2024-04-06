@@ -1,2 +1,5 @@
 deployment/luna/src/__pycache__/*
-deployment/data/*
+deployment/data/tech_subtech_p_mapping.xlsx
+deployment/data/tech_subtech_s_mapping.xlsx
+deployment/data/Case_Metadata.json
+deployment/data/Case_Notes.json
