@@ -8,7 +8,7 @@
 
 * `docker run -p 9000:9000 -v [SOMEWHERE]:/data -dit elfsong/luna:latest`
 
-* `docker run --gpus '"device=all"' -p [FILTER_PORT]:80 ghcr.io/huggingface/text-generation-inference:1.4 --model-id Elfsong/mouadsfilter`
+* `docker run --gpus '"device=0"' -p [FILTER_PORT]:80 ghcr.io/huggingface/text-generation-inference:1.4 --model-id Elfsong/mouadsfilter`
 
 * Open your browser at `http://[YOUR_IP_ADDRESS]:9000`. Then, you're all set.
 
