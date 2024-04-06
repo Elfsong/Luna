@@ -5,4 +5,4 @@
 * tech_subtech_p_mapping.xlsx
 * tech_subtech_s_mapping.xlsx
 
-Contract Mingzhe (mingzhe@nus.edu.sg) if you need these files.
+Contact Mingzhe (mingzhe@nus.edu.sg) if you need these files.
