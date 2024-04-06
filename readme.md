@@ -91,5 +91,5 @@ docker run --gpus '"device=[GPU_DEVICES]"' -p [LOCAL_PORT]:80 ghcr.io/huggingfac
 * You are all set.
 
 ## FAQ
-Q1: docker: permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
-A1: sudo chmod 666 /var/run/docker.sock
+### Q1: docker: permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+sudo chmod 666 /var/run/docker.sock
