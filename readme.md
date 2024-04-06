@@ -55,5 +55,18 @@ docker tag elfsong/luna:1.0 elfsong/luna
 docker push elfsong/luna
 ```
 
-### Step 2. Set up Dockers
+### Step 2. Set up the Docker Image Anywhere
+```shell
+# Set up Luna
+# E.g. `docker run -p 9000:9000 -v ./data:/data -dit elfsong/luna:latest`
+docker run -p [LOCAL_PORT]:[DOCKER_PORT] -v [LOCAL_VOLUME]:/data -dit elfsong/luna:latest
 
+# Set up NN Filter
+# E.g. docker run --gpus '"device=3"' -p 8088:80 -v /raid/hpc/mingzhe/transformers_cache:/data ghcr.io/huggingface/text-generation-inference:1.4 --model-id Elfsong/mouadsfilter
+docker run --gpus '"device=[GPU_DEVICES]"' -p [LOCAL_PORT]:80 ghcr.io/huggingface/text-generation-inference:1.4 --model-id Elfsong/mouadsfilter
+```
+
+### Step 3. Open your browser
+* Open `http://localhost:[DOCKER_PORT]` in your browser.
+* Fill all fields.
+* You are all set.
