@@ -1,2 +1,2 @@
-deployment/luna/data/*
 deployment/luna/src/__pycache__/*
+deployment/data/*

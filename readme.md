@@ -34,8 +34,8 @@ docker build -t luna .
 docker images
 
 # Start a Docker Container
-# E.g. `docker run -p 9000:9000 -dit 9cde8d37f698`
-docker run -p [LOCAL_PORT]:[DOCKER_PORT] -dit [IMAGE_ID]
+# E.g. `docker run -p 9000:9000 -v ./data:/data -dit luna:latest`
+docker run -p [LOCAL_PORT]:[DOCKER_PORT] -v [LOCAL_VOLUME]:/data -dit [IMAGE_ID]
 
 # Check the Container
 docker ps -a
