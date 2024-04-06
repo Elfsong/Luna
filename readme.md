@@ -2,15 +2,22 @@
 
 ## For Cisco Readers (TL;DR)
 
-* Download `data` from [the link](https://mynbox.nus.edu.sg/u/hbmxb6y5sUWXubFB/dd83324d-b5b4-4545-ae44-63c51579a543?l). Hope you have the [access code](mailto:mingzhe@nus.edu.sg) 😃.
+* Download **data** from [the link](https://mynbox.nus.edu.sg/u/ttsM25_bDPCk2wz1/435f6f30-4a25-4504-b946-c2ecc5aa877c?l). Hope you have the [access code](mailto:mingzhe@nus.edu.sg).
 
-* Unzip and place `data` at [SOMEWHERE]. 
+* Unzip and place **data** at [SOMEWHERE]. 
 
-* `docker run -p 9000:9000 -v [SOMEWHERE]:/data -dit elfsong/luna:latest`
+* Run `docker run -p 9000:9000 -v [SOMEWHERE]:/data -dit elfsong/luna:latest`
 
-* `docker run --gpus '"device=0"' -p [FILTER_PORT]:80 -v [SOMEWHERE]:/data -dit ghcr.io/huggingface/text-generation-inference:1.4 --model-id Elfsong/mouadsfilter`
+* Run `docker run --gpus '"device=0"' -p [FILTER_PORT]:80 -v [SOMEWHERE]:/data -dit ghcr.io/huggingface/text-generation-inference:1.4 --model-id Elfsong/mouadsfilter`
+    * The first time run might take more than 10 minutes to downlode model weights.
 
-* Open your browser at `http://[YOUR_IP_ADDRESS]:9000`. Then, you're all set.
+* Open your browser at `http://[YOUR_IP_ADDRESS]:9000`. 
+    * OpenAI Token can be found at: [https://platform.openai.com/api-keys](https://platform.openai.com/api-keys)
+    * NN Filter URL: http://[YOUR_IP_ADDRESS]:[FILTER_PORT]
+    * Upload new `metadata` and `notes` replacing the default NUS data.
+    * Select whether you intend to use case filters.
+
+* Then, you're all set 🥳.
 
 ## For NUS Readers
 
@@ -46,15 +53,15 @@ docker build -t luna .
 docker images
 
 # Start a Docker Container
-# E.g. `docker run -p 9000:9000 -v ./data:/data -dit luna:latest`
-docker run -p [LOCAL_PORT]:[DOCKER_PORT] -v [LOCAL_VOLUME]:/data -dit [IMAGE_ID]
+# E.g. `docker run -p 9000:9000 -v ./data:/data --name my_luna -dit luna:latest`
+docker run -p [LOCAL_PORT]:[DOCKER_PORT] -v [LOCAL_VOLUME]:/data --name [CONTAINER_NAME] -dit [IMAGE_ID]
 
 # Check the Container
 docker ps -a
 
 # Commit the Container
-# e.g. `docker commit -a "elfsong mingzhe@nus.edu.sg" -m "init" luna luna:1.0`
-docker commit -a "[YOUR NAME] [YOUR EMAIL]" -m "[COMMIT_MESSAGE]" [CONTAINER_ID] [CONTAINER_TAG]
+# e.g. `docker commit -a "elfsong mingzhe@nus.edu.sg" -m "init" my_luna luna:1.0`
+docker commit -a "[YOUR NAME] [YOUR EMAIL]" -m "[COMMIT_MESSAGE]" [CONTAINER_NAME] [CONTAINER_TAG]
 
 # Tag the Image
 docker tag luna:1.0 elfsong/luna:1.0
