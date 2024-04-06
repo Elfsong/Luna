@@ -2,7 +2,9 @@
 
 ## For Cisco Readers (TL;DR)
 
-* Download `data` from `https://mynbox.nus.edu.sg/u/hbmxb6y5sUWXubFB/dd83324d-b5b4-4545-ae44-63c51579a543?l`. Unzip and place it at [SOMEWHERE]. Hope you have the access code:)
+* Download `data` from `https://mynbox.nus.edu.sg/u/hbmxb6y5sUWXubFB/dd83324d-b5b4-4545-ae44-63c51579a543?l`. Hope you have the access code:)
+
+* Unzip and place `data` at [SOMEWHERE]. 
 
 * `docker run -p 9000:9000 -v [SOMEWHERE]:/data -dit elfsong/luna:latest`
 
