@@ -20,7 +20,6 @@ st.title('Hello, welcome to Luna 🌙')
 # Status Initialization
 if "config" not in st.session_state:
     st.session_state.config = None
-    
     st.session_state.current_step = 0
     st.session_state.current_sr = None
     st.session_state.current_metadata = None
