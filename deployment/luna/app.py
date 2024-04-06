@@ -47,8 +47,8 @@ metadata_f = st.file_uploader("Choose the Metadata file (Don't choose if you wan
 notes_f = st.file_uploader("Choose the Notes file (Don't choose if you wanna use the default config:)")
 
 # Filter Options
-with st.container():
-    st.write("Filter Options")
+with st.container(border=True):
+    st.write("**Filter Options** *(NN filter requires filling the filter URL):*")
     col1, col2 = st.columns([1, 1])
     regex_filter_switch = col1.checkbox('Enable Regex Filter')
     nn_filter_switch = col2.checkbox('Enable NN Filter')
