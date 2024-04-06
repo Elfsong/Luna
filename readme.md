@@ -2,6 +2,10 @@
 
 ## For Cisco Readers (TL;DR)
 
+If you just want to visit Luna, click [this link](https://f8f3-137-132-186-229.ngrok-free.app/). That's all.
+
+Alternatively, if you want to deploy Luna locally, follow these steps:
+
 * Download **data** from [the link](https://mynbox.nus.edu.sg/u/ttsM25_bDPCk2wz1/435f6f30-4a25-4504-b946-c2ecc5aa877c?l). Hope you have the [access code](mailto:mingzhe@nus.edu.sg).
 
 * Unzip and place **data** at [SOMEWHERE]. 
