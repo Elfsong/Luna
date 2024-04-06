@@ -102,8 +102,7 @@ if st.session_state.current_step > 1:
     st.markdown('#### Step 3. SR Selection')
     sr_id = st.selectbox('Which SR you would like to proceed?', tuple(st.session_state.metadata.keys()))
     st.session_state.current_metadata = st.session_state.metadata[sr_id]
-    if st.button("Confirm and Proceed", type="primary", key="sr_checked_btn"):
-        st.session_state.current_step = 3
+    st.session_state.current_step = 3
         
 # Mapping List Retrival
 if st.session_state.current_step > 2:

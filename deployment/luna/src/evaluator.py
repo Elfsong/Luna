@@ -18,7 +18,7 @@ class LCSEvaluator(Evaluator):
     @staticmethod
     def eval(a: str, b: str, threshold: float) -> bool:
         match = SequenceMatcher(None, a, b).find_longest_match()
-        overlap = match.size / len(a)
+        overlap = match.size / (len(a) + 1e-5)
         correct = True if overlap > threshold else False
         return correct, overlap
     
