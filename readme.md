@@ -1,7 +1,7 @@
 # Hello, welcome to Luna 🌙
 
 ## TL;DR
-If you just want to visit Luna, click [this link](https://f8f3-137-132-186-229.ngrok-free.app/). That's all😃.
+If you just want to visit Luna, click [this link](https://f8f3-137-132-186-229.ngrok-free.app/). That's all 😃.
 
 ## For Cisco Readers
 If you want to deploy Luna locally, follow these steps:
