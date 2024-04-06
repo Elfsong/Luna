@@ -2,13 +2,26 @@
 
 ## For Cisco Readers(TL;DR)
 ```shell
-# Set up dockers
+# Download the `data` folder, unzip and place it [SOMEWHERE].
 
-# Open your brower
+# Set up the Luna container.
+docker run -p 9000:9000 -v [SOMEWHERE]:/data -dit elfsong/luna:latest
+
+# Set up the NN filter container (optional).
+docker run --gpus '"device=3"' -p [FILTER_PORT]:80 ghcr.io/huggingface/text-generation-inference:1.4 --model-id Elfsong/mouadsfilter
 ```
 
+Open your browser at `http://[YOUR_IP_ADDRESS]:9000`. Then, you are all set.
 
 ## For NUS Readers
+
+This is the minimal version of **Luna**.
+
+At the very beginning, you need to prepare a runnable computer. 
+
+**Luna** itself can run across different systems (Windows / Linux / MacOS), but the **NN filter** requires Nvidia GPUs. Therefore, you need a `Nvidia GPU Server` if you intend to enable the **NN filter**.
+
+**Luna** and **NN filter** have been dockerized. You can set up the **Luna** container anywhere, and the **NN filter** on a `Nvidia GPU Server`.
 
 ### Step 0. Git Repo Preparation
 ```shell
