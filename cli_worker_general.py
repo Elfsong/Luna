@@ -16,7 +16,7 @@ def general_worker(console, caller, config):
         console.log(f'Metadata & Case notes file loaded.')
     
     with console.status("[bold green] Loading software version mapping file...") as status:
-        s_mapping = get_swv_mapping('./resources/tech_subtech_swv_norm2.csv')
+        s_mapping, swv_map = get_swv_mapping('./resources/tech_subtech_swv_norm2.csv')
         time.sleep(3)
         console.log(f'Software version mapping file loaded.')
 
@@ -62,9 +62,12 @@ def general_worker(console, caller, config):
             nnodes = cn[mnode]
             
             for nnode in nnodes:
-                if nnode['extracted_note'] is None:
-                    nnode['extracted_note'] = nnode['Note__c']
-                note_content = nnode["extracted_note"]
+                if 'extracted_note' in nnode:
+                    if nnode['extracted_note'] is None:
+                        nnode['extracted_note'] = nnode['Note__c']
+                    note_content = nnode["extracted_note"]
+                else:
+                    note_content=nnode['Note__c']
                 if filter.filter_by_local_classifier(note_content, s_list):
                     sw_notes +=[note_content]
                 notes += [note_content]
@@ -123,7 +126,7 @@ def general_worker(console, caller, config):
 
             if config["eval"]:
                 valid_sr = mnode_swv in doc
-                correct = SDASEvaluator.eval(mnode_swv, prediction, 0.2)
+                correct = SDASEvaluator.eval(swv_map[mnode_swv], prediction, 0.2)
                 correct_p, overlap = LCSEvaluator.eval(mnode_product, prediction_p, 0.5)
                 total += 1
                 valid_total += 1 if valid_sr else 0
