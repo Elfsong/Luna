@@ -5,36 +5,18 @@ import pandas as pd
 from rich.progress import track
 from rich.console import Console
 from src.filter import Filter
-from src.graph import CiscoGraph
-from src.caller import OpenAICaller, TGICaller
+from src.caller import OpenAICaller
 from src.evaluator import LCSEvaluator, SDASEvaluator
-from src.utils import get_product_mapping, get_norm_swv_mapping, save_results, banner, config_generator, load_metadata, load_notes
+from src.utils import get_product_mapping, get_swv_mapping, save_results, banner, config_generator, get_sr_data
 
-def graph_worker(console, graph_handler, config):
-    metadata = load_metadata(config["graph_metadata"])
-    notes = load_notes(config['graph_notes'])
-
-    graph_handler.node_delete_all()
-    # Loding Metadata
-    for instance in track(metadata, description="Loading metadata to Neo4J..."):
-        graph_handler.node_create(node_type="Metadata", node_attributes=instance.to_cypher())
-    
-    # Loading Notes
-    for instance in track(notes, description="Loading notes to Neo4J..."):
-        note_node = graph_handler.node_create(node_type="Note", node_attributes=instance.to_cypher())
-        note_node_id = note_node.element_id
-        sr_node_id = graph_handler.node_id_query("Metadata", "sr", instance.sr_uuid)
-        graph_handler.edge_create(sr_node_id, note_node_id, "Has", {})
-    
-    # Assign Gold Nodes
-    graph_handler.add_gold_set()
-    
-    console.log("Data Loaded Successfully!")
-
-def general_worker(console, graph_handler, caller, config):
-    graph_worker(console, graph_handler,config)
+def general_worker(console, caller, config):
     with console.status("[bold green] Loading software version mapping file...") as status:
-        s_mapping = get_norm_swv_mapping('./resources/tech_subtech_swv_norm2.csv')
+        cm, cn = get_sr_data(config["filepath_metadata"], config['filepath_notes'])
+        time.sleep(3)
+        console.log(f'Metadata & Case notes file loaded.')
+    
+    with console.status("[bold green] Loading software version mapping file...") as status:
+        s_mapping = get_swv_mapping('./resources/tech_subtech_swv_norm2.csv')
         time.sleep(3)
         console.log(f'Software version mapping file loaded.')
 
@@ -48,53 +30,49 @@ def general_worker(console, graph_handler, caller, config):
         time.sleep(3)
         console.log(f'filter loaded.')
     
-    with console.status("[bold green]Retrieving nodes from the graph...") as status:
+    with console.status("[bold green]Retrieving metadata from the file...") as status:
         if config['test_sr'] == []:
-            mnodes = graph_handler.raw_excute("MATCH (m:Metadata) WHERE (m)--() RETURN m")
+            mnodes = cm
         else:
-            mnodes = graph_handler.raw_excute("MATCH (m:Metadata) WHERE m.sr IN " + str(config['test_sr']) + " RETURN m")
+            mnodes = {x:cm[x] for x in config['test_sr']}
         time.sleep(3)
-        console.log(f"Got {len(mnodes)} nodes from the graph.")
+        console.log(f"Got {len(mnodes)} nodes from the file.")
     
     results = list()
     total, correct_sum, correct_sum_p = 0, 0, 0
     valid_total = 0
-    
     with console.status("[bold green] Node Processing...") as status:
         for index, mnode in enumerate(mnodes):
             console.log("=" * 30)
-            mnode_data = mnode["m"]
-            mnode_sr = mnode_data["sr"]
+
+            mnode_data = mnodes[mnode]
+            mnode_sr = mnode
             if config["eval"]:
                 mnode_swv = mnode_data["SW_Version__c"]
                 mnode_product = mnode_data["Product_Name__c"]
             mnode_tech = mnode_data["Technology_Text__c"]
             mnode_subtech = mnode_data["Sub_Technology_Text__c"]
             s_list = s_mapping[mnode_tech][mnode_subtech]
-            s_set = set(s_list)
-            s_list = list(s_set)
             s_str = "/ ".join(s_list)
             p_list = p_mapping[mnode_tech][mnode_subtech]
-            p_set = set(p_list)
-            p_list = list(p_set)
             p_str = "/ ".join(p_list)
-            
+
             notes = list()  
             sw_notes = list()
-            nnodes = graph_handler.raw_excute(f"MATCH (m:Metadata) WHERE (m.sr = '{mnode_sr}') MATCH ((m)-[:Has]->(n)) RETURN n")
+            nnodes = cn[mnode]
             
             for nnode in nnodes:
-                nnode_data = nnode["n"]
-                if 'extracted_note' not in nnode_data:
-                    nnode_data['extracted_note'] = nnode_data['Note__c']
-                note_content = nnode_data["extracted_note"]
+                if nnode['extracted_note'] is None:
+                    nnode['extracted_note'] = nnode['Note__c']
+                note_content = nnode["extracted_note"]
                 if filter.filter_by_local_classifier(note_content, s_list):
                     sw_notes +=[note_content]
                 notes += [note_content]
-            
+
             if len(sw_notes) == 0:
                 sw_notes=  notes
-            doc,doc_sw = "" , ""
+
+            doc, doc_sw = "" , ""
             if "notes" in config["fields"]:
                 doc += "\n".join(notes)
                 doc_sw += "\n".join(sw_notes)
@@ -107,7 +85,6 @@ def general_worker(console, graph_handler, caller, config):
             if "summary" in config["fields"]:
                 doc += "\n" + mnode_data["Resolution_Summary__c"]
                 doc_sw += "\n" + mnode_data["Resolution_Summary__c"]
-
 
 
             if config['mcq']:
@@ -146,16 +123,16 @@ def general_worker(console, graph_handler, caller, config):
 
             if config["eval"]:
                 valid_sr = mnode_swv in doc
-                correct = SDASEvaluator.eval(mnode_swv, prediction, 0.3)
+                correct = SDASEvaluator.eval(mnode_swv, prediction, 0.2)
                 correct_p, overlap = LCSEvaluator.eval(mnode_product, prediction_p, 0.5)
                 total += 1
                 valid_total += 1 if valid_sr else 0
                 correct_sum += correct
                 correct_sum_p += correct_p
                 
-                console.log(f'Ground truth: [bold green]{mnode_swv}[/bold green] SWV Prediction: [bold yellow]{prediction}[/bold yellow] Valid: {str(valid_sr)} Passed: {str(correct)}')
+                console.log(f'Ground truth: [bold green]{mnode_swv}[/bold green] Prediction: [bold yellow]{prediction}[/bold yellow] Valid: {str(valid_sr)} Passed: {str(correct)}')
                 console.log(f'Explanation: [i]{explanation}[/i]')
-                console.log(f'Ground truth: [bold green]{mnode_product}[/bold green] PN Prediction: [bold yellow]{prediction_p}[/bold yellow] Overlap: {overlap} Passed: {str(correct_p)}')
+                console.log(f'Ground truth: [bold green]{mnode_product}[/bold green] Prediction: [bold yellow]{prediction_p}[/bold yellow] Overlap: {overlap} Passed: {str(correct_p)}')
                 console.log(f'Explanation: [i]{explanation_p}[/i]')
                 
                 results += [{
@@ -185,9 +162,9 @@ def general_worker(console, graph_handler, caller, config):
                     "explanation_p": explanation,
                     "summary_p": summary_p,
                 }]
-                console.log(f' Software version Prediction: [bold yellow]{prediction}[/bold yellow]')
+                console.log(f' Prediction: [bold yellow]{prediction}[/bold yellow]')
                 console.log(f'Explanation: [i]{explanation}[/i]')
-                console.log(f' Product name Prediction: [bold yellow]{prediction_p}[/bold yellow]')
+                console.log(f' Prediction: [bold yellow]{prediction_p}[/bold yellow]')
                 console.log(f'Explanation: [i]{explanation_p}[/i]')
 
     
@@ -203,7 +180,6 @@ def general_worker(console, graph_handler, caller, config):
             console.log(f"The accuracy for the software version prediction is {accuracy_sw}, and the accuracy for the product name prediction is {accuracy_p}")
         else:
             console.log(f" Please check the detailed result at '{save_file_path}'.")
-    graph_handler.close()
 
 if __name__ == "__main__":
     console = Console(record=True)
@@ -213,7 +189,6 @@ if __name__ == "__main__":
     with console.status("[bold green] Loading configuration...") as status:
         parser = argparse.ArgumentParser(description='Luna 0.2')
         parser.add_argument('--config_path', type=str,default='./config/gpt-3.json', help='Configuration File Path')
-        parser.add_argument('--task', type=str,default='graph', help='Task Assigning')
         parser.add_argument('--openai_key', type=str,default=None,help="enter the openai key")
         parser.add_argument('--eval', type=bool,default=False,help="evaluate on glod SRs")
         args = parser.parse_args()
@@ -225,32 +200,18 @@ if __name__ == "__main__":
         else:
             console.log(f"No config detected. Let me ask you a few questions:)")
             config = config_generator(console)
+
         if args.openai_key:
             config['openai_api_key'] = args.openai_key
         if args.eval:
             config['eval'] = args.eval
     # Step 2. Load Handlers
     with console.status("[bold green] Loading components...") as status:
-        # Step 2.1. Load graph handler
-        graph_handler = CiscoGraph(config['graph_url'], config['graph_user'], config['graph_pwd'])
-        time.sleep(3)
-        console.log(f"[bold cyan]Graph Handler[/bold cyan] Load Completed!")
-    
-        # Step 2.2. Load llm handler
-        llm_caller = None
-        if config["type"] == "openai":
-            llm_caller = OpenAICaller(config, console)
-        elif config["type"] == "llama":
-            llm_caller = TGICaller(config, console)
-        else:
-            raise NotImplementedError(f'Unknown Type [{config["type"]}]')
+        #  Load llm handler
+        llm_caller = OpenAICaller(config, console)
         time.sleep(3)
         console.log(f"[bold cyan]LLM Handler[/bold cyan] Load Completed!")
     
     # Step 3. Let's go
-    console.log(f"[bold cyan]Worker[/bold cyan] Current task: {args.task}")
-    if args.task == "graph":
-        graph_worker(console, graph_handler, config)
-    elif args.task == "general":
-        general_worker(console, graph_handler, llm_caller, config)
+    general_worker(console, llm_caller, config)
     
