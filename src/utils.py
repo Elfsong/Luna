@@ -2,42 +2,20 @@
 
 # Author: Du Mingzhe (mingzhe@nus.edu.sg)
 # Date: 29/12/2023
-
+import os
 import json
 import pandas as pd
 from rich import print
 from rich.prompt import Prompt
 from rich.progress import track
 from collections import defaultdict
-from src.datatypes import SR_Metadata, SR_Note
+
 import tiktoken
 
 def banner():
     with open('./data/banner', 'r') as banner_f:
         print(banner_f.read())
         
-def load_metadata(file_path):
-    with open(file_path) as file_handler:
-        data = json.load(file_handler)
-
-    sr_set, sr_data = set(), list()
-    for instance in track(data, description=f"Parsing raw metadata from {file_path}..."):
-        if instance["sr"] not in sr_set:
-            sr_data += [SR_Metadata(instance)]
-            sr_set.add(instance["sr"])
-    
-    return sr_data
-
-def load_notes(file_path):
-    with open(file_path) as file_handler:
-        data = json.load(file_handler)
-        
-    sr_data = list()
-    for instance in track(data, description=f"Parsing raw notes from {file_path}..."):
-        sr_data += [SR_Note(instance)]
-        
-    return sr_data
-
 def config_generator(console):
     config = dict()
     # type
@@ -205,7 +183,13 @@ def config_generator(console):
     return config
 
 def get_product_mapping(file_path: str) -> dict:
-    df = pd.read_csv(file_path)
+    ext = os.path.splitext(file_path)[1]
+    if ext == '.psv':
+        df = pd.read_psv(file_path)
+    elif ext == '.csv':
+        df = pd.read_csv(file_path)
+    elif ext == '.xlsx':
+        df = pd.read_excel(file_path)
     p_mapping = defaultdict(lambda: defaultdict(lambda: list()))
 
     for _, row in df.iterrows():
@@ -217,31 +201,53 @@ def get_product_mapping(file_path: str) -> dict:
     return p_mapping
 
 def get_swv_mapping(file_path: str) -> dict:
-    df = pd.read_excel(file_path)
+    ext = os.path.splitext(file_path)[1]
+    if ext == '.psv':
+        df = pd.read_psv(file_path)
+    elif ext == '.csv':
+        df = pd.read_csv(file_path)
+    elif ext == '.xlsx':
+        df = pd.read_excel(file_path)
     s_mapping = defaultdict(lambda: defaultdict(lambda: list()))
 
     for _, row in df.iterrows():
         tech = row["Technology_Text__c"]
         sub_tech = row["Sub_Technology_Text__c"]
-        s = row["SW_Version__c"]
+        if "Norm_SWV" in row:
+            s = row["Norm_SWV"]
+        else:
+            s = row["SW_Version__c"]
+
         s_mapping[tech][sub_tech] += [str(s)]
         
     return s_mapping
 
-def get_norm_swv_mapping(file_path: str) -> dict:
-    df = pd.read_csv(file_path)
-    s_mapping = defaultdict(lambda: defaultdict(lambda: list()))
-
-    for _, row in df.iterrows():
-        tech = row["Technology_Text__c"]
-        sub_tech = row["Sub_Technology_Text__c"]
-        s = row["Norm_SWV"]
-        s_mapping[tech][sub_tech] += [str(s)]
-        
-    return s_mapping
 
 def save_results(df: pd.DataFrame, file_path: str) -> None:
     df.to_csv(file_path)
+
+def get_sr_data(metadata_file, notes_file):
+    mf, cf = list(), list()
+    case_metadata, case_notes = dict(), dict()
+    
+    if metadata_file and notes_file:
+        metadata_f = open(metadata_file, "r")
+        notes_f = open(notes_file, "r")
+
+        mf = json.load(metadata_f)
+        cf = json.load(notes_f)
+
+        metadata_f.close()
+        notes_f.close()
+    
+    for m in mf:
+        case_metadata[m["sr"]] = m
+        case_notes[m["sr"]] = list()
+        
+    for c in cf:
+        case_notes[c["sr"]] += [c]
+        
+    return case_metadata, case_notes
 
 def get_price(model_name, text):
     price_base = 0
