@@ -91,42 +91,7 @@ def config_generator(console):
             break
         else:
             print('[blue]Luna[/blue]: chunk_overlap should between 0 to 128000. It depends on the model you choose.')
-                
-    # graph_url
-    while True:
-        graph_url_default = 'bolt://10.245.89.103:7687'
-        print(f'[blue]Luna[/blue]: What is your graph server address? [[u]{graph_url_default}[/u]]')
-        graph_url_input = Prompt.ask('You')
-        if graph_url_input == "":
-            config['graph_url'] = graph_url_default
-            break
-        else:
-            config['graph_url'] = graph_url_input
-            break
-    
-    # graph_user
-    while True:
-        graph_user_default = 'neo4j'
-        print(f'[blue]Luna[/blue]: What is your graph server username? [[u]{graph_user_default}[/u]]')
-        graph_user_input = Prompt.ask('You')
-        if graph_user_input == "":
-            config['graph_user'] = graph_user_default
-            break
-        else:
-            config['graph_user'] = graph_user_input
-            break
-    
-    # graph_pwd
-    while True:
-        graph_pwd_default = 'yyids123'
-        print(f'[blue]Luna[/blue]: What is your graph server password? [[u]{graph_pwd_default}[/u]]')
-        graph_pwd_input = Prompt.ask('You')
-        if graph_pwd_input == "":
-            config['graph_pwd'] = graph_pwd_default
-            break
-        else:
-            config['graph_pwd'] = graph_pwd_input
-            break
+
     
     # graph_metadata
     while True:
@@ -134,10 +99,10 @@ def config_generator(console):
         print(f'[blue]Luna[/blue]: Where is your metadata path? [[u]{graph_metadata_default}[/u]]')
         graph_metadata_input = Prompt.ask('You')
         if graph_metadata_input == "":
-            config['graph_metadata'] = graph_metadata_default
+            config['filepath_metadata'] = graph_metadata_default
             break
         else:
-            config['graph_metadata'] = graph_metadata_input
+            config['filepath_metadata'] = graph_metadata_input
             break
     
     # graph_notes
@@ -146,10 +111,10 @@ def config_generator(console):
         print(f'[blue]Luna[/blue]: Where is your notes path? [[u]{graph_notes_default}[/u]]')
         graph_notes_input = Prompt.ask('You')
         if graph_notes_input == "":
-            config['graph_notes'] = graph_notes_default
+            config['filepath_notes'] = graph_notes_default
             break
         else:
-            config['graph_notes'] = graph_notes_input
+            config['filepath_notes'] = graph_notes_input
             break
         
     # fields
