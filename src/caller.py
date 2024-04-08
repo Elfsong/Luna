@@ -1,14 +1,9 @@
-# coding: utf-8
 
-# Author: Du Mingzhe (mingzhe@nus.edu.sg)
-# Date: 29/12/2023
-
-import os
+# import os
+# os.environ["CUDA_VISIBLE_DEVICES"] = "3"
 from openai import OpenAI
-from rich.progress import track
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 import torch
-from huggingface_hub import InferenceClient
 from langchain.text_splitter import TokenTextSplitter
 
 
@@ -74,7 +69,6 @@ class OpenAICaller(Caller):
                     
             result = self.call(map_prompt)
             map_results.append(result)
-            
         # Step 2. reduce these results        
         reduce_results = map_results[::-1]
         while True:
@@ -120,7 +114,7 @@ class OpenAICaller(Caller):
                     
             result = self.call(map_prompt)
             map_results.append(result)
-            
+
         # Step 2. reduce these results        
         reduce_results = map_results[::-1]
         while True:
@@ -136,116 +130,6 @@ class OpenAICaller(Caller):
                 Response in this JSON format: \n {{"software_version": "","explanation": "", "summary": ""}} \n {reduce_result_str}'
                 
             reduce_results.append(self.call(reduce_prompt))
-            
-        return reduce_results[0]
-    
-class TGICaller(Caller):
-    def __init__(self, config, console=None) -> None:
-        super().__init__(config, console)
-        self.client = InferenceClient(model=config['local_llm_url'])
-    
-    def call(self, prompt, max_new_tokens=1024) -> str:
-        response = self.client.text_generation(prompt=prompt, max_new_tokens=max_new_tokens, stop_sequences=['\n\n', '"}'])
-        response = response.strip()
-        return response
-    
-    def product_analysis(self, docs, question, choice_list, status=None) -> str:
-        chunks = list()
-        assert isinstance(docs, list)
-        
-        # Step 0. split docs into chunks
-        for doc in docs:
-            chunks += self.text_splitter.split_text(doc)
-        self.console.log(f"Document input length: {len(doc)}, which has been split into {len(chunks)} chunks.")
-            
-        # Step 1. map these chunks
-        map_results = list()
-        for index, chunk in enumerate(chunks):
-            if status:
-                status.update(f"[bold green] Mapping chunk [{index+1}/{len(chunks)}]...")
-            
-            # MCQ Switch
-            if choice_list:
-                map_prompt = f'Question: {question} \n \
-                    The ONLY product_name should be selected from the given product list: {choice_list} \
-                    Response in this JSON format: \n {{"product_name": "","explanation": "<less_than_50_words>", "summary": "<less_than_50_words>"}} \n {chunk} \n \
-                    Response:\n'
-            else:
-                map_prompt = f'Question: {question} \n \
-                    Response in this JSON format: \n {{"product_name": "","explanation": "<less_than_50_words>", "summary": "<less_than_50_words>"}} \n {chunk} \n \
-                    Response:\n'
-            result = self.call(map_prompt)
-            map_results.append(result)
-            
-            
-        # Step 2. reduce these results 
-        reduce_results = map_results[::-1]
-        while True:
-            if status:
-                status.update(f"[bold green] Reducing chunks from {len(reduce_results)} -> 1...")
-            if len(reduce_results) == 1: break
-            
-            reduce_result_str = ""
-            while reduce_results and len(self.text_splitter.split_text(reduce_result_str)) <= 1:
-                reduce_result_str += reduce_results.pop()
-            
-            reduce_prompt = f'Given the following results, answer this question: {question} \n \
-                {reduce_result_str} \n \
-                Response ONLY one JSON in this format: \n {{"product_name": "<product_name>","explanation": "<less_than_50_words>", "summary": "<less_than_50_words>"}} \n \
-                Response:\n'
-            
-            result = self.call(reduce_prompt)
-            reduce_results.append(result)
-            
-        return reduce_results[0]
-    
-    def software_analysis(self, docs, question, choice_list, status=None) -> str:
-        chunks = list()
-        assert isinstance(docs, list)
-        
-        # Step 0. split docs into chunks
-        for doc in docs:
-            chunks += self.text_splitter.split_text(doc)
-        self.console.log(f"Document input length: {len(doc)}, which has been split into {len(chunks)} chunks.")
-            
-        # Step 1. map these chunks
-        map_results = list()
-        for index, chunk in enumerate(chunks):
-            if status:
-                status.update(f"[bold green] Mapping chunk [{index+1}/{len(chunks)}]...")
-            
-            # MCQ Switch
-            if choice_list:
-                map_prompt = f'Question: {question} \n \
-                    The ONLY software_version should be selected from the given product list: {choice_list} \
-                    Response in this JSON format: \n {{"software_version": "","explanation": "<less_than_50_words>", "summary": "<less_than_50_words>"}} \n {chunk} \n \
-                    Response:\n'
-            else:
-                map_prompt = f'Question: {question} \n \
-                    Response in this JSON format: \n {{"software_version": "","explanation": "<less_than_50_words>", "summary": "<less_than_50_words>"}} \n {chunk} \n \
-                    Response:\n'
-            result = self.call(map_prompt)
-            map_results.append(result)
-            
-            
-        # Step 2. reduce these results 
-        reduce_results = map_results[::-1]
-        while True:
-            if status:
-                status.update(f"[bold green] Reducing chunks from {len(reduce_results)} -> 1...")
-            if len(reduce_results) == 1: break
-            
-            reduce_result_str = ""
-            while reduce_results and len(self.text_splitter.split_text(reduce_result_str)) <= 1:
-                reduce_result_str += reduce_results.pop()
-            
-            reduce_prompt = f'Given the following results, answer this question: {question} \n \
-                {reduce_result_str} \n \
-                Response ONLY one JSON in this format: \n {{"software_version": "<software_version>","explanation": "<less_than_50_words>", "summary": "<less_than_50_words>"}} \n \
-                Response:\n'
-            
-            result = self.call(reduce_prompt)
-            reduce_results.append(result)
             
         return reduce_results[0]
     

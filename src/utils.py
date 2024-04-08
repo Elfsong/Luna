@@ -18,59 +18,32 @@ def banner():
         
 def config_generator(console):
     config = dict()
-    # type
-    while True:
-        print('[blue]Luna[/blue]: Which model type do you want to preceed? [openai/[u]llama[/u]]')
-        type_input = Prompt.ask('You')
-        if type_input in ['llama', 'openai']:
-            config['type'] = type_input
-            break
-        elif type_input == "":
-            config['type'] = 'llama'
-            break
-        else:
-            print('[blue]Luna[/blue]: Model type should be picked from [openai/llama].')
-                
     # model_name
     while True:
-        model_name_default = '[u]Llama-70b[/u]' if config['type'] == 'llama' else '[gpt-4-preview-1106/[u]gpt-3.5-turbo-1106[/u]]'
+        model_name_default = '[gpt-4-preview-1106/[u]gpt-3.5-turbo-1106[/u]]'
         print(f'[blue]Luna[/blue]: Which specific model you would like to try? [{model_name_default}]')
         model_name_input = Prompt.ask('You')
         if model_name_input == "":
-            config['model_name'] = model_name_default
+            config['model_name'] = 'gpt-3.5-turbo-1106'
             break
         else:
             config['model_name'] = model_name_input
             break
     
-    # llm
-    if config['type'] == 'llama':
-        while True:
-            llm_url_default = 'http://10.246.112.13:8080'
-            print(f'[blue]Luna[/blue]: Cool! What is your llm server address? [[u]{llm_url_default}[/u]]')
-            llm_url_input = Prompt.ask('You')
-            if llm_url_input == "":
-                config['llm_url'] = llm_url_default
-                break
-            else:
-                config['llm_url'] = llm_url_default
-                break
-            
-    elif config['type'] == 'openai':
-        while True:
-            openai_api_key_default = 'OPENAI_KEY'
-            print(f'[blue]Luna[/blue]: Well, what is your openai api key? [[u]{openai_api_key_default}[/u]]')
-            openai_api_key_input = Prompt.ask('You')
-            if openai_api_key_input == "":
-                config['openai_api_key'] = openai_api_key_default
-                break
-            else:
-                config['openai_api_key'] = openai_api_key_input
-                break
+    while True:
+        openai_api_key_default = 'OPENAI_KEY'
+        print(f'[blue]Luna[/blue]: Well, what is your openai api key? [[u]{openai_api_key_default}[/u]]')
+        openai_api_key_input = Prompt.ask('You')
+        if openai_api_key_input == "":
+            config['openai_api_key'] = openai_api_key_default
+            break
+        else:
+            config['openai_api_key'] = openai_api_key_input
+            break
     
     # chunk_size
     while True:
-        chunk_size_default = 2048 if config['type'] == 'llama' else 12800
+        chunk_size_default =  16000
         print(f'[blue]Luna[/blue]: How about the chunk size? [[u]{chunk_size_default}[/u]]')
         chunksize_input = Prompt.ask('You')
         chunksize_input = int(chunksize_input) if chunksize_input else chunk_size_default
@@ -82,7 +55,7 @@ def config_generator(console):
         
     # chunk_overlap
     while True:
-        chunk_overlap_default = 256 if config['type'] == 'llama' else 512
+        chunk_overlap_default = 512
         print(f'[blue]Luna[/blue]: How about the chunk overlap? [[u]{chunk_overlap_default}[/u]]')
         chunk_overlap_input = Prompt.ask('You')
         chunk_overlap_input = int(chunk_overlap_input) if chunk_overlap_input else chunk_overlap_default
@@ -93,28 +66,28 @@ def config_generator(console):
             print('[blue]Luna[/blue]: chunk_overlap should between 0 to 128000. It depends on the model you choose.')
 
     
-    # graph_metadata
+    # file_metadata
     while True:
-        graph_metadata_default = './data/NUS_Case_Metadata.json'
-        print(f'[blue]Luna[/blue]: Where is your metadata path? [[u]{graph_metadata_default}[/u]]')
-        graph_metadata_input = Prompt.ask('You')
-        if graph_metadata_input == "":
-            config['filepath_metadata'] = graph_metadata_default
+        file_metadata_default = './data/NUS_Case_Metadata.json'
+        print(f'[blue]Luna[/blue]: Where is your metadata path? [[u]{file_metadata_default}[/u]]')
+        file_metadata_input = Prompt.ask('You')
+        if file_metadata_input == "":
+            config['filepath_metadata'] = file_metadata_default
             break
         else:
-            config['filepath_metadata'] = graph_metadata_input
+            config['filepath_metadata'] = file_metadata_input
             break
     
-    # graph_notes
+    # file_notes
     while True:
-        graph_notes_default = './data/NUS_Case_Notes.json'
-        print(f'[blue]Luna[/blue]: Where is your notes path? [[u]{graph_notes_default}[/u]]')
-        graph_notes_input = Prompt.ask('You')
-        if graph_notes_input == "":
-            config['filepath_notes'] = graph_notes_default
+        file_notes_default = './data/NUS_Case_Notes.json'
+        print(f'[blue]Luna[/blue]: Where is your notes path? [[u]{file_notes_default}[/u]]')
+        file_notes_input = Prompt.ask('You')
+        if file_notes_input == "":
+            config['filepath_notes'] = file_notes_default
             break
         else:
-            config['filepath_notes'] = graph_notes_input
+            config['filepath_notes'] = file_notes_input
             break
         
     # fields
