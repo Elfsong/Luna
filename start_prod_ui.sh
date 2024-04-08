@@ -1,1 +1,0 @@
-streamlit run product_ui.py --server.port 9002
