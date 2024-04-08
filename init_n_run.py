@@ -58,7 +58,7 @@ def run_cli(key,eval_flag,config_flag):
         if eval_flag:
             cmd = cmd + ["--eval", eval_flag]
         if config_flag:
-            cmd = cmd + ["--config", config_flag]
+            cmd = cmd + ["--config_path", config_flag]
         subprocess.check_call(cmd)
     else:
         print("cli_worker_general.py not found")
