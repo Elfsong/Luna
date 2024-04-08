@@ -4,11 +4,8 @@
     "chunk_overlap": 500,
     "model_name": "gpt-3.5-turbo-1106",
     "openai_api_key": "YOU_OPENAI_KEY",
-    "graph_url": "bolt://10.245.89.103:7687",
-    "graph_user": "neo4j",
-    "graph_pwd": "yyids123",
-    "graph_metadata": "./samples/Sample_Metadata.json",
-    "graph_notes": "./samples/Sample_Case_Notes.json",
+    "filepath_metadata": "./samples/Sample_Metadata.json",
+    "filepath_notes": "./samples/Sample_Case_Notes.json",
     "test_sr" : [],
     "eval" : false,
     "model_path" : "./filter_model",
@@ -19,5 +16,4 @@
         "summary"
     ],
     "mcq": true,
-    "local_llm_url": "http://10.246.112.13:8088"
 }
