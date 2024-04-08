@@ -1,6 +1,6 @@
 {
     "type": "openai",
-    "chunk_size": 12000,
+    "chunk_size": 16000,
     "chunk_overlap": 500,
     "model_name": "gpt-3.5-turbo-1106",
     "openai_api_key": "YOU_OPENAI_KEY",
