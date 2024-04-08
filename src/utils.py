@@ -147,18 +147,19 @@ def get_swv_mapping(file_path: str) -> dict:
     elif ext == '.xlsx':
         df = pd.read_excel(file_path)
     s_mapping = defaultdict(lambda: defaultdict(lambda: list()))
-
+    swv_map = dict()
     for _, row in df.iterrows():
         tech = row["Technology_Text__c"]
         sub_tech = row["Sub_Technology_Text__c"]
         if "Norm_SWV" in row:
             s = row["Norm_SWV"]
+            swv_map[row["Sw"]] = row["Norm_SWV"]
         else:
             s = row["SW_Version__c"]
 
         s_mapping[tech][sub_tech] += [str(s)]
         
-    return s_mapping
+    return s_mapping , swv_map
 
 
 def save_results(df: pd.DataFrame, file_path: str) -> None:
