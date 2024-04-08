@@ -4,8 +4,6 @@
 # Date: 29/12/2023
 
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "3"
-
 from openai import OpenAI
 from rich.progress import track
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
@@ -261,7 +259,7 @@ class LocalCaller(Caller):
         self.model.eval()
         with torch.no_grad():
             ids = self.tokenizer.encode(prompt, return_tensors="pt").to(device, dtype = torch.long)
-            generated_ids = self.model.generate(input_ids = ids)
+            generated_ids = self.model.generate(input_ids = ids,max_length= 20)
             preds = self.tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
         response = preds.strip()
         return response
