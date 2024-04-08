@@ -29,6 +29,12 @@ If test_sr list has a list of valid SRs and eval is True, we also provide evalua
 bash init_run.sh --openai_key [YOUR OPENAI KEY]  (If nothing else has changed, this script will simply run on the new data files specified as above)
 ```
 
+You can change the openai_key and other parameters in a config file and run with it by following this:
+
+```
+bash run_extractor --config [CONFIG FILE PATH]
+```
+
 ### 3. Train/Test "Send to GPT or not" Binary Classifier related code can be found under src/filter_training
 
 ```
