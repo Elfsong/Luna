@@ -117,19 +117,11 @@ class SR_Note(object):
         return self.metadata
     
 def load_metadata(file_path):
-    """
-    The function `load_metadata` loads metadata from a file, parses it, and returns a list of SR
-    metadata instances.
-    
-    :param file_path: The `file_path` parameter is a string that represents the path to the file
-    containing the metadata
-    :return: a list of SR_Metadata objects.
-    """
     with open(file_path) as file_handler:
         data = json.load(file_handler)
         
     sr_set, sr_data = set(), list()
-    for instance in tqdm(data, desc=f"Parsing raw metadata from {file_path}..."):
+    for instance in tqdm(data, desc=f"[1/6] Parsing raw metadata from {file_path}..."):
         if instance["sr"] not in sr_set:
             sr_data += [SR_Metadata(instance)]
             sr_set.add(instance["sr"])
@@ -137,17 +129,9 @@ def load_metadata(file_path):
     return sr_data
 
 def load_notes(file_path):
-    """
-    The function `load_notes` loads notes from a file and returns a list of `CiscoData.SR_Note`
-    instances.
-    
-    :param file_path: The `file_path` parameter is a string that represents the path to the file
-    containing the notes data that you want to load
-    :return: a list of instances of the `CiscoData.SR_Note` class.
-    """
     with open(file_path) as file_handler:
         data = json.load(file_handler)
-    return [SR_Note(instance) for instance in tqdm(data, desc=f"Parsing raw notes from {file_path}...")]
+    return [SR_Note(instance) for instance in tqdm(data, desc=f"[2/6] Parsing raw notes from {file_path}...")]
 
 metadata = load_metadata(args.meta)
 notes = load_notes(args.note)
@@ -156,12 +140,12 @@ graph_handler = CiscoGraph(args.address, args.username, args.passowrd)
 graph_handler.node_delete_all()
 
 def add_metadata_to_graph(graph_handler, data):
-    for instance in tqdm(data, desc="Uploading metadata to Neo4J..."):
+    for instance in tqdm(data, desc="[3/6] Uploading metadata to Neo4J..."):
         graph_handler.node_create(node_type="Metadata", node_attributes=instance.to_cypher())
 add_metadata_to_graph(graph_handler, metadata)
 
 def add_notes_to_graph(graph_handler, data):
-    for instance in tqdm(data, desc="Uploading notes to Neo4J..."):
+    for instance in tqdm(data, desc="[4/6] Uploading notes to Neo4J..."):
         note_node = graph_handler.node_create(node_type="Note", node_attributes=instance.to_cypher())
         note_node_id = note_node.element_id
         sr_node_id = graph_handler.node_id_query("Metadata", "sr", instance.sr_uuid)
@@ -171,7 +155,7 @@ add_notes_to_graph(graph_handler, notes)
 def add_products_to_graph(graph_handler, data):
     product_node_ids = dict()
     
-    for instance in tqdm(data, desc="Adding products to Neo4J..."):
+    for instance in tqdm(data, desc="[5/6] Adding products to Neo4J..."):
         sr_node_id = graph_handler.node_id_query("Metadata", "sr", instance.uuid)
         product_name = instance.metadata["Product_Name__c"]
         product_family = instance.metadata["Product_Family__c"]
@@ -194,7 +178,7 @@ def add_tech_to_graph(graph_handler, data):
     sub_technology_ids = dict()
     technology_dict = dict()
     
-    for instance in tqdm(data, desc="Adding tech to Neo4J..."):
+    for instance in tqdm(data, desc="[6/6] Adding tech to Neo4J..."):
         sr_node_id = graph_handler.node_id_query("Metadata", "sr", instance.uuid)
         technology = instance.metadata["Technology_Text__c"]
         sub_technology = instance.metadata["Sub_Technology_Text__c"]
