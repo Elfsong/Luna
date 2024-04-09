@@ -7,3 +7,5 @@ data/NUS_Case_Notes.json
 data/gold_data.csv
 __pycache__/
 data/ft5model/
+data/Case_Metadata.json
+data/Case_Notes.json
