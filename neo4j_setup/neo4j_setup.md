@@ -21,5 +21,5 @@ python neo4j_setup.py   -a bolt://localhost:7687 \
                         -u neo4j \
                         -p neo4j \
                         -n [SOMEWHERE]/Case_Notes.json \
-                        -m [SOMEWHERE]/data/Case_Metadata.json
+                        -m [SOMEWHERE]/Case_Metadata.json
 ```
