@@ -6,6 +6,6 @@
 pip install tqdm
 pip install neo4j
 
-neo4j start
+neo4j restart
 
 python neo4j_setup.py 
