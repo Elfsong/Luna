@@ -5,7 +5,7 @@
 Download the repository zip from github, unzip and run the following script at bash prompt:
 
 ```
-bash init_run.sh --openai_key [YOUR OPENAI KEY]
+bash init_test.sh --openai_key [YOUR OPENAI KEY]
 ```
 
 This script:
@@ -19,6 +19,7 @@ c) Uses your provided OPENAI key to extract product_names and software_versions 
 
 To avoid training the model in step (b) please download the trained model from [HERE](https://drive.google.com/drive/folders/1qTd5yGKpNt8sCREOLPrHpYVDk79-ZvhQ?usp=sharing) and place it in "filter_model"
 
+
 ### 2. Running on new data
 
 Please edit the data files for new run in config/gpt-3.json using the entries  ```graph_metadata/graph_notes```
@@ -26,13 +27,13 @@ Please edit the data files for new run in config/gpt-3.json using the entries  `
 If test_sr list has a list of valid SRs and eval is True, we also provide evaluation results at the end.
 
 ```
-bash init_run.sh --openai_key [YOUR OPENAI KEY]  (If nothing else has changed, this script will simply run on the new data files specified as above)
+bash init_test.sh --openai_key [YOUR OPENAI KEY]  (If nothing else has changed, this script will simply run on the new data files specified as above)
 ```
 
 You can change the openai_key and other parameters in a config file and run with it by following this:
 
 ```
-bash run_extractor --config [CONFIG FILE PATH]
+bash run_extractors.sh --config [CONFIG FILE PATH]
 ```
 
 ### 3. Train/Test "Send to GPT or not" Binary Classifier related code can be found under src/filter_training
