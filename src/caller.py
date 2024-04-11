@@ -1,6 +1,4 @@
 
-import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "3"
 from openai import OpenAI
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 import torch
