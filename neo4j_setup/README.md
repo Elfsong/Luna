@@ -4,7 +4,10 @@
 More details can be found on [this document](https://shorturl.at/lyKTZ)
 
 ## Step 2. Raw Data Retrieval
-Download **data** from [the link](https://mynbox.nus.edu.sg/u/ttsM25_bDPCk2wz1/435f6f30-4a25-4504-b946-c2ecc5aa877c?l).
+* Download `Case_Metadata.json` and `Case_Notes.json` from [the link](https://mynbox.nus.edu.sg/u/ttsM25_bDPCk2wz1/435f6f30-4a25-4504-b946-c2ecc5aa877c?l).
+Password can be found [here](mailto:mingzhe@nus.edu.sg)
+
+* OR you can use your own `Case_Metadata.json` and `Case_Notes.json`.
 
 Place the `Case_Metadata.json` and `Case_Notes.json` to [SOMEWHERE].
 
