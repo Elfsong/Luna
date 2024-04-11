@@ -18,7 +18,7 @@ To create new train/test data run
 ``python CreateTrainTest_GPTClassifier.py''
 
 
-To re-train the classifier, specify these new data files 
+To re-train the classifier, specify these new data files (in the command described in filter_training/README)
 
 
 
