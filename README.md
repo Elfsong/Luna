@@ -22,32 +22,21 @@ To avoid training the model in step (b) please download the trained model from [
 
 ### 2. Running on new data
 
-Please edit the data files for new run in config/gpt-3.json using the entries  ```graph_metadata/graph_notes```
+Please edit the data files for new run in config/gpt-3.json using the entries  ```filepath_metadata/filepath_notes```
 
 If test_sr list has a list of valid SRs and eval is True, we also provide evaluation results at the end.
 
-```
-bash init_test.sh --openai_key [YOUR OPENAI KEY]  (If nothing else has changed, this script will simply run on the new data files specified as above)
-```
-
-You can change the openai_key and other parameters in a config file and run with it by following this:
 
 ```
 bash run_extractors.sh --config [CONFIG FILE PATH]
 ```
 
-### 3. Train/Test "Send to GPT or not" Binary Classifier related code can be found under src/filter_training
+### 3. Train/Test "Send to GPT or not" Binary Classifier
 
-```
-python flant5-train-test.py --train_path "TRAINING FILE PATH" --test_path "TESTING FILE PATH" --batch_size "BATCH_SIZE" --do_test "TRUE/FALSE"
-```
+Please check the README in ```filter_training```
 
-Our precomputed train/test data files are listed in  ```"data/test_gold_data.csv"``` and ``` "data/train2_data.csv"```
+Our precomputed train/test data files are listed in  ```"data/test.csv"``` and ``` "data/train.csv"```
 
-The relevant scripts to generate new training data are also listed in this directory. Further documentation on how to do this for new data is TBD (and will be ready next week)
+### 4. Creating Product Name and Software Version lists for use in predictions and Creating the train/test data for the binary classifier
 
-### 4. Creating Product Name and Software Version lists for use in predictions
-
-The relevant scripts to compile software name and product name lists are provided in src/create_lists. 
-We will include version extraction scripts to normalize all software mentions. 
-TBD (and will be ready next week)
+Please check the README in ```create_resources```
