@@ -76,33 +76,30 @@ def general_worker(console, caller, config):
                 sw_notes=  notes
 
             doc, doc_sw = "" , ""
-            if "notes" in config["fields"]:
+
+
+            if config["include_notes"]:
                 doc += "\n".join(notes)
                 doc_sw += "\n".join(sw_notes)
-            if "symptom" in config["fields"]:
-                doc += "\n" + mnode_data["Customer_Symptom__c"]
-                doc_sw += "\n" + mnode_data["Customer_Symptom__c"]
-            if "description" in config["fields"]:
-                doc += "\n" + mnode_data["Description"]
-                doc_sw += "\n" + mnode_data["Description"]
-            if "summary" in config["fields"]:
-                doc += "\n" + mnode_data["Resolution_Summary__c"]
-                doc_sw += "\n" + mnode_data["Resolution_Summary__c"]
+            for field in config["fields"]:
+                doc += "\n" + mnode_data[field]
+                doc_sw += "\n" + mnode_data[field]
+
 
 
             if config['mcq']:
                 question = f'Which product is principally discussed in these documents?'
                 console.log(f"Current node {mnode_sr} [{index+1}/{len(mnodes)}]")
-                response_p = caller.product_analysis([doc], question, p_str, status)
+                response_p, price_p, num_tokens_p = caller.product_analysis([doc], question, p_str, status)
             else:
                 question = f'What product is principally discussed in these documents?'
                 console.log(f"Current node {mnode_sr} [{index+1}/{len(mnodes)}]")
-                response_p = caller.product_analysis([doc], question, None, status)
+                response_p, price_p, num_tokens_p = caller.product_analysis([doc], question, None, status)
             
             # question = f'Which software version of {mnode_product} is principally discussed in these documents? Answer "None" if you cannot find answer in the given documents.'
             question = f'Which software version is principally discussed in these documents?'
             
-            response = caller.software_analysis([doc_sw], question, s_str, status)
+            response, price_sw, num_tokens_sw = caller.software_analysis([doc_sw], question, s_str, status)
             
             prediction, summary, explanation = "", "", ""
             try:
@@ -122,7 +119,7 @@ def general_worker(console, caller, config):
                 explanation_p = response_json_p['explanation']
             except Exception as e:
                 console.log(f"[bold red] [Worker] Json parse error: {e}. Using the original response instead.")
-                prediction = response
+                prediction_p = response_p
 
             if config["eval"]:
                 valid_sr = mnode_swv in doc
@@ -144,26 +141,33 @@ def general_worker(console, caller, config):
                     "product_name": mnode_product,
                     "prediction_sw": prediction,
                     "explanation_sw": explanation,
-                    "valid_sr": valid_sr,
-                    "summary": summary,
-                    "correct": correct,
+                    "summary_sw": summary,
+                    "valid_sr_sw": valid_sr,
+                    "correct_sw": correct,
+                    "num_tokens_sw": num_tokens_sw,
+                    "price_sw" : price_sw,
                     "prediction_p": prediction_p,
                     "explanation_p": explanation_p,
                     "summary_p": summary_p,
                     "overlap": overlap,
-                    "correct_sw": correct,
                     "correct_p": correct_p,
+                    "num_tokens_p": num_tokens_p,
+                    "price_p" : price_p,
                 }]
                 
             else: 
                 results += [{
                     "sr": mnode_sr,
                     "prediction_sw": prediction,
-                    "prediction_p": prediction_p,
                     "explanation_sw": explanation,
                     "summary_sw": summary,
+                    "num_tokens_sw": num_tokens_sw,
+                    "price_sw" : price_sw,
+                    "prediction_p": prediction_p,
                     "explanation_p": explanation,
                     "summary_p": summary_p,
+                    "num_tokens_p": num_tokens_p,
+                    "price_p" : price_p,
                 }]
                 console.log(f' Prediction: [bold yellow]{prediction}[/bold yellow]')
                 console.log(f'Explanation: [i]{explanation}[/i]')
