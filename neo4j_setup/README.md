@@ -19,10 +19,13 @@ neo4j restart
 ```
 
 ## Step 4. Neo4J Data Conversion
+* [USERNAME] is 'neo4j'
+* [PASSWORD] will be required to reset when you enter the system first time.
+
 ```shell
 python neo4j_setup.py   -a bolt://localhost:7687 \
-                        -u neo4j \
-                        -p neo4j \
+                        -u [USERNAME] \
+                        -p [PASSWORD] \
                         -n [SOMEWHERE]/Case_Notes.json \
                         -m [SOMEWHERE]/Case_Metadata.json
 ```
