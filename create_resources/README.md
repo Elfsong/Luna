@@ -11,11 +11,11 @@ After the necessary libraries installed (via init_test script)
 <b>*IMPORTANT</b> Alter the file paths for inputs and outputs in CRConfig (the fields to alter are marked by TO EDIT first)
 
 To create new lists run
-``python CreatePNamesSWVLists.py''
+```python CreatePNamesSWVLists.py```
 
 
 To create new train/test data run
-``python CreateTrainTest_GPTClassifier.py''
+```python CreateTrainTest_GPTClassifier.py```
 
 
 To re-train the classifier, specify these new data files (in the command described in filter_training/README)
