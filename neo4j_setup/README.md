@@ -17,6 +17,8 @@ pip install tqdm
 pip install neo4j
 neo4j restart
 ```
+* Run all above commands.
+* Open [the link](http://localhost:7474) displayed from `neo4j restart`.
 
 ## Step 4. Neo4J Data Conversion
 * [USERNAME] is 'neo4j'
