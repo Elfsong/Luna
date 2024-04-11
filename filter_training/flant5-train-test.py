@@ -15,8 +15,10 @@ from rich.console import Console
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Training Flan-T5')
-    parser.add_argument('--train_path', type=str,default='./data/train.csv', help='Training File Path')
-    parser.add_argument('--test_path', type=str,default='./data/test.csv', help='Testing File Path')
+    parser.add_argument('--train_path', type=str,default='./data/train2_data.csv', help='Training File Path')
+    parser.add_argument('--batch_size', type=int,default=8, help='Batch size for training')
+    parser.add_argument('--do_test', type=bool,default=False, help='Evaluate model on dataset')
+    parser.add_argument('--test_path', type=str,default='./data/test_gold_data.csv', help='Testing File Path')
     args = parser.parse_args()
 
     df_train = pd.read_csv(args.train_path)
@@ -124,7 +126,7 @@ def compute_metrics(eval_preds):
     return result
     
 L_RATE = 5e-5
-BATCH_SIZE = 16
+BATCH_SIZE = args.batch_size
 PER_DEVICE_EVAL_BATCH = 4
 WEIGHT_DECAY = 0.01
 SAVE_TOTAL_LIM = 3
@@ -132,7 +134,7 @@ NUM_EPOCHS = 3
 
 # Set up training arguments
 training_args = Seq2SeqTrainingArguments(
-   output_dir="./results",
+   output_dir="./checkpoints",
    evaluation_strategy="epoch",
    learning_rate=L_RATE,
    per_device_train_batch_size=BATCH_SIZE,
@@ -162,6 +164,8 @@ trainer = Seq2SeqTrainer(
 
 trainer.train()
 
+trainer.save_model("./filter_model/")
+
 def validate(tokenizer, model, device, loader):
 
   """
@@ -190,15 +194,17 @@ def validate(tokenizer, model, device, loader):
           actuals.extend(target)
   return predictions, actuals
 
-output_dir="./outputs/"
-val_params = {
-        "batch_size": 8,
-        "shuffle": False,
-        "num_workers": 0,
-    }
-val_loader = DataLoader(val_dataset, **val_params)
-predictions, actuals = validate(tokenizer, model, 'cuda', val_loader)
-final_df = pd.DataFrame({"Generated Text": predictions, "Actual Text": actuals})
-final_df.to_csv(os.path.join(output_dir, "predictions.csv"))
-print(classification_report(actuals, predictions))
+if args.do_test:
+
+    output_dir="./outputs/"
+    val_params = {
+            "batch_size": BATCH_SIZE,
+            "shuffle": False,
+            "num_workers": 0,
+        }
+    val_loader = DataLoader(val_dataset, **val_params)
+    predictions, actuals = validate(tokenizer, model, 'cuda', val_loader)
+    final_df = pd.DataFrame({"Generated Text": predictions, "Actual Text": actuals})
+    final_df.to_csv(os.path.join(output_dir, "predictions.csv"))
+    print(classification_report(actuals, predictions))
 
