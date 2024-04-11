@@ -15,8 +15,8 @@ from rich.console import Console
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Training Flan-T5')
-    parser.add_argument('--train_path', type=str,default='./data/train2_data.csv', help='Training File Path')
-    parser.add_argument('--test_path', type=str,default='./data/test_gold_data.csv', help='Testing File Path')
+    parser.add_argument('--train_path', type=str,default='./data/train.csv', help='Training File Path')
+    parser.add_argument('--test_path', type=str,default='./data/test.csv', help='Testing File Path')
     args = parser.parse_args()
 
     df_train = pd.read_csv(args.train_path)
