@@ -21,6 +21,7 @@ neo4j restart
 ## Step 4. Neo4J Data Conversion
 * [USERNAME] is 'neo4j'
 * Neo4J UI will prompt you to reset your [PASSWORD] upon your first login.
+* Port 7474 is the Neo4J front-end interface, and Port 7687 is the Neo4J back-end interface.
 
 ```shell
 python neo4j_setup.py   -a bolt://localhost:7687 \
