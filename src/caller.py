@@ -1,10 +1,11 @@
 
-# import os
-# os.environ["CUDA_VISIBLE_DEVICES"] = "3"
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "3"
 from openai import OpenAI
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 import torch
 from langchain.text_splitter import TokenTextSplitter
+from src.utils import get_price
 
 
 
@@ -32,15 +33,31 @@ class OpenAICaller(Caller):
         
     
     def call(self, prompt) -> str:
-        response = self.client.chat.completions.create(
+        if self.config['model_name'] == "gpt-3.5-turbo-instruct":
+            response = self.client.completions.create(
             model=self.config['model_name'],
-            response_format={ "type": "json_object" },
-            messages=[
-                {"role": "system", "content": "You are a helpful Cisco assistant designed to output JSON."},
-                {"role": "user", "content": prompt}
-            ]
-        )
-        return response.choices[0].message.content
+            prompt=prompt,
+            max_tokens=728,
+            seed = 313
+            )
+            
+            text = response.choices[0].text
+            try:
+                clean = text.split("{")[1].split("}")[0]
+            except:
+                clean = ''
+            return "{" + clean + "}"
+        else:
+            response = self.client.chat.completions.create(
+                model=self.config['model_name'],
+                response_format={ "type": "json_object" },
+                messages=[
+                    {"role": "system", "content": "You are a helpful Cisco assistant designed to output JSON."},
+                    {"role": "user", "content": prompt}
+                ],
+                seed = 313
+            )
+            return response.choices[0].message.content
     
     def product_analysis(self, docs, question, choice_list, status=None) -> str:
         chunks = list()
@@ -61,7 +78,7 @@ class OpenAICaller(Caller):
             # MCQ Switch
             if choice_list:
                 map_prompt = f'Question: {question} \n \
-                    The ONLY product_name should be selected from the given product list: {choice_list} \
+                    The ONLY software version should be selected from the given product name list: {choice_list} \
                     Response in this JSON format: \n {{"product_name": "","explanation": "", "summary": ""}} \n {chunk}'
             else:
                 map_prompt = f'Question: {question} \n \
@@ -69,6 +86,7 @@ class OpenAICaller(Caller):
                     
             result = self.call(map_prompt)
             map_results.append(result)
+
         # Step 2. reduce these results        
         reduce_results = map_results[::-1]
         while True:
@@ -84,8 +102,10 @@ class OpenAICaller(Caller):
                 Response in this JSON format: \n {{"product_name": "","explanation": "", "summary": ""}} \n {reduce_result_str}'
                 
             reduce_results.append(self.call(reduce_prompt))
+
+        price, num_tokens = get_price(self.config['model_name'], map_prompt)
             
-        return reduce_results[0]
+        return reduce_results[0] , price, num_tokens
     
     def software_analysis(self, docs, question, choice_list, status=None) -> str:
         chunks = list()
@@ -130,8 +150,10 @@ class OpenAICaller(Caller):
                 Response in this JSON format: \n {{"software_version": "","explanation": "", "summary": ""}} \n {reduce_result_str}'
                 
             reduce_results.append(self.call(reduce_prompt))
+
+        price, num_tokens = get_price(self.config['model_name'], map_prompt)
             
-        return reduce_results[0]
+        return reduce_results[0], price, num_tokens
     
 class LocalCaller(Caller):
     def __init__(self, config, console=None) -> None:
