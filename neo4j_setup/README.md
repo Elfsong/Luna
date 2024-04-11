@@ -20,7 +20,7 @@ neo4j restart
 
 ## Step 4. Neo4J Data Conversion
 * [USERNAME] is 'neo4j'
-* [PASSWORD] will be required to reset when you enter the system first time.
+* Neo4J UI will prompt you to reset your [PASSWORD] upon your first login.
 
 ```shell
 python neo4j_setup.py   -a bolt://localhost:7687 \
