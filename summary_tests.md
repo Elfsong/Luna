@@ -1,8 +1,9 @@
-[TODO Mouad]
+[TODO Check Mouad]
+
 1. Sample run results with different models on the subset of "14" SRs (eval=True)
 
 <table>
-<tr> Software Version Prediction </tr>
+<tr> Accuracy for Software Version Prediction </tr>
 <tr>
 <td>setting/model</td>
 <td>gpt-3.5-turbo-0125</td>
@@ -25,7 +26,7 @@
 
 
 <table>
-<tr> Product Names Prediction </tr>
+<tr> Accuracy for Product Names Prediction </tr>
 <tr>
 <td>setting/model</td>
 <td>gpt-3.5-turbo-0125</td>
