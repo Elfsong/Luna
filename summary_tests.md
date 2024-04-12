@@ -21,9 +21,30 @@
 <td>0.71</td>
 <td>0.64</td>
 </tr>
-
 </table>
-	
+
+
+<table>
+<tr> Product Names Prediction </tr>
+<tr>
+<td>setting/model</td>
+<td>gpt-3.5-turbo-0125</td>
+<td>gpt-4-0125-preview</td>
+<td>gpt-3.5-turbo-instruct</td>
+</tr>
+<tr>
+<td>CS+PD+RS</td>
+<td>0.78</td>
+<td>0.85</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>CS+PD</td>
+<td>0.71</td>
+<td>0.85</td>
+<td>0.35</td>
+</tr>
+</table>
 	swv	pnames	swv	pnames	swv	pnames
 default	0.92	0.78	0.85	0.85	0.85	0.5
 without rs	0.78	0.71	0.78	0.85	0.64	0.35
