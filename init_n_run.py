@@ -28,7 +28,10 @@ def check_pretrained_model(directory):
         print("Directory does not exist")
         print("creating ./filter_model directory")
         os.makedirs(directory)
-        os.makedirs('./filter_training/outputs')
+        try:
+            os.makedirs('./filter_training/outputs')
+        except:
+            print("directory already exists")
         print("training the model from scratch...")
         subprocess.check_call(["python",'./filter_training/flant5-train-test.py', "--train_path", "./filter_training/data/train.csv", "--test_path", "./filter_training/data/test.csv", "--save_path", "./filter_model"])
 
