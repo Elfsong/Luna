@@ -41,7 +41,7 @@ def check_pretrained_model(directory):
         os.makedirs('./checkpoints')
         os.makedirs('./outputs')
         print("training the model from scratch...")
-        subprocess.check_call(["python",'flant5-train-test.py', '--train_path',"./data/train.csv" ,'--test_path', "./data/test.csv"])
+        subprocess.check_call(["python",'./filter_training/flant5-train-test.py'])
 
 
 if __name__ == "__main__":
