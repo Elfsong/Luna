@@ -61,7 +61,9 @@
         True       0.91      1.00      0.95        20
 
     accuracy                           0.99       254
+   
    macro avg       0.95      1.00      0.97       254
+   
 weighted avg       0.99      0.99      0.99       254
 
 
