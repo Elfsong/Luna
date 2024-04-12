@@ -19,9 +19,8 @@ def install_libraries():
 # Function to check if two xlsx files exist in a directory
 def check_xlsx_files(directory):
     files = os.listdir(directory)
-    list_of_files = [file for file in files if file.endswith('.xlsx')]
-    print(list_of_files)
-    if 'tech_subtech_pnames.xlsx' in list_of_files and 'tech_subtech_swv.xlsx' in list_of_files:
+    list_of_files = [file for file in files if file.endswith('.csv') or file.endswith('.xlsx')]
+    if 'tech_subtech_pnames.csv' in list_of_files and 'tech_subtech_swv_norm2.csv' in list_of_files:
         print("resources exist")
     else:
         print("Creating ressources")
@@ -34,11 +33,7 @@ def check_pretrained_model(directory):
         else:
             print("Pretrained Flant5 model does not exist")
             print("training the model from scratch...")
-            try:
-                subprocess.check_call(['pip', 'install', '-r', './config/requirements_train.txt' ,'--upgrade-strategy' ,'only-if-needed'])
-            except:
-                subprocess.check_call(["python", "-m", 'pip', 'install', '-r', './config/requirements_train.txt' ,'--upgrade-strategy' ,'only-if-needed'])
-            subprocess.check_call(["python",'flant5-train-test.py', '--train_path',"./data/train2_data.csv" ,'--test_path', "./data/test_gold_data.csv"])
+            subprocess.check_call(["python",'./filter_training/flant5-train-test.py'])
     else:
         print("Directory does not exist")
         print("creating ./model directory")
@@ -46,11 +41,7 @@ def check_pretrained_model(directory):
         os.makedirs('./checkpoints')
         os.makedirs('./outputs')
         print("training the model from scratch...")
-        try:
-            subprocess.check_call(['pip', 'install', '-r', './config/requirements_train.txt' ,'--upgrade-strategy' ,'only-if-needed'])
-        except:
-            subprocess.check_call(["python", "-m", 'pip', 'install', '-r', './config/requirements_train.txt' ,'--upgrade-strategy' ,'only-if-needed'])
-        subprocess.check_call(["python",'flant5-train-test.py', '--train_path',"./data/train2_data.csv" ,'--test_path', "./data/test_gold_data.csv"])
+        subprocess.check_call(["python",'flant5-train-test.py', '--train_path',"./data/train.csv" ,'--test_path', "./data/test.csv"])
 
 
 if __name__ == "__main__":
