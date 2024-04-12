@@ -53,8 +53,16 @@
 
 
 
-2. Test performance / GPT classifier
+2. Test performance / GPT classifier (on data/test.csv)
 
+            precision    recall  f1-score   support
+
+       False       1.00      0.99      1.00       234
+        True       0.91      1.00      0.95        20
+
+    accuracy                           0.99       254
+   macro avg       0.95      1.00      0.97       254
+weighted avg       0.99      0.99      0.99       254
 
 
 
