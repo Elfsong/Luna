@@ -1,6 +1,5 @@
-[TODO Check Mouad]
 
-1. Sample run results with different models on the subset of "14" SRs (eval=True) are shown with source fields
+1. Sample run results with different models on a subset of SRs (eval=True) are shown with source fields
  (Problem Description: PD, Customer Symptoms: CS, and Resolution Summary: RS)
 
 <table>
