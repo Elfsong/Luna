@@ -12,13 +12,16 @@ from transformers import AutoTokenizer, DataCollatorForSeq2Seq, AutoModelForSeq2
 from nltk.tokenize import sent_tokenize
 from rich.console import Console
 
+path = os.path.abspath("flant5-train-test.py")
+term = path.split('/')
+term="/".join(term[0:len(term)-2])
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Training Flan-T5')
-    parser.add_argument('--train_path', type=str,default='./data/train2_data.csv', help='Training File Path')
+    parser.add_argument('--train_path', type=str,default='./data/train.csv', help='Training File Path')
     parser.add_argument('--batch_size', type=int,default=8, help='Batch size for training')
     parser.add_argument('--do_test', type=bool,default=False, help='Evaluate model on dataset')
-    parser.add_argument('--test_path', type=str,default='./data/test_gold_data.csv', help='Testing File Path')
+    parser.add_argument('--test_path', type=str,default='./data/test.csv', help='Testing File Path')
     args = parser.parse_args()
 
     df_train = pd.read_csv(args.train_path)
@@ -164,7 +167,7 @@ trainer = Seq2SeqTrainer(
 
 trainer.train()
 
-trainer.save_model("./filter_model/")
+trainer.save_model(term + "/filter_model/")
 
 def validate(tokenizer, model, device, loader):
 
