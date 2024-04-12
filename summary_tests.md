@@ -1,8 +1,7 @@
 [TODO Check Mouad]
 
 1. Sample run results with different models on the subset of "14" SRs (eval=True) are shown with source fields
-. (Problem Description
-and without resolution summary (RS)
+ (Problem Description: PD, Customer Symptoms: CS, and Resolution Summary: RS)
 
 <table>
 <tr> Accuracy for Software Version Prediction </tr>
