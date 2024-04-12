@@ -16,15 +16,6 @@ def install_libraries():
     else:
         os.makedirs('./results')
 
-# Function to check if two xlsx files exist in a directory
-def check_xlsx_files(directory):
-    files = os.listdir(directory)
-    list_of_files = [file for file in files if file.endswith('.csv') or file.endswith('.xlsx')]
-    if 'tech_subtech_pnames.csv' in list_of_files and 'tech_subtech_swv_norm2.csv' in list_of_files:
-        print("resources exist")
-    else:
-        print("Creating ressources")
-
 # Function to check if a callable pretrained flant5 model exists in a certain directory
 def check_pretrained_model(directory):
     if os.path.exists(directory):
@@ -36,9 +27,9 @@ def check_pretrained_model(directory):
             subprocess.check_call(["python",'./filter_training/flant5-train-test.py', "--train_path", "./filter_training/data/train.csv", "--test_path", "./filter_training/data/test.csv"])
     else:
         print("Directory does not exist")
-        print("creating ./model directory")
+        print("creating ./filter_model directory")
         os.makedirs(directory)
-        os.makedirs('.?filter_training/checkpoints')
+        os.makedirs('./filter_training/checkpoints')
         os.makedirs('./filter_training/outputs')
         print("training the model from scratch...")
         subprocess.check_call(["python",'./filter_training/flant5-train-test.py', "--train_path", "./filter_training/data/train.csv", "--test_path", "./filter_training/data/test.csv"])
@@ -51,7 +42,5 @@ if __name__ == "__main__":
     args = parser.parse_args()
     # Install libraries from requirements.txt
     install_libraries()
-    # Check if two xlsx files exist in a directory
-    check_xlsx_files(args.resources_path)
     # Check if a callable pretrained flant5 model exists in a certain directory
     check_pretrained_model(args.filter_path)
