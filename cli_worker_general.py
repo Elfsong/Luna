@@ -16,12 +16,12 @@ def general_worker(console, caller, config):
         console.log(f'Metadata & Case notes file loaded.')
     
     with console.status("[bold green] Loading software version mapping file...") as status:
-        s_mapping, swv_map = get_swv_mapping('./resources/tech_subtech_swv_norm2.csv')
+        s_mapping, swv_map = get_swv_mapping(config["tech_subtech_sw_map"])
         time.sleep(3)
         console.log(f'Software version mapping file loaded.')
 
     with console.status("[bold green] Loading product mapping file...") as status:
-        p_mapping = get_product_mapping('./resources/tech_subtech_pnames.csv')
+        p_mapping = get_product_mapping(config["tech_subtech_pnames_map"])
         time.sleep(3)
         console.log(f'Product mapping file loaded.')
 
