@@ -18,8 +18,8 @@ def install_libraries():
 # Function to check if two xlsx files exist in a directory
 def check_xlsx_files(directory):
     files = os.listdir(directory)
-    list_of_files = [file for file in files if file.endswith('.xlsx')]
-    if 'tech_subtech_pnames.xlsx' in list_of_files and 'tech_subtech_swv.xlsx' in list_of_files:
+    list_of_files = [file for file in files if file.endswith('.xlsx') or file.endswith('.csv')]
+    if 'tech_subtech_pnames.csv' in list_of_files and 'tech_subtech_swv_norm2.csv' in list_of_files:
         print("resources exist")
     else:
         print("Creating ressources")
@@ -32,11 +32,7 @@ def check_pretrained_model(directory):
         else:
             print("Pretrained Flant5 model does not exist")
             print("training the model from scratch...")
-            try:
-                subprocess.check_call(['pip', 'install', '-r', './config/requirements_train.txt' ,'--upgrade-strategy' ,'only-if-needed'])
-            except:
-                subprocess.check_call(["python", "-m", 'pip', 'install', '-r', './config/requirements_train.txt' ,'--upgrade-strategy' ,'only-if-needed'])
-            subprocess.check_call(["python",'flant5-train-test.py', '--train_path',"./data/train2_data.csv" ,'--test_path', "./data/test_gold_data.csv"])
+            subprocess.check_call(["python",'./filter_training/flant5-train-test.py'])
     else:
         print("Directory does not exist")
         print("creating ./model directory")
@@ -44,11 +40,7 @@ def check_pretrained_model(directory):
         os.makedirs('./checkpoints')
         os.makedirs('./outputs')
         print("training the model from scratch...")
-        try:
-            subprocess.check_call(['pip', 'install', '-r', './config/requirements_train.txt' ,'--upgrade-strategy' ,'only-if-needed'])
-        except:
-            subprocess.check_call(["python", "-m", 'pip', 'install', '-r', './config/requirements_train.txt' ,'--upgrade-strategy' ,'only-if-needed'])
-        subprocess.check_call(["python",'flant5-train-test.py', '--train_path',"./data/train2_data.csv" ,'--test_path', "./data/test_gold_data.csv"])
+        subprocess.check_call(["python",'./filter_training/flant5-train-test.py'])
 
 def run_cli(key,eval_flag,config_flag):
     if os.path.exists('cli_worker_general.py'):
@@ -66,7 +58,7 @@ def run_cli(key,eval_flag,config_flag):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Initializing the environment')
     parser.add_argument('--resources_path', type=str,default='./resources', help='Resources Files path')
-    parser.add_argument('--filter_path', type=str,default="./filter", help='Filter model path')
+    parser.add_argument('--filter_path', type=str,default="./filter_model", help='Filter model path')
     parser.add_argument('--openai_key', type=str,default=None, help='your openai key')
     parser.add_argument('--eval', type=bool,default=False,help="evaluate on glod SRs")
     parser.add_argument('--config', type=str,default=None,help="config path")
