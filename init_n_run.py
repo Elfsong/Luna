@@ -23,7 +23,7 @@ def check_pretrained_model(directory):
         else:
             print("Pretrained Flant5 model does not exist")
             print("training the model from scratch...")
-            subprocess.check_call(["python",'./filter_training/flant5-train-test.py', "--train_path", "./filter_training/data/train.csv", "--test_path", "./filter_training/data/test.csv"])
+            subprocess.check_call(["python",'./filter_training/flant5-train-test.py', "--train_path", "./filter_training/data/train.csv", "--test_path", "./filter_training/data/test.csv", "--save_path", "./filter_model"])
     else:
         print("Directory does not exist")
         print("creating ./filter_model directory")
@@ -31,7 +31,7 @@ def check_pretrained_model(directory):
         os.makedirs('./filter_training/checkpoints')
         os.makedirs('./filter_training/outputs')
         print("training the model from scratch...")
-        subprocess.check_call(["python",'./filter_training/flant5-train-test.py', "--train_path", "./filter_training/data/train.csv", "--test_path", "./filter_training/data/test.csv"])
+        subprocess.check_call(["python",'./filter_training/flant5-train-test.py', "--train_path", "./filter_training/data/train.csv", "--test_path", "./filter_training/data/test.csv", "--save_path", "./filter_model"])
 
 def run_cli(key,eval_flag,config_flag):
     if os.path.exists('cli_worker_general.py'):
