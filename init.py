@@ -38,8 +38,8 @@ def check_pretrained_model(directory):
         print("Directory does not exist")
         print("creating ./model directory")
         os.makedirs(directory)
-        os.makedirs('./checkpoints')
-        os.makedirs('./outputs')
+        os.makedirs('.?filter_training/checkpoints')
+        os.makedirs('./filter_training/outputs')
         print("training the model from scratch...")
         subprocess.check_call(["python",'./filter_training/flant5-train-test.py'])
 
