@@ -1,6 +1,8 @@
 [TODO Check Mouad]
 
-1. Sample run results with different models on the subset of "14" SRs (eval=True)
+1. Sample run results with different models on the subset of "14" SRs (eval=True) are shown with source fields
+. (Problem Description
+and without resolution summary (RS)
 
 <table>
 <tr> Accuracy for Software Version Prediction </tr>
@@ -46,9 +48,7 @@
 <td>0.35</td>
 </tr>
 </table>
-	swv	pnames	swv	pnames	swv	pnames
-default	0.92	0.78	0.85	0.85	0.85	0.5
-without rs	0.78	0.71	0.78	0.85	0.64	0.35
+
 
 
 
