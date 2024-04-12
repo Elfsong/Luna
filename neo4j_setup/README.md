@@ -3,7 +3,6 @@
 ## Step 1. Make sure you've installed Neo4J.
 More details can be found on [this document](https://shorturl.at/lyKTZ)
 
-Please note that most of the installation steps need adminstrator/sudo access since this involves setting up daemon services.
 
 ## Step 2. Raw Data Retrieval
 * Download `Case_Metadata.json` and `Case_Notes.json` from [the link](https://mynbox.nus.edu.sg/u/ttsM25_bDPCk2wz1/435f6f30-4a25-4504-b946-c2ecc5aa877c?l).
