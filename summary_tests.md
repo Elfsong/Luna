@@ -18,8 +18,8 @@
 <tr>
 <td>CS+PD</td>
 <td>0.78</td>
-<td>0.78</td>
-<td>0.85</td>
+<td>0.71</td>
+<td>0.64</td>
 </tr>
 
 </table>
