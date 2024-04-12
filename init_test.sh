@@ -20,6 +20,6 @@ if [ -z "$OPENAI_KEY" ]; then
     exit 1
 fi
 
-if conda info --envs | grep -q luna; then echo "luna already exists"; else conda create -y -n luna python=3.9; fi
+if conda info --envs | grep -q luna; then echo "luna already exists"; conda activate luna; else conda create -y -n luna python=3.9; conda activate luna; fi
 
 python init_n_run.py --openai_key "$OPENAI_KEY"
