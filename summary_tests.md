@@ -60,7 +60,7 @@
 <tr><td>       False</td>    <td>   1.00  </td>  <td>  0.99  </td>   <td> 1.00   </td>   <td> 234</td></tr>
 <tr><td>        True</td>    <td>   0.91  </td>   <td> 1.00  </td>  <td>  0.95  </td>   <td>   20</td></tr>
 
-<tr><td>    accuracy </td>                 <td>         0.99  </td>   <td>  254</td></tr>
+<tr><td>    accuracy </td>     <td></td></td>    <td></td>             <td>         0.99  </td>   <td>  254</td></tr>
    
 <tr><td>   macro avg</td>    <td>   0.95 </td>   <td>  1.00 </td>    <td> 0.97 </td>   <td>   254</td></tr>
    
