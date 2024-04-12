@@ -37,7 +37,7 @@ bash run_extractors.sh --config [CONFIG FILE PATH]
 
 Please check the README in ```filter_training```
 
-Our precomputed train/test data files are listed in  ```"data/test.csv"``` and ``` "data/train.csv"```
+Our precomputed test/train data files are listed in  ```"filter_training/data/test.csv"``` and ``` "filter_training/data/train.csv"```
 
 ### 4. Compiling the Product Name and Software Version lists and Creating the train/test data for the binary classifier
 
