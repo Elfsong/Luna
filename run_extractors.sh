@@ -16,7 +16,7 @@ done
 
 # Check if --openai_key flag is provided
 if [ -z "$CONFIG" ]; then
-    echo "Error: Please provide --config_file flag with a path."
+    echo "Error: Please provide --config flag with a path."
     exit 1
 fi
 
