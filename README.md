@@ -24,6 +24,8 @@ To avoid training the model in step (b) please download the trained model from [
 
 Please edit the data files for new run in config/gpt-3.json using the entries  ```filepath_metadata/filepath_notes```
 
+New product names/software version lists may be specified using ```tech_subtech_sw_map/tech_subtech_pnames_map```
+
 If test_sr list has a list of valid SRs and eval is True, we also provide evaluation results at the end.
 
 
