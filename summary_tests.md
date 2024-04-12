@@ -54,7 +54,7 @@
 
 2. Test performance / GPT classifier (on data/test.csv)
 <table>
-<tr> <td>     precision</td>    <td>recall</td> <td> f1-score</td>   <td>support </td></tr>
+<tr> <td></td> <td> precision</td>    <td>recall</td> <td> f1-score</td>   <td>support </td></tr>
 
 <tr><td>       False</td>    <td>   1.00  </td>  <td>  0.99  </td>   <td> 1.00   </td>   <td> 234</td></tr>
 <tr><td>        True</td>    <td>   0.91  </td>   <td> 1.00  </td>  <td>  0.95  </td>   <td>   20</td></tr>
