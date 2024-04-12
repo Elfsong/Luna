@@ -37,6 +37,10 @@ Please check the README in ```filter_training```
 
 Our precomputed train/test data files are listed in  ```"data/test.csv"``` and ``` "data/train.csv"```
 
-### 4. Creating Product Name and Software Version lists for use in predictions and Creating the train/test data for the binary classifier
+### 4. Compiling the Product Name and Software Version lists and Creating the train/test data for the binary classifier
 
 Please check the README in ```create_resources```
+
+### 5. Neo4J: Visualizing your data via graphs
+
+Please check the installation and setup details in ```neo4j_setup```
