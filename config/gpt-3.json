@@ -4,6 +4,8 @@
     "chunk_overlap": 500,
     "model_name": "gpt-3.5-turbo-1106",
     "openai_api_key": "YOU_OPENAI_KEY",
+    "tech_subtech_sw_map": "",
+    "tech_subtech_sw_map": "",
     "filepath_metadata": "./sample_data/Sample_Metadata.json",
     "filepath_notes": "./sample_data/Sample_Case_Notes.json",
     "test_sr" : [],
