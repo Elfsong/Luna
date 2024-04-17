@@ -14,7 +14,7 @@ a) Installs the necessary Python libraries (specified in requirements.txt).
 
 b) Trains the necessary "Call GPT or NOT binary classifier" using training data created by us (in "data").
 
-c) Uses your provided OPENAI key to extract product_names and software_versions using the sample data from "samples".
+c) Uses your provided OPENAI key to extract product_names and software_versions using the sample data from "sample_data".
 
 
 To avoid training the model in step (b) please download the trained model from [HERE](https://drive.google.com/drive/folders/1qTd5yGKpNt8sCREOLPrHpYVDk79-ZvhQ?usp=sharing) and place it in a sub-directory called "filter_model".
