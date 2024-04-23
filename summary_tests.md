@@ -52,7 +52,7 @@
 
 
 
-2. Test performance / send to GPT or not (SWV) classifier (on data/test.csv )
+2. Test performance / send to GPT or not (SWV) classifier (on filter_training/data/test.csv )
 <table>
 <tr> <td></td> <td> precision</td>    <td>recall</td> <td> f1-score</td>   <td>support </td></tr>
 
