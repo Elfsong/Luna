@@ -1,7 +1,7 @@
 The code provided in this directory is for creating the following two resources
 
 
-1. The train and test files for training the classifier that filters cases notes to figure out (whether to make an OpenAI call or not)
+1. The train and test files for training the classifier that filters cases notes and product name to figure out (whether to make an OpenAI call or not)
 2. The lists of product names and software version names that are used to build the options list for MCQ calls
 
 The resources folder already includes these two files for the data provided as part of the WP1 (use-case#1)
