@@ -52,7 +52,7 @@
 
 
 
-2. Test performance / GPT classifier (on data/test.csv)
+2. Test performance / GPT classifier software version (on data/test.csv)
 <table>
 <tr> <td></td> <td> precision</td>    <td>recall</td> <td> f1-score</td>   <td>support </td></tr>
 
@@ -67,5 +67,18 @@
 
 </table>
 
+3. Test performance / GPT classifier product name (on data/test.csv)
+<table>
+<tr> <td></td> <td> precision</td>    <td>recall</td> <td> f1-score</td>   <td>support </td></tr>
 
+<tr><td>       False</td>    <td>   0.89  </td>  <td>  0.89  </td>   <td> 0.89   </td>   <td> 1305</td></tr>
+<tr><td>        True</td>    <td>   0.65  </td>   <td> 0.63  </td>  <td>  0.64  </td>   <td>   409</td></tr>
+
+<tr><td>    accuracy </td>     <td></td></td>    <td></td>             <td>         0.83  </td>   <td>  1714</td></tr>
+   
+<tr><td>   macro avg</td>    <td>   0.77 </td>   <td>  0.76 </td>    <td> 0.76 </td>   <td>   1714</td></tr>
+   
+<tr><td>weighted avg </td>   <td>   0.83  </td>   <td> 0.83 </td>  <td>   0.83</td>     <td>  1714</td></tr>
+
+</table>
 
