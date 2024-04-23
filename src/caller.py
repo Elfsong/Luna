@@ -69,6 +69,7 @@ class OpenAICaller(Caller):
             
         # Step 1. map these chunks
         map_results = list()
+        price_total, num_tokens_total = 0 , 0
         for index, chunk in enumerate(chunks):
             if status:
                 status.update(f"[bold green] Mapping chunk [{index+1}/{len(chunks)}]...")
@@ -76,13 +77,16 @@ class OpenAICaller(Caller):
             # MCQ Switch
             if choice_list:
                 map_prompt = f'Question: {question} \n \
-                    The ONLY software version should be selected from the given product name list: {choice_list} \
+                    The ONLY product name should be selected from the given product name list: {choice_list} \
                     Response in this JSON format: \n {{"product_name": "","explanation": "", "summary": ""}} \n {chunk}'
             else:
                 map_prompt = f'Question: {question} \n \
                     Response in this JSON format: \n {{"product_name": "","explanation": "", "summary": ""}} \n {chunk}'
                     
             result = self.call(map_prompt)
+            price, num_tokens = get_price(self.config['model_name'], map_prompt)
+            price_total = price_total + price
+            num_tokens_total = num_tokens_total + num_tokens
             map_results.append(result)
 
         # Step 2. reduce these results        
@@ -101,9 +105,7 @@ class OpenAICaller(Caller):
                 
             reduce_results.append(self.call(reduce_prompt))
 
-        price, num_tokens = get_price(self.config['model_name'], map_prompt)
-            
-        return reduce_results[0] , price, num_tokens
+        return reduce_results[0] , price_total, num_tokens_total
     
     def software_analysis(self, docs, question, choice_list, status=None) -> str:
         chunks = list()
@@ -114,7 +116,7 @@ class OpenAICaller(Caller):
             chunks += self.text_splitter.split_text(doc)
         if self.console:
             self.console.log(f"Document input length: {len(doc)}, which has been split into {len(chunks)} chunks.")
-            
+        price_total,num_tokens_total = 0,0
         # Step 1. map these chunks
         map_results = list()
         for index, chunk in enumerate(chunks):
@@ -131,6 +133,9 @@ class OpenAICaller(Caller):
                     Response in this JSON format: \n {{"software_version": "","explanation": "", "summary": ""}} \n {chunk}'
                     
             result = self.call(map_prompt)
+            price, num_tokens = get_price(self.config['model_name'], map_prompt)
+            price_total = price_total + price
+            num_tokens_total = num_tokens_total + num_tokens
             map_results.append(result)
 
         # Step 2. reduce these results        
@@ -148,16 +153,29 @@ class OpenAICaller(Caller):
                 Response in this JSON format: \n {{"software_version": "","explanation": "", "summary": ""}} \n {reduce_result_str}'
                 
             reduce_results.append(self.call(reduce_prompt))
-
-        price, num_tokens = get_price(self.config['model_name'], map_prompt)
             
-        return reduce_results[0], price, num_tokens
+        return reduce_results[0], price_total, num_tokens_total
     
 class LocalCaller(Caller):
     def __init__(self, config, console=None) -> None:
         super().__init__(config, console)
         self.tokenizer = AutoTokenizer.from_pretrained(config['model_path'],local_files_only=True)
         self.model = AutoModelForSeq2SeqLM.from_pretrained(config['model_path'],local_files_only=True).to(device)
+            
+    def call(self, prompt) -> str:
+        self.model.eval()
+        with torch.no_grad():
+            ids = self.tokenizer.encode(prompt, return_tensors="pt").to(device, dtype = torch.long)
+            generated_ids = self.model.generate(input_ids = ids,max_length= 20)
+            preds = self.tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
+        response = preds.strip()
+        return response
+    
+class LocalCaller_p(Caller):
+    def __init__(self, config, console=None) -> None:
+        super().__init__(config, console)
+        self.tokenizer = AutoTokenizer.from_pretrained(config['model_path_p'],local_files_only=True)
+        self.model = AutoModelForSeq2SeqLM.from_pretrained(config['model_path_p'],local_files_only=True).to(device)
             
     def call(self, prompt) -> str:
         self.model.eval()

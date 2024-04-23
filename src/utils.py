@@ -202,3 +202,7 @@ def get_price(model_name, text):
     num_tokens = len(encoding.encode(text))
     price  = num_tokens * price_base
     return price, num_tokens
+
+def create_summary(filename,content):
+    with open(filename, 'w') as file:
+        file.write(content)
