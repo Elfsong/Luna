@@ -10,7 +10,7 @@ import csv
 import sys
 import random 
 import CRConfig as config
-from Matcher import matchSWStrings
+from Matcher import matchSWStrings, edmatch
 from GPTClassifierTDUtils import loadCaseNotes, loadTST_SWVMap
 
 
@@ -35,11 +35,11 @@ for ele in data:
     for field in config.fields:
         if field in ele:
             if ele[field] is None:
-                print (field+" is None for "+ele[config.sr_key])
+                #print (field+" is None for "+ele[config.sr_key])
                 break            
             row.append(ele[field])
         else:
-            print (field+" not found for "+ele[config.sr_key])
+            #print (field+" not found for "+ele[config.sr_key])
             break
     
     if len(row)==len(config.fields)+1: #for SR
@@ -60,7 +60,7 @@ sr_cn = loadCaseNotes(cndata_file)
 print ("len(sr_cn)="+str(len(sr_cn)))
 
 
-
+cp = csv.reader(open(config.pname_tst_map_file, "r"))
 
 csvr = csv.reader(open(config.swv_tst_map_file, "r"))
 header = {}
@@ -75,7 +75,28 @@ for row in csvr:
         swv = row[header[config.sw_version_key]]
         nswv = row[header[config.norm_swv_key]]
         swv2nswv[swv.strip()] = nswv.strip()
+
+header2 = {}
+ts2p={}
+for row in cp:
+    if len(header2)==0:
+        for rx, rele in enumerate(row):
+            header2[rele]=rx
+        print (header2)
+        continue
+    else:
+        tech = row[header2[config.tech_key]]
+        sub_tech = row[header2[config.subtech_key]]
+        pname = row[header2[config.prod_name_key]]
         
+        if str([tech,sub_tech]) in ts2p.keys():
+            ts2p[str([tech,sub_tech])].append(pname)
+        else:
+            ts2p[str([tech,sub_tech])] = [pname]
+
+
+
+
 
 print ("#normalized sw map entries "+str(len(swv2nswv)))
 SEPARATOR_TOKEN=" <> "
@@ -85,6 +106,8 @@ header, pnmap, r_pnmap = loadTST_SWVMap(config.swv_tst_map_file, SEPARATOR_TOKEN
 
 prows=[]
 nrows=[]
+prows_sw=[]
+nrows_sw=[]
 
 
 src_list=config.sourcefield_names
@@ -120,7 +143,10 @@ for row in rows:
     ptechs = row[rowhead.index(config.tech_key)]
     psubtechs = row[rowhead.index(config.subtech_key)]
     pname_tgt = row[rowhead.index(config.prod_name_key)]
-        
+    try:
+        pname_list = ts2p[str([ptechs,psubtechs])]
+    except:
+        pname_list = [pname_tgt]
             
     key = ptechs.strip()+config.SEPARATOR_TOKEN+psubtechs.strip()
     cnotes = []
@@ -145,6 +171,7 @@ for row in rows:
     
     #print ("tgt "+tgt+" ntgt="+ntgt+" #potlabels="+str(len(plabels)))
     match=False
+    match_sw = False
     words = src.split()
     for word in words:
         for ptgt in plabels:
@@ -152,19 +179,28 @@ for row in rows:
                 nptgt = swv2nswv[ptgt.strip()]
             else:
                 nptgt = ptgt
-            
             if matchSWStrings(word, nptgt):
+                match_sw=True
+
+        for ptgt_2 in pname_list:
+            if edmatch(word, ptgt_2):
                 match=True
-                #print ("Match in metadata, word="+word+" ntgt="+ntgt+" nptgt="+nptgt)
+                print ("Match in metadata, word="+word+" pname=" + ptgt_2)
+            
+                #print ("Match in metadata, word="+word+" pname="+pname_tgt)
     
     if len(plabels)==0 or src.strip()=="":
         print ("DEBUG IGNORING entry since plabels/note is empty")
     else:
     
         if match:
-            prows.append([srnum, "srmeta", src, str(plabels), ntgt, pname_tgt])
+            prows.append([srnum, "srmeta", src, str(plabels),str(pname_list), ntgt, pname_tgt,str(match),str(match_sw)])
         else:
-            nrows.append([srnum, "srmeta", src, str(plabels), ntgt, pname_tgt])
+            nrows.append([srnum, "srmeta", src, str(plabels),str(pname_list), ntgt, pname_tgt,str(match),str(match_sw)])
+        if match_sw:
+            prows_sw.append([srnum, "srmeta", src, str(plabels),str(pname_list), ntgt, pname_tgt,str(match),str(match_sw)])
+        else:
+            nrows_sw.append([srnum, "srmeta", src, str(plabels),str(pname_list), ntgt, pname_tgt,str(match),str(match_sw)])
         
     if len(cnotes)>10:
         random.shuffle(cnotes)
@@ -183,28 +219,39 @@ for row in rows:
                     nptgt = swv2nswv[ptgt.strip()]
                 else:
                     nptgt = ptgt
-                
                 if matchSWStrings(word, nptgt):
-                    #print ("Match in metadata, word="+word+" ntgt="+ntgt+" nptgt="+nptgt)
+                    #print ("Match in metadata, word="+word+" pname_tgt="+pname_tgt)
+                    match_sw=True
+            for ptgt_2 in pname_list:
+                if edmatch(word, ptgt_2):
                     match=True
-        
+                    print ("Match in metadata, word="+word+" pname="+ptgt_2)
+            
         
         if len(plabels)==0 or ext_note.strip()=="":
-            print ("DEBUG IGNORING entry since plabels/note is empty")
+            #print ("DEBUG IGNORING entry since plabels/note is empty")
             continue
             
             
         if match:
             prows.append([srnum, cntype.replace(" ","").strip(), \
-                          ext_note, str(plabels), ntgt, pname_tgt])
+                          ext_note, str(plabels),str(pname_list), ntgt, pname_tgt,str(match),str(match_sw)])
         else:
             nrows.append([srnum, cntype.replace(" ","").strip(), \
-                          ext_note, str(plabels), ntgt, pname_tgt])
+                          ext_note, str(plabels),str(pname_list), ntgt, pname_tgt,str(match),str(match_sw)])
+            
+        if match_sw:
+            prows_sw.append([srnum, cntype.replace(" ","").strip(), \
+                          ext_note, str(plabels),str(pname_list), ntgt, pname_tgt,str(match),str(match_sw)])
+        else:
+            nrows_sw.append([srnum, cntype.replace(" ","").strip(), \
+                          ext_note, str(plabels),str(pname_list), ntgt, pname_tgt,str(match),str(match_sw)])
                         
         
 
 
 print("len(prows)="+str(len(prows))+ " len(nrows)="+str(len(nrows)))
+print("len(prows_sw)="+str(len(prows_sw))+ " len(nrows_sw)="+str(len(nrows_sw)))
 
 testsrs=[]
 if len(goldsrs)!=0:
@@ -224,11 +271,11 @@ if len(testsrs)==0:
         
     trainsrs=trainsrs[0:maxi]
         
-print ("#goldsrs="+str(len(goldsrs)))
-print ("#trainsrs="+str(len(trainsrs)))
-print ("#testsrs="+str(len(testsrs)))
+# print ("#goldsrs="+str(len(goldsrs)))
+# print ("#trainsrs="+str(len(trainsrs)))
+# print ("#testsrs="+str(len(testsrs)))
 
-header=["SR","CNTYPE","source","plabels","SWV_VERSION","PROD_NAME","target"]
+header=["SR","CNTYPE","source","swv_labels","pname_labels","SWV_VERSION","PROD_NAME","target_sw","target_pname"]
 
 fout1 = open (tr_opfile, "w")
 csvw1 = csv.writer(fout1, delimiter=",", quotechar='"', \
@@ -254,10 +301,7 @@ for prow in prows:
     
     if hasnones:
         continue
-        
-    
-    tgt = "True"
-    prow.append(tgt)
+
     sr = prow[0]
     if sr not in testsrs:
         csvw1.writerow(prow)
@@ -281,8 +325,6 @@ for nrow in nrows:
     if hasnones:
         continue
         
-    tgt = "False"
-    nrow.append(tgt)
     sr = nrow[0]
     if sr not in testsrs:
         csvw1.writerow(nrow)
