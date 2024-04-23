@@ -11,6 +11,7 @@
     "test_sr" : [],
     "eval" : false,
     "model_path" : "./filter_model",
+    "model_path_p" : "./filter_model_p",
     "include_notes" : true,
     "fields": ["Customer_Symptom__c","Description","Resolution_Summary__c"],
     "mcq": true
