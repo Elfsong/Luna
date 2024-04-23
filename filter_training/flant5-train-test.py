@@ -22,7 +22,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Training Flan-T5')
     parser.add_argument('--train_path', type=str,default='./data/train.csv', help='Training File Path')
     parser.add_argument('--batch_size', type=int,default=8, help='Batch size for training')
-    parser.add_argument('--do_test', type=bool,default=False, help='Evaluate model on dataset')
+    parser.add_argument('--swv_or_pname', type=str,default="swv", help='train for swv prediction or pname prediction')
+    #parser.add_argument('--do_test', type=bool,default=False, help='Evaluate model on dataset')
     parser.add_argument('--test_path', type=str,default='./data/test.csv', help='Testing File Path')
     parser.add_argument('--save_path', type=str,default=term+'/filter_model', help='Save Model Path')
     args = parser.parse_args()
@@ -153,9 +154,12 @@ training_args = Seq2SeqTrainingArguments(
 )
 
 train2  = df_train['source'].tolist()
-
-train_dataset = TextClassificationDataset(df_train['source'].tolist(),df_train['plabels'].tolist(), df_train['target'].tolist(), tokenizer, max_length=512)
-val_dataset = TextClassificationDataset(df_test['source'].tolist(),df_test['plabels'].tolist(),  df_test['target'].tolist(), tokenizer, max_length=512)
+if args.swv_or_pname == "swv":
+    train_dataset = TextClassificationDataset(df_train['source'].tolist(),df_train['swv_labels'].tolist(), df_train['target_sw'].tolist(), tokenizer, max_length=512)
+    val_dataset = TextClassificationDataset(df_test['source'].tolist(),df_test['swv_labels'].tolist(),  df_test['target_sw'].tolist(), tokenizer, max_length=512)
+elif args.swv_or_pname == "pname":
+    train_dataset = TextClassificationDataset(df_train['source'].tolist(),df_train['pname_labels'].tolist(), df_train['target_pname'].tolist(), tokenizer, max_length=512)
+    val_dataset = TextClassificationDataset(df_test['source'].tolist(),df_test['pname_labels'].tolist(),  df_test['target_pname'].tolist(), tokenizer, max_length=512)
 
 
 trainer = Seq2SeqTrainer(
@@ -200,17 +204,16 @@ def validate(tokenizer, model, device, loader):
           actuals.extend(target)
   return predictions, actuals
 
-if args.do_test:
+output_dir="./filter_training/outputs/"
+val_params = {
+        "batch_size": BATCH_SIZE,
+        "shuffle": False,
+        "num_workers": 0,
+    }
+val_loader = DataLoader(val_dataset, **val_params)
+predictions, actuals = validate(tokenizer, model, 'cuda', val_loader)
+final_df = pd.DataFrame({"Generated Text": predictions, "Actual Text": actuals})
+print(classification_report(actuals, predictions))
+final_df.to_csv(os.path.join(output_dir, "predictions.csv"))
 
-    output_dir="./outputs/"
-    val_params = {
-            "batch_size": BATCH_SIZE,
-            "shuffle": False,
-            "num_workers": 0,
-        }
-    val_loader = DataLoader(val_dataset, **val_params)
-    predictions, actuals = validate(tokenizer, model, 'cuda', val_loader)
-    final_df = pd.DataFrame({"Generated Text": predictions, "Actual Text": actuals})
-    final_df.to_csv(os.path.join(output_dir, "predictions.csv"))
-    print(classification_report(actuals, predictions))
 
