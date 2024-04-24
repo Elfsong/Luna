@@ -56,14 +56,14 @@
 <table>
 <tr> <td></td> <td> precision</td>    <td>recall</td> <td> f1-score</td>   <td>support </td></tr>
 
-<tr><td>       False</td>    <td>   1.00  </td>  <td>  0.99  </td>   <td> 1.00   </td>   <td> 234</td></tr>
-<tr><td>        True</td>    <td>   0.91  </td>   <td> 1.00  </td>  <td>  0.95  </td>   <td>   20</td></tr>
+<tr><td>       False</td>    <td>   0.99  </td>  <td>  0.98  </td>   <td> 0.99   </td>   <td> 1589</td></tr>
+<tr><td>        True</td>    <td>   0.80  </td>   <td> 0.86  </td>  <td>  0.83  </td>   <td>   125</td></tr>
 
-<tr><td>    accuracy </td>     <td></td></td>    <td></td>             <td>         0.99  </td>   <td>  254</td></tr>
+<tr><td>    accuracy </td>     <td></td></td>    <td></td>             <td>         0.97  </td>   <td>  1714</td></tr>
    
-<tr><td>   macro avg</td>    <td>   0.95 </td>   <td>  1.00 </td>    <td> 0.97 </td>   <td>   254</td></tr>
+<tr><td>   macro avg</td>    <td>   0.90 </td>   <td>  0.92 </td>    <td> 0.91 </td>   <td>   254</td></tr>
    
-<tr><td>weighted avg </td>   <td>   0.99  </td>   <td> 0.99 </td>  <td>   0.99</td>     <td>  254</td></tr>
+<tr><td>weighted avg </td>   <td>   0.98  </td>   <td> 0.97 </td>  <td>   0.97</td>     <td>  254</td></tr>
 
 </table>
 
