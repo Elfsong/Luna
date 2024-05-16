@@ -53,7 +53,7 @@
 
 
 2. Test performance / send to GPT or not (SWV) classifier  (on filter_training/data/test.csv )
-   * flanT5-large:
+   * flanT5-large (780M parameters):
     <table>
     <tr> <td></td> <td> precision</td>    <td>recall</td> <td> f1-score</td>   <td>support </td></tr>
     
@@ -68,7 +68,7 @@
     
     </table>
 
-   * flanT5-base:
+   * flanT5-base(250M parameters):
     <table>
     <tr> <td></td> <td> precision</td>    <td>recall</td> <td> f1-score</td>   <td>support </td></tr>
     
@@ -83,7 +83,7 @@
     
     </table>
 
-   * T5-large:
+   * T5-large(770M parameters):
     <table>
     <tr> <td></td> <td> precision</td>    <td>recall</td> <td> f1-score</td>   <td>support </td></tr>
     
@@ -98,7 +98,7 @@
     
     </table>
 
-    * T5-base:
+    * T5-base(220M parameters):
      <table>
      <tr> <td></td> <td> precision</td>    <td>recall</td> <td> f1-score</td>   <td>support </td></tr>
      
@@ -112,8 +112,7 @@
      <tr><td>weighted avg </td>   <td>   0.98  </td>   <td> 0.98 </td>  <td>   0.98</td>     <td>  254</td></tr>
      
      </table>
-
-     * roberta-large:
+      * roberta-large(354M parameters):
       <table>
       <tr> <td></td> <td> precision</td>    <td>recall</td> <td> f1-score</td>   <td>support </td></tr>
       
@@ -128,7 +127,22 @@
       
       </table>
 
-      * Bert-base-uncased:
+     * roberta-base (123M parameters):
+      <table>
+      <tr> <td></td> <td> precision</td>    <td>recall</td> <td> f1-score</td>   <td>support </td></tr>
+      
+      <tr><td>       False</td>    <td>   0.99  </td>  <td>  0.96  </td>   <td> 0.97   </td>   <td> 234</td></tr>
+      <tr><td>        True</td>    <td>   0.63  </td>   <td> 0.85  </td>  <td>  0.72  </td>   <td>   20</td></tr>
+      
+      <tr><td>    accuracy </td>     <td></td></td>    <td></td>             <td>         0.95  </td>   <td>  254</td></tr>
+         
+      <tr><td>   macro avg</td>    <td>   0.81 </td>   <td>  0.90 </td>    <td> 0.85 </td>   <td>   254</td></tr>
+         
+      <tr><td>weighted avg </td>   <td>   0.96  </td>   <td> 0.95 </td>  <td>   0.95</td>     <td>  254</td></tr>
+      
+      </table>
+
+      * Bert-base-uncased(110M parameters):
       <table>
       <tr> <td></td> <td> precision</td>    <td>recall</td> <td> f1-score</td>   <td>support </td></tr>
       
@@ -143,7 +157,7 @@
       
       </table>
 
-       * Bert-large-uncased:
+       * Bert-large-uncased(336M parameters):
        <table>
        <tr> <td></td> <td> precision</td>    <td>recall</td> <td> f1-score</td>   <td>support </td></tr>
        
