@@ -131,14 +131,14 @@
       <table>
       <tr> <td></td> <td> precision</td>    <td>recall</td> <td> f1-score</td>   <td>support </td></tr>
       
-      <tr><td>       False</td>    <td>   0.99  </td>  <td>  0.96  </td>   <td> 0.97   </td>   <td> 234</td></tr>
-      <tr><td>        True</td>    <td>   0.63  </td>   <td> 0.85  </td>  <td>  0.72  </td>   <td>   20</td></tr>
+      <tr><td>       False</td>    <td>   0.97  </td>  <td>  0.99  </td>   <td> 0.98   </td>   <td> 234</td></tr>
+      <tr><td>        True</td>    <td>   0.86  </td>   <td> 0.60  </td>  <td>  0.71  </td>   <td>   20</td></tr>
       
-      <tr><td>    accuracy </td>     <td></td></td>    <td></td>             <td>         0.95  </td>   <td>  254</td></tr>
+      <tr><td>    accuracy </td>     <td></td></td>    <td></td>             <td>         0.96  </td>   <td>  254</td></tr>
          
-      <tr><td>   macro avg</td>    <td>   0.81 </td>   <td>  0.90 </td>    <td> 0.85 </td>   <td>   254</td></tr>
+      <tr><td>   macro avg</td>    <td>   0.91 </td>   <td>  0.80 </td>    <td> 0.84 </td>   <td>   254</td></tr>
          
-      <tr><td>weighted avg </td>   <td>   0.96  </td>   <td> 0.95 </td>  <td>   0.95</td>     <td>  254</td></tr>
+      <tr><td>weighted avg </td>   <td>   0.96  </td>   <td> 0.96 </td>  <td>   0.96</td>     <td>  254</td></tr>
       
       </table>
 
@@ -156,19 +156,19 @@
       <tr><td>weighted avg </td>   <td>   0.96  </td>   <td> 0.95 </td>  <td>   0.96</td>     <td>  254</td></tr>
       
       </table>
-
-       * Bert-large-uncased(336M parameters):
-       <table>
-       <tr> <td></td> <td> precision</td>    <td>recall</td> <td> f1-score</td>   <td>support </td></tr>
-       
-       <tr><td>       False</td>    <td>   0.92  </td>  <td>  1.00  </td>   <td> 0.96   </td>   <td> 234</td></tr>
-       <tr><td>        True</td>    <td>   0.00  </td>   <td> 0.00  </td>  <td>  0.00  </td>   <td>   20</td></tr>
-       
-       <tr><td>    accuracy </td>     <td></td></td>    <td></td>             <td>         0.92  </td>   <td>  254</td></tr>
-          
-       <tr><td>   macro avg</td>    <td>   0.46 </td>   <td>  0.50 </td>    <td> 0.48 </td>   <td>   254</td></tr>
-          
-       <tr><td>weighted avg </td>   <td>   0.85  </td>   <td> 0.92 </td>  <td>   0.88</td>     <td>  254</td></tr>
-       
-       </table>
+      
+      * Bert-large-uncased(336M parameters):
+      <table>
+      <tr> <td></td> <td> precision</td>    <td>recall</td> <td> f1-score</td>   <td>support </td></tr>
+      
+      <tr><td>       False</td>    <td>   0.92  </td>  <td>  1.00  </td>   <td> 0.96   </td>   <td> 234</td></tr>
+      <tr><td>        True</td>    <td>   0.00  </td>   <td> 0.00  </td>  <td>  0.00  </td>   <td>   20</td></tr>
+      
+      <tr><td>    accuracy </td>     <td></td></td>    <td></td>             <td>         0.92  </td>   <td>  254</td></tr>
+         
+      <tr><td>   macro avg</td>    <td>   0.46 </td>   <td>  0.50 </td>    <td> 0.48 </td>   <td>   254</td></tr>
+         
+      <tr><td>weighted avg </td>   <td>   0.85  </td>   <td> 0.92 </td>  <td>   0.88</td>     <td>  254</td></tr>
+      
+      </table>
 
