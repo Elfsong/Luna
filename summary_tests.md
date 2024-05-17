@@ -47,12 +47,22 @@
 </tr>
 </table>
 
+2. Summary performance for all the models trained and tested on  filter_training/data/test.csv
+ <table>
+    <tr> <td>model name</td> <td> #Parameters </td>    <td>F1 positive</td> <td> F1 negative</td>   <td>Macro F1 </td></tr>
+    
+    <tr><td>FlanT5-large</td>   <td>780M</td>    <td>  0.95  </td>  <td>  1.00  </td>   <td> 0.97 </td></tr>
+    <tr><td>FlanT5-base</td>    <td>250M</td>    <td>  0.87  </td>  <td>  0.99  </td>   <td> 0.93 </td></tr>
+    <tr><td>T5-large</td>       <td>770M</td>    <td>  0.84  </td>  <td>  0.98  </td>   <td> 0.91 </td></tr>
+    <tr><td>T5-base</td>        <td>220M</td>    <td>  0.89  </td>  <td>  0.99  </td>   <td> 0.94 </td></tr>
+    <tr><td>Roberta-large</td>  <td>354M</td>    <td>  0.72  </td>  <td>  0.97  </td>   <td> 0.85 </td></tr>
+    <tr><td>Roberta-base</td>   <td>123M</td>    <td>  0.71  </td>  <td>  0.98  </td>   <td> 0.84 </td></tr>
+    <tr><td>Bert-base</td>      <td>110M</td>    <td>  0.75  </td>  <td>  0.97  </td>   <td> 0.86 </td></tr>
+    <tr><td>Bert-large</td>     <td>336M</td>    <td>  0.00  </td>  <td>  0.96  </td>   <td> 0.48 </td></tr>    
+    </table>
 
 
-
-
-
-2. Test performance / send to GPT or not (SWV) classifier  (on filter_training/data/test.csv )
+3. Test performance / send to GPT or not (SWV) classifier  (on filter_training/data/test.csv )
    * flanT5-large (780M parameters):
     <table>
     <tr> <td></td> <td> precision</td>    <td>recall</td> <td> f1-score</td>   <td>support </td></tr>
