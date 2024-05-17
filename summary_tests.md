@@ -48,7 +48,7 @@
 </table>
 
 2. Summary performance for all the models trained and tested on  filter_training/data/test.csv
- <table>
+    <table>
     <tr> <td>model name</td> <td> #Parameters </td>    <td>F1 positive</td> <td> F1 negative</td>   <td>Macro F1 </td></tr>
     
     <tr><td>FlanT5-large</td>   <td>780M</td>    <td>  0.95  </td>  <td>  1.00  </td>   <td> 0.97 </td></tr>
