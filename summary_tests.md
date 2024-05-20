@@ -47,7 +47,7 @@
 </tr>
 </table>
 
-2. Summary performance for all the models trained and tested on  filter_training/data/test.csv
+2. Summary of model performance on test data (Send to GPT or not /SWV classifier)
     <table>
     <tr> <td>model name</td> <td> #Parameters </td>    <td>F1 positive</td> <td> F1 negative</td>   <td>Macro F1 </td></tr>
     
@@ -62,7 +62,7 @@
     </table>
 
 
-3. Test performance / send to GPT or not (SWV) classifier  (on filter_training/data/test.csv )
+3. Detailed performance of various models on test data:(Send to GPT or not /SWV classifier)
    * flanT5-large (780M parameters):
     <table>
     <tr> <td></td> <td> precision</td>    <td>recall</td> <td> f1-score</td>   <td>support </td></tr>
